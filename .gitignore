@@ -1,0 +1,9 @@
+# macOS
+#
+## A file created by Finder to hold the user's folder view preferences
+.DS_Store
+
+# Xcode
+#
+## User settings
+xcuserdata/
