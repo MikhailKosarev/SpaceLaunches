@@ -12,3 +12,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `README` file with the main informaiton about the project.
 - `LICENSE` to reflect project license information.
 - `.gitignore` file to lists all of the files that are local to a project that Git should not push to GitHub.
+- Created an initial empty Xcode project with customized configuration.
