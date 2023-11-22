@@ -13,3 +13,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `LICENSE` to reflect project license information.
 - `.gitignore` file to lists all of the files that are local to a project that Git should not push to GitHub.
 - Created an initial empty Xcode project with customized configuration.
+- Installed and set up the necessary dependencies using `Cocoapods`.
+- `SwiftLint` as a script to the build phase and set up the rules.
+
+### Changed
+
+- Change the background color of the screen from wgite to yellow.
+- Format default project files according to the lint rules.
+
+### Removed
+- Remove unnecessary methods and comments from the default files.
