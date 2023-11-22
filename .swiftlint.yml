@@ -1,0 +1,7 @@
+# paths to ignore during linting.
+excluded:
+  - Pods
+
+# configurable rules
+trailing_comma:
+  mandatory_comma: true
