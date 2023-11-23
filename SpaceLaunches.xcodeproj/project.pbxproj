@@ -48,6 +48,54 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		741FB9F02B0F8EA700E6A95E /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				7474E0172B0CA804008AA32B /* AppDelegate.swift */,
+				7474E0192B0CA804008AA32B /* SceneDelegate.swift */,
+				7474E0252B0CA805008AA32B /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		741FB9F22B0F8EDF00E6A95E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		741FB9F32B0F8EF800E6A95E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		741FB9F42B0F8EFE00E6A95E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				7474E01B2B0CA804008AA32B /* ViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		741FB9F52B0F8F0500E6A95E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7474E0202B0CA805008AA32B /* Assets.xcassets */,
+				7474E0222B0CA805008AA32B /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		741FB9F62B0F8F1600E6A95E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		7474E00B2B0CA803008AA32B = {
 			isa = PBXGroup;
 			children = (
@@ -69,12 +117,12 @@
 		7474E0162B0CA804008AA32B /* SpaceLaunches */ = {
 			isa = PBXGroup;
 			children = (
-				7474E0172B0CA804008AA32B /* AppDelegate.swift */,
-				7474E0192B0CA804008AA32B /* SceneDelegate.swift */,
-				7474E01B2B0CA804008AA32B /* ViewController.swift */,
-				7474E0202B0CA805008AA32B /* Assets.xcassets */,
-				7474E0222B0CA805008AA32B /* LaunchScreen.storyboard */,
-				7474E0252B0CA805008AA32B /* Info.plist */,
+				741FB9F02B0F8EA700E6A95E /* Application */,
+				741FB9F62B0F8F1600E6A95E /* Common */,
+				741FB9F22B0F8EDF00E6A95E /* Data */,
+				741FB9F32B0F8EF800E6A95E /* Domain */,
+				741FB9F42B0F8EFE00E6A95E /* Presentation */,
+				741FB9F52B0F8F0500E6A95E /* Resources */,
 			);
 			path = SpaceLaunches;
 			sourceTree = "<group>";
