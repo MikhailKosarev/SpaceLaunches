@@ -17,6 +17,7 @@
 		746C1F402B10F9F600FA9612 /* OrbitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C1F3F2B10F9F600FA9612 /* OrbitResponse.swift */; };
 		746C1F422B10FA1C00FA9612 /* AgencyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C1F412B10FA1C00FA9612 /* AgencyResponse.swift */; };
 		746C1F442B10FA3700FA9612 /* PadResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C1F432B10FA3700FA9612 /* PadResponse.swift */; };
+		746C1F462B10FA5600FA9612 /* LocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C1F452B10FA5600FA9612 /* LocationResponse.swift */; };
 		7474E0182B0CA804008AA32B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7474E0172B0CA804008AA32B /* AppDelegate.swift */; };
 		7474E01A2B0CA804008AA32B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7474E0192B0CA804008AA32B /* SceneDelegate.swift */; };
 		7474E01C2B0CA804008AA32B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7474E01B2B0CA804008AA32B /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 		746C1F3F2B10F9F600FA9612 /* OrbitResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrbitResponse.swift; sourceTree = "<group>"; };
 		746C1F412B10FA1C00FA9612 /* AgencyResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgencyResponse.swift; sourceTree = "<group>"; };
 		746C1F432B10FA3700FA9612 /* PadResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PadResponse.swift; sourceTree = "<group>"; };
+		746C1F452B10FA5600FA9612 /* LocationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationResponse.swift; sourceTree = "<group>"; };
 		7474E0142B0CA804008AA32B /* SpaceLaunches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceLaunches.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7474E0172B0CA804008AA32B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7474E0192B0CA804008AA32B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				746C1F3F2B10F9F600FA9612 /* OrbitResponse.swift */,
 				746C1F412B10FA1C00FA9612 /* AgencyResponse.swift */,
 				746C1F432B10FA3700FA9612 /* PadResponse.swift */,
+				746C1F452B10FA5600FA9612 /* LocationResponse.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7474E01C2B0CA804008AA32B /* ViewController.swift in Sources */,
+				746C1F462B10FA5600FA9612 /* LocationResponse.swift in Sources */,
 				746C1F362B10F93F00FA9612 /* LaunchStatusResponse.swift in Sources */,
 				746C1F322B10F89000FA9612 /* LaunchListResponse.swift in Sources */,
 				746C1F3C2B10F9AD00FA9612 /* RocketConfigurationResponse.swift in Sources */,
