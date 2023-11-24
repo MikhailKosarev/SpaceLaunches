@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added
+
+- Structures for decoding responses from the LaunchLibrary2 API.
+
 ### Changed
 
 - The project file structure according to the clean approach.
