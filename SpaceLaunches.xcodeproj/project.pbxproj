@@ -12,6 +12,7 @@
 		746C1F362B10F93F00FA9612 /* LaunchStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C1F352B10F93F00FA9612 /* LaunchStatusResponse.swift */; };
 		746C1F382B10F97500FA9612 /* LaunchServiceProviderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C1F372B10F97500FA9612 /* LaunchServiceProviderResponse.swift */; };
 		746C1F3A2B10F99000FA9612 /* RocketResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C1F392B10F99000FA9612 /* RocketResponse.swift */; };
+		746C1F3C2B10F9AD00FA9612 /* RocketConfigurationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C1F3B2B10F9AD00FA9612 /* RocketConfigurationResponse.swift */; };
 		7474E0182B0CA804008AA32B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7474E0172B0CA804008AA32B /* AppDelegate.swift */; };
 		7474E01A2B0CA804008AA32B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7474E0192B0CA804008AA32B /* SceneDelegate.swift */; };
 		7474E01C2B0CA804008AA32B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7474E01B2B0CA804008AA32B /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 		746C1F352B10F93F00FA9612 /* LaunchStatusResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchStatusResponse.swift; sourceTree = "<group>"; };
 		746C1F372B10F97500FA9612 /* LaunchServiceProviderResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchServiceProviderResponse.swift; sourceTree = "<group>"; };
 		746C1F392B10F99000FA9612 /* RocketResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RocketResponse.swift; sourceTree = "<group>"; };
+		746C1F3B2B10F9AD00FA9612 /* RocketConfigurationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RocketConfigurationResponse.swift; sourceTree = "<group>"; };
 		7474E0142B0CA804008AA32B /* SpaceLaunches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceLaunches.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7474E0172B0CA804008AA32B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7474E0192B0CA804008AA32B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				746C1F352B10F93F00FA9612 /* LaunchStatusResponse.swift */,
 				746C1F372B10F97500FA9612 /* LaunchServiceProviderResponse.swift */,
 				746C1F392B10F99000FA9612 /* RocketResponse.swift */,
+				746C1F3B2B10F9AD00FA9612 /* RocketConfigurationResponse.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				7474E01C2B0CA804008AA32B /* ViewController.swift in Sources */,
 				746C1F362B10F93F00FA9612 /* LaunchStatusResponse.swift in Sources */,
 				746C1F322B10F89000FA9612 /* LaunchListResponse.swift in Sources */,
+				746C1F3C2B10F9AD00FA9612 /* RocketConfigurationResponse.swift in Sources */,
 				746C1F382B10F97500FA9612 /* LaunchServiceProviderResponse.swift in Sources */,
 				7474E0182B0CA804008AA32B /* AppDelegate.swift in Sources */,
 				746C1F342B10F8BA00FA9612 /* LaunchResponse.swift in Sources */,
