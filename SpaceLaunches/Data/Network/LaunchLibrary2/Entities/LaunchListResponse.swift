@@ -8,4 +8,12 @@ struct LaunchListResponse: Decodable {
     let previous: String?
     /// Contains `LaunchResponse` objects representing launches in the current response.
     let results: [LaunchResponse]
+
+    /// Coding keys to map the structure to JSON keys during encoding and decoding.
+    enum CodingKeys: String, CodingKey {
+        case count
+        case next
+        case previous
+        case results
+    }
 }
