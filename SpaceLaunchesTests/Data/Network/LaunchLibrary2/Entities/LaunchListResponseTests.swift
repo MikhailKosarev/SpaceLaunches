@@ -123,4 +123,23 @@ final class LaunchListResponseTests: XCTestCase {
         // When & Then
         XCTAssertNoThrow(try JSONDecoder().decode(LaunchListResponse.self, from: Data(jsonWithEmptyResultsArray)))
     }
+
+    func test_LaunchListResponse_successfullyDecodedWithDuplicateElementsInResults() {
+        // Given
+        let jsonWithDuplicateResults = """
+            {
+                "count": 2,
+                "next": "https://example.com/next",
+                "previous": "https://example.com/previous",
+                "results": [
+                    {"id": "1", "name": "Launch 1"},
+                    {"id": "2", "name": "Launch 2"},
+                    {"id": "1", "name": "Launch 1"}
+                ]
+            }
+            """.utf8
+
+        // When & Then
+        XCTAssertNoThrow(try JSONDecoder().decode(LaunchListResponse.self, from: Data(jsonWithDuplicateResults)))
+    }
 }
