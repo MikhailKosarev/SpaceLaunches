@@ -36,4 +36,21 @@ final class LaunchListResponseTests: XCTestCase {
         // When & Then
         XCTAssertThrowsError(try JSONDecoder().decode(LaunchListResponse.self, from: Data(allNullJSON)))
     }
+
+    func test_LaunchListResponse_failsDecodingWhenKeyIsMissing() {
+        // Given
+        let jsonWithoutCountKey = """
+            {
+                "next": "https://example.com/next",
+                "previous": "https://example.com/previous",
+                "results": [
+                    {"id": "1", "name": "Launch 1"},
+                    {"id": "2", "name": "Launch 2"}
+                ]
+            }
+            """.utf8
+
+        // When & Then
+        XCTAssertThrowsError(try JSONDecoder().decode(LaunchListResponse.self, from: Data(jsonWithoutCountKey)))
+    }
 }
