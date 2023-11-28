@@ -1,10 +1,10 @@
-/// The response data for the launch service provider information.
-struct LaunchServiceProviderResponse: Codable {
+/// The response data for launch service provider information, designed for decoding JSON responses.
+struct LaunchServiceProviderResponse: Decodable {
     /// The unique identifier for the launch service provider.
     let id: Int
     /// The name of the launch service provider.
     let name: String
-    /// The URL for the logo of the launch service provider, if available.
+    /// The URL for the logo of the launch service provider, `nil` if unavailable.
     let logoURL: String?
 
     /// Coding keys to map the structure to JSON keys during encoding and decoding.

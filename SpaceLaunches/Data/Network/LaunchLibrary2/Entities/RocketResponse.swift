@@ -1,5 +1,5 @@
-/// The response data for the rocket information.
-struct RocketResponse: Codable {
+/// The response data for rocket information, designed for decoding JSON responses.
+struct RocketResponse: Decodable {
     /// The unique identifier for the rocket.
     let id: Int
     /// The rocket's configuration details.
