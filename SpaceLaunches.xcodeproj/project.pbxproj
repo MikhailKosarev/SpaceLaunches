@@ -204,6 +204,37 @@
 			path = SpaceLaunches;
 			sourceTree = "<group>";
 		};
+		74D5127F2B1604E000126E9E /* SpaceLaunchesTests */ = {
+			isa = PBXGroup;
+			children = (
+				74D512872B16092C00126E9E /* Data */,
+				74D512882B16093200126E9E /* Domain */,
+				74D512892B16093600126E9E /* Presentation */,
+			);
+			path = SpaceLaunchesTests;
+			sourceTree = "<group>";
+		};
+		74D512872B16092C00126E9E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		74D512882B16093200126E9E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		74D512892B16093600126E9E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		C65C6995E716EB61376BF5A0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
