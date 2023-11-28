@@ -1,5 +1,5 @@
 /// The response data for the orbit information.
-struct OrbitResponse: Codable {
+struct OrbitResponse: Decodable {
     /// The unique identifier for the orbit.
     let id: Int
     /// The name of the orbit.

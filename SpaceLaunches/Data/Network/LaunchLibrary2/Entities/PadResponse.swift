@@ -1,5 +1,5 @@
 /// The response data for the pad information.
-struct PadResponse: Codable {
+struct PadResponse: Decodable {
     /// The unique identifier for the pad.
     let id: Int
     /// The latitude of the pad, if available.

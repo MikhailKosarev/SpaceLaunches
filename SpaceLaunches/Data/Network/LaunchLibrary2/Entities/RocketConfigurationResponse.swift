@@ -1,5 +1,5 @@
 /// The response data for the rocket configuration information.
-struct RocketConfigurationResponse: Codable {
+struct RocketConfigurationResponse: Decodable {
     /// The unique identifier for the rocket configuration.
     let id: Int
     /// The name of the rocket configuration.

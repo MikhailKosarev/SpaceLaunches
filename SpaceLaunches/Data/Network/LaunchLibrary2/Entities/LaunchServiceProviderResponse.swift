@@ -1,5 +1,5 @@
 /// The response data for the launch service provider information.
-struct LaunchServiceProviderResponse: Codable {
+struct LaunchServiceProviderResponse: Decodable {
     /// The unique identifier for the launch service provider.
     let id: Int
     /// The name of the launch service provider.

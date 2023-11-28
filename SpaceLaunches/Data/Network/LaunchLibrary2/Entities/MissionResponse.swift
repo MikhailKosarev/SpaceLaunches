@@ -1,5 +1,5 @@
 /// The response data for the mission information.
-struct MissionResponse: Codable {
+struct MissionResponse: Decodable {
     /// The unique identifier for the mission.
     let id: Int
     /// The name of the mission.

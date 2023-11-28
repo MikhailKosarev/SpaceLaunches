@@ -1,5 +1,5 @@
 /// The response data for the launch status information.
-struct LaunchStatusResponse: Codable {
+struct LaunchStatusResponse: Decodable {
     /// The unique identifier for the launch status.
     let id: Int
     /// The name of the launch status.

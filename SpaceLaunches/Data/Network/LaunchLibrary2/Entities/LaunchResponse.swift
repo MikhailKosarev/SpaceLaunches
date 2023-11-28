@@ -1,5 +1,5 @@
 /// The response data for the launch.
-struct LaunchResponse: Codable {
+struct LaunchResponse: Decodable {
     /// The unique identifier for the launch.
     let id: String
     /// The name of the launch.

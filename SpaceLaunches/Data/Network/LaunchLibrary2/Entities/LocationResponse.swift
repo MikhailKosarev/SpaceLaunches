@@ -1,5 +1,5 @@
 /// The response data for the location information.
-struct LocationResponse: Codable {
+struct LocationResponse: Decodable {
     /// The unique identifier for the location.
     let id: Int
     /// The name of the location.

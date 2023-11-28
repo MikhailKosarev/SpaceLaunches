@@ -1,5 +1,5 @@
 /// The response data for the agency information.
-struct AgencyResponse: Codable {
+struct AgencyResponse: Decodable {
     /// The unique identifier for the agency.
     let id: Int
     /// The name of the agency.

@@ -1,5 +1,5 @@
 /// Paginated response for the list of launches.
-struct LaunchListResponse: Codable {
+struct LaunchListResponse: Decodable {
     /// The total count of launches available.
     let count: Int
     /// The URL for the next page of launches, if available.
