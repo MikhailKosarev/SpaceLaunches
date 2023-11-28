@@ -1,4 +1,4 @@
-/// The response data for the location information.
+/// The response data for location information, designed for decoding JSON responses.
 struct LocationResponse: Decodable {
     /// The unique identifier for the location.
     let id: Int
