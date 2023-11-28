@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Structures for decoding responses from the LaunchLibrary2 API.
 - `SpaceLaunchTests` target and set it up for unit-testing.
 - Directory structure for the `SpaceLaunchTests`.
+- Tests for `LaunchListResponse`.
 
 ### Changed
 
