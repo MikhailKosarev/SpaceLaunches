@@ -21,4 +21,19 @@ final class LaunchListResponseTests: XCTestCase {
         // When & Then
         XCTAssertNoThrow(try JSONDecoder().decode(LaunchListResponse.self, from: Data(validJSON)))
     }
+
+    func test_LaunchListResponse_failsDecodingWhenAllRequiredValuesNull() {
+        // Given
+        let allNullJSON = """
+        {
+            "count": null,
+            "next": null,
+            "previous": null,
+            "results": null
+        }
+        """.utf8
+
+        // When & Then
+        XCTAssertThrowsError(try JSONDecoder().decode(LaunchListResponse.self, from: Data(allNullJSON)))
+    }
 }
