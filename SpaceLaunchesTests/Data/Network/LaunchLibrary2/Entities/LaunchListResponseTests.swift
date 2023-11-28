@@ -108,4 +108,19 @@ final class LaunchListResponseTests: XCTestCase {
         // When & Then
         XCTAssertThrowsError(try JSONDecoder().decode(LaunchListResponse.self, from: Data(jsonWithInvalidResults)))
     }
+
+    func test_LaunchListResponse_successfullyDecodedWithEmptyResultsArray() {
+        // Given
+        let jsonWithEmptyResultsArray = """
+            {
+                "count": 0,
+                "next": "https://example.com/next",
+                "previous": "https://example.com/previous",
+                "results": []
+            }
+            """.utf8
+
+        // When & Then
+        XCTAssertNoThrow(try JSONDecoder().decode(LaunchListResponse.self, from: Data(jsonWithEmptyResultsArray)))
+    }
 }
