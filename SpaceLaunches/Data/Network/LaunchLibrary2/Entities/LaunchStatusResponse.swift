@@ -1,4 +1,4 @@
-/// The response data for the launch status information.
+/// The response data for the launch status information, designed for decoding JSON responses.
 struct LaunchStatusResponse: Decodable {
     /// The unique identifier for the launch status.
     let id: Int
