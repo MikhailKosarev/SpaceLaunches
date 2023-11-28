@@ -26,6 +26,16 @@
 		B530CE68AA903395293F85C0 /* Pods_SpaceLaunches.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593C047467B9CBB825EE2664 /* Pods_SpaceLaunches.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		74D512822B1604E000126E9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7474E00C2B0CA803008AA32B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7474E0132B0CA804008AA32B;
+			remoteInfo = SpaceLaunches;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		208D79752BB5E4BA155BB8E5 /* Pods-SpaceLaunches.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceLaunches.debug.xcconfig"; path = "Target Support Files/Pods-SpaceLaunches/Pods-SpaceLaunches.debug.xcconfig"; sourceTree = "<group>"; };
 		593C047467B9CBB825EE2664 /* Pods_SpaceLaunches.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceLaunches.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +58,7 @@
 		7474E0202B0CA805008AA32B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7474E0232B0CA805008AA32B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7474E0252B0CA805008AA32B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74D5127E2B1604E000126E9E /* SpaceLaunchesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceLaunchesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +67,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B530CE68AA903395293F85C0 /* Pods_SpaceLaunches.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74D5127B2B1604E000126E9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				7474E0162B0CA804008AA32B /* SpaceLaunches */,
+				74D5127F2B1604E000126E9E /* SpaceLaunchesTests */,
 				7474E0152B0CA804008AA32B /* Products */,
 				C65C6995E716EB61376BF5A0 /* Pods */,
 				59D3603B2A4C84CF69DE8643 /* Frameworks */,
@@ -167,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				7474E0142B0CA804008AA32B /* SpaceLaunches.app */,
+				74D5127E2B1604E000126E9E /* SpaceLaunchesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,6 +236,24 @@
 			productReference = 7474E0142B0CA804008AA32B /* SpaceLaunches.app */;
 			productType = "com.apple.product-type.application";
 		};
+		74D5127D2B1604E000126E9E /* SpaceLaunchesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74D512862B1604E000126E9E /* Build configuration list for PBXNativeTarget "SpaceLaunchesTests" */;
+			buildPhases = (
+				74D5127A2B1604E000126E9E /* Sources */,
+				74D5127B2B1604E000126E9E /* Frameworks */,
+				74D5127C2B1604E000126E9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				74D512832B1604E000126E9E /* PBXTargetDependency */,
+			);
+			name = SpaceLaunchesTests;
+			productName = SpaceLaunchesTests;
+			productReference = 74D5127E2B1604E000126E9E /* SpaceLaunchesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -228,6 +266,10 @@
 				TargetAttributes = {
 					7474E0132B0CA804008AA32B = {
 						CreatedOnToolsVersion = 15.0.1;
+					};
+					74D5127D2B1604E000126E9E = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 7474E0132B0CA804008AA32B;
 					};
 				};
 			};
@@ -245,6 +287,7 @@
 			projectRoot = "";
 			targets = (
 				7474E0132B0CA804008AA32B /* SpaceLaunches */,
+				74D5127D2B1604E000126E9E /* SpaceLaunchesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -256,6 +299,13 @@
 			files = (
 				7474E0242B0CA805008AA32B /* LaunchScreen.storyboard in Resources */,
 				7474E0212B0CA805008AA32B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74D5127C2B1604E000126E9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +395,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		74D5127A2B1604E000126E9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		74D512832B1604E000126E9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7474E0132B0CA804008AA32B /* SpaceLaunches */;
+			targetProxy = 74D512822B1604E000126E9E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7474E0222B0CA805008AA32B /* LaunchScreen.storyboard */ = {
@@ -542,6 +607,50 @@
 			};
 			name = Release;
 		};
+		74D512842B1604E000126E9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = "$(MARKETING_VERSION)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mikhailkosarev.SpaceLaunchesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceLaunches.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SpaceLaunches";
+			};
+			name = Debug;
+		};
+		74D512852B1604E000126E9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = "$(MARKETING_VERSION)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mikhailkosarev.SpaceLaunchesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceLaunches.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SpaceLaunches";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -559,6 +668,15 @@
 			buildConfigurations = (
 				7474E0292B0CA805008AA32B /* Debug */,
 				7474E02A2B0CA805008AA32B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74D512862B1604E000126E9E /* Build configuration list for PBXNativeTarget "SpaceLaunchesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74D512842B1604E000126E9E /* Debug */,
+				74D512852B1604E000126E9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
