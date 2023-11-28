@@ -1,12 +1,12 @@
-/// The response data for the pad information.
+/// The response data for pad information, designed for decoding JSON responses.
 struct PadResponse: Decodable {
     /// The unique identifier for the pad.
     let id: Int
-    /// The latitude of the pad, if available.
+    /// The latitude of the pad, `nil` if unavailable.
     let latitude: String?
-    /// The longitude of the pad, if available.
+    /// The longitude of the pad, `nil` if unavailable.
     let longitude: String?
-    /// The location details associated with the pad, if available.
+    /// The location details associated with the pad, `nil` if unavailable.
     let location: LocationResponse?
 
     /// Coding keys to map the structure to JSON keys during encoding and decoding.
