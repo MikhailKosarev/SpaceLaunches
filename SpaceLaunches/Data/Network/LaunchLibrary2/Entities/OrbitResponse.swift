@@ -1,4 +1,4 @@
-/// The response data for the orbit information.
+/// The response data for orbit information, designed for decoding JSON responses.
 struct OrbitResponse: Decodable {
     /// The unique identifier for the orbit.
     let id: Int
