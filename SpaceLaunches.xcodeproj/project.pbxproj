@@ -23,6 +23,7 @@
 		7474E01C2B0CA804008AA32B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7474E01B2B0CA804008AA32B /* ViewController.swift */; };
 		7474E0212B0CA805008AA32B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7474E0202B0CA805008AA32B /* Assets.xcassets */; };
 		7474E0242B0CA805008AA32B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7474E0222B0CA805008AA32B /* LaunchScreen.storyboard */; };
+		74D5128E2B160E8500126E9E /* LaunchListResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5128D2B160E8500126E9E /* LaunchListResponseTests.swift */; };
 		B530CE68AA903395293F85C0 /* Pods_SpaceLaunches.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593C047467B9CBB825EE2664 /* Pods_SpaceLaunches.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		7474E0232B0CA805008AA32B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7474E0252B0CA805008AA32B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74D5127E2B1604E000126E9E /* SpaceLaunchesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceLaunchesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		74D5128D2B160E8500126E9E /* LaunchListResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListResponseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 		74D512872B16092C00126E9E /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				74D5128A2B160D5B00126E9E /* Network */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -233,6 +236,30 @@
 			children = (
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		74D5128A2B160D5B00126E9E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				74D5128B2B160D6500126E9E /* LaunchLibrary2 */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		74D5128B2B160D6500126E9E /* LaunchLibrary2 */ = {
+			isa = PBXGroup;
+			children = (
+				74D5128C2B160D6E00126E9E /* Entities */,
+			);
+			path = LaunchLibrary2;
+			sourceTree = "<group>";
+		};
+		74D5128C2B160D6E00126E9E /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				74D5128D2B160E8500126E9E /* LaunchListResponseTests.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		C65C6995E716EB61376BF5A0 /* Pods */ = {
@@ -300,6 +327,7 @@
 					};
 					74D5127D2B1604E000126E9E = {
 						CreatedOnToolsVersion = 15.0.1;
+						LastSwiftMigration = 1500;
 						TestTargetID = 7474E0132B0CA804008AA32B;
 					};
 				};
@@ -430,6 +458,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74D5128E2B160E8500126E9E /* LaunchListResponseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,7 +518,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -554,7 +583,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -642,6 +671,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -654,6 +684,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpaceLaunches.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SpaceLaunches";
@@ -664,6 +695,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(CURRENT_PROJECT_VERSION)";
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
