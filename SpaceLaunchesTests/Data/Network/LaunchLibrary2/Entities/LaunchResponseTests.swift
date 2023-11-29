@@ -21,7 +21,29 @@ final class LaunchResponseTests: XCTestCase {
                 }
                 """.utf8
         // swiftlint:enable line_length
+
         // When & Then
         XCTAssertNoThrow(try JSONDecoder().decode(LaunchResponse.self, from: Data(validJSON)))
+    }
+
+    func test_LaunchResponse_successfullyDecodedWhenAllOptionalValuesAreNull() {
+        // Given
+        let jsonWithAllOptionalValuesNull = """
+                {
+                    "id": "1",
+                    "name": "Launch 1",
+                    "status": null,
+                    "net": null,
+                    "launch_service_provider": null,
+                    "rocket": null,
+                    "mission": null,
+                    "pad": null,
+                    "image": null
+                }
+                """.utf8
+
+        // When & Then
+        XCTAssertNoThrow(try JSONDecoder().decode(LaunchResponse.self, from: Data(jsonWithAllOptionalValuesNull)))
+    }
     }
 }
