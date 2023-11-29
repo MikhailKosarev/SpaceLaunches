@@ -25,6 +25,11 @@
 		7474E0242B0CA805008AA32B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7474E0222B0CA805008AA32B /* LaunchScreen.storyboard */; };
 		74D5128E2B160E8500126E9E /* LaunchListResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5128D2B160E8500126E9E /* LaunchListResponseTests.swift */; };
 		74ED9D2A2B173701000BF024 /* LaunchResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D292B173701000BF024 /* LaunchResponseTests.swift */; };
+		74ED9D322B175C8B000BF024 /* LaunchListMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D312B175C8B000BF024 /* LaunchListMode.swift */; };
+		74ED9D342B175CBA000BF024 /* LaunchListNetworkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D332B175CBA000BF024 /* LaunchListNetworkType.swift */; };
+		74ED9D362B175CF0000BF024 /* GetLaunchListRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D352B175CF0000BF024 /* GetLaunchListRequestParameters.swift */; };
+		74ED9D382B175D23000BF024 /* LaunchLibrary2API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D372B175D23000BF024 /* LaunchLibrary2API.swift */; };
+		74ED9D3A2B17613A000BF024 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D392B17613A000BF024 /* Credentials.swift */; };
 		B530CE68AA903395293F85C0 /* Pods_SpaceLaunches.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593C047467B9CBB825EE2664 /* Pods_SpaceLaunches.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +68,11 @@
 		74D5127E2B1604E000126E9E /* SpaceLaunchesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceLaunchesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D5128D2B160E8500126E9E /* LaunchListResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListResponseTests.swift; sourceTree = "<group>"; };
 		74ED9D292B173701000BF024 /* LaunchResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchResponseTests.swift; sourceTree = "<group>"; };
+		74ED9D312B175C8B000BF024 /* LaunchListMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListMode.swift; sourceTree = "<group>"; };
+		74ED9D332B175CBA000BF024 /* LaunchListNetworkType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListNetworkType.swift; sourceTree = "<group>"; };
+		74ED9D352B175CF0000BF024 /* GetLaunchListRequestParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLaunchListRequestParameters.swift; sourceTree = "<group>"; };
+		74ED9D372B175D23000BF024 /* LaunchLibrary2API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLibrary2API.swift; sourceTree = "<group>"; };
+		74ED9D392B17613A000BF024 /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				746C1F172B10B62C00FA9612 /* Network */,
+				74ED9D392B17613A000BF024 /* Credentials.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -153,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				746C1F192B10BA0000FA9612 /* Entities */,
+				74ED9D372B175D23000BF024 /* LaunchLibrary2API.swift */,
 			);
 			path = LaunchLibrary2;
 			sourceTree = "<group>";
@@ -160,17 +172,10 @@
 		746C1F192B10BA0000FA9612 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				746C1F312B10F89000FA9612 /* LaunchListResponse.swift */,
-				746C1F332B10F8BA00FA9612 /* LaunchResponse.swift */,
-				746C1F352B10F93F00FA9612 /* LaunchStatusResponse.swift */,
-				746C1F372B10F97500FA9612 /* LaunchServiceProviderResponse.swift */,
-				746C1F392B10F99000FA9612 /* RocketResponse.swift */,
-				746C1F3B2B10F9AD00FA9612 /* RocketConfigurationResponse.swift */,
-				746C1F3D2B10F9D500FA9612 /* MissionResponse.swift */,
-				746C1F3F2B10F9F600FA9612 /* OrbitResponse.swift */,
-				746C1F412B10FA1C00FA9612 /* AgencyResponse.swift */,
-				746C1F432B10FA3700FA9612 /* PadResponse.swift */,
-				746C1F452B10FA5600FA9612 /* LocationResponse.swift */,
+				74ED9D302B175C20000BF024 /* Responses */,
+				74ED9D312B175C8B000BF024 /* LaunchListMode.swift */,
+				74ED9D332B175CBA000BF024 /* LaunchListNetworkType.swift */,
+				74ED9D352B175CF0000BF024 /* GetLaunchListRequestParameters.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -263,6 +268,24 @@
 				74ED9D292B173701000BF024 /* LaunchResponseTests.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		74ED9D302B175C20000BF024 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				746C1F312B10F89000FA9612 /* LaunchListResponse.swift */,
+				746C1F332B10F8BA00FA9612 /* LaunchResponse.swift */,
+				746C1F352B10F93F00FA9612 /* LaunchStatusResponse.swift */,
+				746C1F372B10F97500FA9612 /* LaunchServiceProviderResponse.swift */,
+				746C1F392B10F99000FA9612 /* RocketResponse.swift */,
+				746C1F3B2B10F9AD00FA9612 /* RocketConfigurationResponse.swift */,
+				746C1F3D2B10F9D500FA9612 /* MissionResponse.swift */,
+				746C1F3F2B10F9F600FA9612 /* OrbitResponse.swift */,
+				746C1F412B10FA1C00FA9612 /* AgencyResponse.swift */,
+				746C1F432B10FA3700FA9612 /* PadResponse.swift */,
+				746C1F452B10FA5600FA9612 /* LocationResponse.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 		C65C6995E716EB61376BF5A0 /* Pods */ = {
@@ -442,6 +465,7 @@
 			files = (
 				7474E01C2B0CA804008AA32B /* ViewController.swift in Sources */,
 				746C1F462B10FA5600FA9612 /* LocationResponse.swift in Sources */,
+				74ED9D362B175CF0000BF024 /* GetLaunchListRequestParameters.swift in Sources */,
 				746C1F362B10F93F00FA9612 /* LaunchStatusResponse.swift in Sources */,
 				746C1F322B10F89000FA9612 /* LaunchListResponse.swift in Sources */,
 				746C1F3C2B10F9AD00FA9612 /* RocketConfigurationResponse.swift in Sources */,
@@ -449,10 +473,14 @@
 				746C1F3E2B10F9D500FA9612 /* MissionResponse.swift in Sources */,
 				7474E0182B0CA804008AA32B /* AppDelegate.swift in Sources */,
 				746C1F342B10F8BA00FA9612 /* LaunchResponse.swift in Sources */,
+				74ED9D342B175CBA000BF024 /* LaunchListNetworkType.swift in Sources */,
 				746C1F3A2B10F99000FA9612 /* RocketResponse.swift in Sources */,
 				746C1F442B10FA3700FA9612 /* PadResponse.swift in Sources */,
+				74ED9D3A2B17613A000BF024 /* Credentials.swift in Sources */,
 				746C1F422B10FA1C00FA9612 /* AgencyResponse.swift in Sources */,
+				74ED9D382B175D23000BF024 /* LaunchLibrary2API.swift in Sources */,
 				746C1F402B10F9F600FA9612 /* OrbitResponse.swift in Sources */,
+				74ED9D322B175C8B000BF024 /* LaunchListMode.swift in Sources */,
 				7474E01A2B0CA804008AA32B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
