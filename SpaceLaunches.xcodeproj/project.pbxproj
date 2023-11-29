@@ -27,6 +27,7 @@
 		74ED9D2A2B173701000BF024 /* LaunchResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D292B173701000BF024 /* LaunchResponseTests.swift */; };
 		74ED9D322B175C8B000BF024 /* LaunchListMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D312B175C8B000BF024 /* LaunchListMode.swift */; };
 		74ED9D342B175CBA000BF024 /* LaunchListNetworkType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D332B175CBA000BF024 /* LaunchListNetworkType.swift */; };
+		74ED9D362B175CF0000BF024 /* GetLaunchListRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D352B175CF0000BF024 /* GetLaunchListRequestParameters.swift */; };
 		B530CE68AA903395293F85C0 /* Pods_SpaceLaunches.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593C047467B9CBB825EE2664 /* Pods_SpaceLaunches.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		74ED9D292B173701000BF024 /* LaunchResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchResponseTests.swift; sourceTree = "<group>"; };
 		74ED9D312B175C8B000BF024 /* LaunchListMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListMode.swift; sourceTree = "<group>"; };
 		74ED9D332B175CBA000BF024 /* LaunchListNetworkType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListNetworkType.swift; sourceTree = "<group>"; };
+		74ED9D352B175CF0000BF024 /* GetLaunchListRequestParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLaunchListRequestParameters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				74ED9D302B175C20000BF024 /* Responses */,
 				74ED9D312B175C8B000BF024 /* LaunchListMode.swift */,
 				74ED9D332B175CBA000BF024 /* LaunchListNetworkType.swift */,
+				74ED9D352B175CF0000BF024 /* GetLaunchListRequestParameters.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 			files = (
 				7474E01C2B0CA804008AA32B /* ViewController.swift in Sources */,
 				746C1F462B10FA5600FA9612 /* LocationResponse.swift in Sources */,
+				74ED9D362B175CF0000BF024 /* GetLaunchListRequestParameters.swift in Sources */,
 				746C1F362B10F93F00FA9612 /* LaunchStatusResponse.swift in Sources */,
 				746C1F322B10F89000FA9612 /* LaunchListResponse.swift in Sources */,
 				746C1F3C2B10F9AD00FA9612 /* RocketConfigurationResponse.swift in Sources */,
