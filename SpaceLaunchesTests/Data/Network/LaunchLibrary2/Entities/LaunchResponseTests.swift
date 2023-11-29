@@ -68,5 +68,23 @@ final class LaunchResponseTests: XCTestCase {
         XCTAssertThrowsError(try JSONDecoder().decode(LaunchListResponse.self,
                                                       from: Data(jsonWithAllRequiredValuesNull)))
     }
+
+    func test_LaunchResponse_failsDecodingWhenRequiredKeyIsMissing() {
+        // Given
+        let jsonWithoutIdKey = """
+                {
+                    "name": "Launch 1",
+                    "status": null,
+                    "net": null,
+                    "launch_service_provider": null,
+                    "rocket": null,
+                    "mission": null,
+                    "pad": null,
+                    "image": null
+                }
+                """.utf8
+
+        // When & Then
+        XCTAssertThrowsError(try JSONDecoder().decode(LaunchResponse.self, from: Data(jsonWithoutIdKey)))
     }
 }
