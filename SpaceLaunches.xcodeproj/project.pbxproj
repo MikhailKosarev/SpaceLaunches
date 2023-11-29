@@ -160,17 +160,7 @@
 		746C1F192B10BA0000FA9612 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				746C1F312B10F89000FA9612 /* LaunchListResponse.swift */,
-				746C1F332B10F8BA00FA9612 /* LaunchResponse.swift */,
-				746C1F352B10F93F00FA9612 /* LaunchStatusResponse.swift */,
-				746C1F372B10F97500FA9612 /* LaunchServiceProviderResponse.swift */,
-				746C1F392B10F99000FA9612 /* RocketResponse.swift */,
-				746C1F3B2B10F9AD00FA9612 /* RocketConfigurationResponse.swift */,
-				746C1F3D2B10F9D500FA9612 /* MissionResponse.swift */,
-				746C1F3F2B10F9F600FA9612 /* OrbitResponse.swift */,
-				746C1F412B10FA1C00FA9612 /* AgencyResponse.swift */,
-				746C1F432B10FA3700FA9612 /* PadResponse.swift */,
-				746C1F452B10FA5600FA9612 /* LocationResponse.swift */,
+				74ED9D302B175C20000BF024 /* Responses */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -263,6 +253,24 @@
 				74ED9D292B173701000BF024 /* LaunchResponseTests.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		74ED9D302B175C20000BF024 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				746C1F312B10F89000FA9612 /* LaunchListResponse.swift */,
+				746C1F332B10F8BA00FA9612 /* LaunchResponse.swift */,
+				746C1F352B10F93F00FA9612 /* LaunchStatusResponse.swift */,
+				746C1F372B10F97500FA9612 /* LaunchServiceProviderResponse.swift */,
+				746C1F392B10F99000FA9612 /* RocketResponse.swift */,
+				746C1F3B2B10F9AD00FA9612 /* RocketConfigurationResponse.swift */,
+				746C1F3D2B10F9D500FA9612 /* MissionResponse.swift */,
+				746C1F3F2B10F9F600FA9612 /* OrbitResponse.swift */,
+				746C1F412B10FA1C00FA9612 /* AgencyResponse.swift */,
+				746C1F432B10FA3700FA9612 /* PadResponse.swift */,
+				746C1F452B10FA5600FA9612 /* LocationResponse.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 		C65C6995E716EB61376BF5A0 /* Pods */ = {
