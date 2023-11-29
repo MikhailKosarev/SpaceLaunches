@@ -25,6 +25,7 @@
 		7474E0242B0CA805008AA32B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7474E0222B0CA805008AA32B /* LaunchScreen.storyboard */; };
 		74D5128E2B160E8500126E9E /* LaunchListResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5128D2B160E8500126E9E /* LaunchListResponseTests.swift */; };
 		74ED9D2A2B173701000BF024 /* LaunchResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D292B173701000BF024 /* LaunchResponseTests.swift */; };
+		74ED9D322B175C8B000BF024 /* LaunchListMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D312B175C8B000BF024 /* LaunchListMode.swift */; };
 		B530CE68AA903395293F85C0 /* Pods_SpaceLaunches.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593C047467B9CBB825EE2664 /* Pods_SpaceLaunches.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		74D5127E2B1604E000126E9E /* SpaceLaunchesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceLaunchesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D5128D2B160E8500126E9E /* LaunchListResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListResponseTests.swift; sourceTree = "<group>"; };
 		74ED9D292B173701000BF024 /* LaunchResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchResponseTests.swift; sourceTree = "<group>"; };
+		74ED9D312B175C8B000BF024 /* LaunchListMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListMode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				74ED9D302B175C20000BF024 /* Responses */,
+				74ED9D312B175C8B000BF024 /* LaunchListMode.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				746C1F442B10FA3700FA9612 /* PadResponse.swift in Sources */,
 				746C1F422B10FA1C00FA9612 /* AgencyResponse.swift in Sources */,
 				746C1F402B10F9F600FA9612 /* OrbitResponse.swift in Sources */,
+				74ED9D322B175C8B000BF024 /* LaunchListMode.swift in Sources */,
 				7474E01A2B0CA804008AA32B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
