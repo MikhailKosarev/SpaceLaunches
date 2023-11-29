@@ -128,4 +128,24 @@ final class LaunchResponseTests: XCTestCase {
         // When & Then
         XCTAssertNoThrow(try JSONDecoder().decode(LaunchResponse.self, from: Data(jsonWithExtraKeys)))
     }
+
+    func test_LaunchResponse_failsDecodingWhenStatusContainsInvalidElements() {
+            // Given
+            let jsonWithInvalidStatus = """
+                {
+                    "id": "1",
+                    "name": "Launch 1",
+                    "status": {"invalidKey": "value"},
+                    "net": null,
+                    "launch_service_provider": null,
+                    "rocket": null,
+                    "mission": null,
+                    "pad": null,
+                    "image": null,
+                }
+                """.utf8
+
+            // When & Then
+            XCTAssertThrowsError(try JSONDecoder().decode(LaunchResponse.self, from: Data(jsonWithInvalidStatus)))
+        }
 }
