@@ -18,4 +18,19 @@ final class LaunchStatusResponseTests: XCTestCase {
         // When & Then
         XCTAssertNoThrow(try JSONDecoder().decode(LaunchStatusResponse.self, from: Data(validJSON)))
     }
+
+    func test_LaunchStatusResponse_successfullyDecodedWhenAllValuesAreEmpty() {
+        // Given
+        let jsonWithAllValuesEmpty = """
+            {
+                "id": 0,
+                "name": "",
+                "abbrev": "",
+                "description": ""
+            }
+            """.utf8
+
+        // When & Then
+        XCTAssertNoThrow(try JSONDecoder().decode(LaunchStatusResponse.self, from: Data(jsonWithAllValuesEmpty)))
+    }
 }
