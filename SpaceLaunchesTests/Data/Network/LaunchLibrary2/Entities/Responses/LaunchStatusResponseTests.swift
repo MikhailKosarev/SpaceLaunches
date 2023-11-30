@@ -62,4 +62,20 @@ final class LaunchStatusResponseTests: XCTestCase {
         // When & Then
         XCTAssertThrowsError(try JSONDecoder().decode(LaunchStatusResponse.self, from: Data(jsonWithInvalidId)))
     }
+
+    func test_LaunchStatusResponse_successfullyDecodedWithExtraKeys() {
+        // Given
+        let jsonWithExtraKeys = """
+            {
+                "id": 1,
+                "name": "Status",
+                "abbrev": "S",
+                "description": "Launch Status",
+                "extraKey": "extraValue"
+            }
+            """.utf8
+
+        // When & Then
+        XCTAssertNoThrow(try JSONDecoder().decode(LaunchStatusResponse.self, from: Data(jsonWithExtraKeys)))
+    }
 }
