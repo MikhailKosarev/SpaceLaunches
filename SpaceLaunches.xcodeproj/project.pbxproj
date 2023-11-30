@@ -30,6 +30,7 @@
 		74ED9D362B175CF0000BF024 /* GetLaunchListRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D352B175CF0000BF024 /* GetLaunchListRequestParameters.swift */; };
 		74ED9D382B175D23000BF024 /* LaunchLibrary2API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D372B175D23000BF024 /* LaunchLibrary2API.swift */; };
 		74ED9D3A2B17613A000BF024 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D392B17613A000BF024 /* Credentials.swift */; };
+		74ED9D3D2B1896F6000BF024 /* LaunchStatusResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D3C2B1896F6000BF024 /* LaunchStatusResponseTests.swift */; };
 		B530CE68AA903395293F85C0 /* Pods_SpaceLaunches.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593C047467B9CBB825EE2664 /* Pods_SpaceLaunches.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		74ED9D352B175CF0000BF024 /* GetLaunchListRequestParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLaunchListRequestParameters.swift; sourceTree = "<group>"; };
 		74ED9D372B175D23000BF024 /* LaunchLibrary2API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLibrary2API.swift; sourceTree = "<group>"; };
 		74ED9D392B17613A000BF024 /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		74ED9D3C2B1896F6000BF024 /* LaunchStatusResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchStatusResponseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +294,7 @@
 			children = (
 				74D5128D2B160E8500126E9E /* LaunchListResponseTests.swift */,
 				74ED9D292B173701000BF024 /* LaunchResponseTests.swift */,
+				74ED9D3C2B1896F6000BF024 /* LaunchStatusResponseTests.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74ED9D3D2B1896F6000BF024 /* LaunchStatusResponseTests.swift in Sources */,
 				74D5128E2B160E8500126E9E /* LaunchListResponseTests.swift in Sources */,
 				74ED9D2A2B173701000BF024 /* LaunchResponseTests.swift in Sources */,
 			);
