@@ -30,6 +30,7 @@
 		74ED9D362B175CF0000BF024 /* GetLaunchListRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D352B175CF0000BF024 /* GetLaunchListRequestParameters.swift */; };
 		74ED9D382B175D23000BF024 /* LaunchLibrary2API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D372B175D23000BF024 /* LaunchLibrary2API.swift */; };
 		74ED9D3A2B17613A000BF024 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D392B17613A000BF024 /* Credentials.swift */; };
+		74ED9D3D2B1896F6000BF024 /* LaunchStatusResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D3C2B1896F6000BF024 /* LaunchStatusResponseTests.swift */; };
 		B530CE68AA903395293F85C0 /* Pods_SpaceLaunches.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593C047467B9CBB825EE2664 /* Pods_SpaceLaunches.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		74ED9D352B175CF0000BF024 /* GetLaunchListRequestParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLaunchListRequestParameters.swift; sourceTree = "<group>"; };
 		74ED9D372B175D23000BF024 /* LaunchLibrary2API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLibrary2API.swift; sourceTree = "<group>"; };
 		74ED9D392B17613A000BF024 /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		74ED9D3C2B1896F6000BF024 /* LaunchStatusResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchStatusResponseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,8 +266,7 @@
 		74D5128C2B160D6E00126E9E /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				74D5128D2B160E8500126E9E /* LaunchListResponseTests.swift */,
-				74ED9D292B173701000BF024 /* LaunchResponseTests.swift */,
+				74ED9D3B2B189360000BF024 /* Responses */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -284,6 +285,16 @@
 				746C1F412B10FA1C00FA9612 /* AgencyResponse.swift */,
 				746C1F432B10FA3700FA9612 /* PadResponse.swift */,
 				746C1F452B10FA5600FA9612 /* LocationResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		74ED9D3B2B189360000BF024 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				74D5128D2B160E8500126E9E /* LaunchListResponseTests.swift */,
+				74ED9D292B173701000BF024 /* LaunchResponseTests.swift */,
+				74ED9D3C2B1896F6000BF024 /* LaunchStatusResponseTests.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -489,6 +500,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74ED9D3D2B1896F6000BF024 /* LaunchStatusResponseTests.swift in Sources */,
 				74D5128E2B160E8500126E9E /* LaunchListResponseTests.swift in Sources */,
 				74ED9D2A2B173701000BF024 /* LaunchResponseTests.swift in Sources */,
 			);
@@ -550,7 +562,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -615,7 +627,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
