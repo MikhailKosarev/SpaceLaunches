@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Tests for `LaunchResponse`.
 - Environment for the `Moya` to work with `LauchLibrary2` API.
 - Tests for `LaunchStatusResponse`.
+- Tests for `LaunchServiceProviderResponse`.
 
 ### Changed
 
