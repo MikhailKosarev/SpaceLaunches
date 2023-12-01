@@ -43,4 +43,19 @@ final class LaunchServiceProviderResponseTests: XCTestCase {
         // When & Then
         XCTAssertThrowsError(try JSONDecoder().decode(LaunchServiceProviderResponse.self, from: Data(jsonWithoutId)))
     }
+
+    func test_LaunchServiceProviderResponse_failsDecodingKeyIsNotValidType() {
+        // Given
+        let jsonWithInvalidId = """
+            {
+                "id": "not_an_integer",
+                "name": "Provider 1",
+                "logo_url": "https://example.com/logo"
+            }
+            """.utf8
+
+        // When & Then
+        XCTAssertThrowsError(try JSONDecoder().decode(LaunchServiceProviderResponse.self,
+                                                      from: Data(jsonWithInvalidId)))
+    }
 }
