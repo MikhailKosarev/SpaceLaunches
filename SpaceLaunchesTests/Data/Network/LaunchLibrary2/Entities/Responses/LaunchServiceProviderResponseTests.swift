@@ -58,4 +58,20 @@ final class LaunchServiceProviderResponseTests: XCTestCase {
         XCTAssertThrowsError(try JSONDecoder().decode(LaunchServiceProviderResponse.self,
                                                       from: Data(jsonWithInvalidId)))
     }
+
+    func test_LaunchServiceProviderResponse_successfullyDecodedWithExtraKeys() {
+        // Given
+        let jsonWithExtraKeys = """
+            {
+                "id": 1,
+                "name": "Provider 1",
+                "logo_url": "https://example.com/logo",
+                "extraKey": "extraValue"
+            }
+            """.utf8
+
+        // When & Then
+        XCTAssertNoThrow(try JSONDecoder().decode(LaunchServiceProviderResponse.self,
+                                                      from: Data(jsonWithExtraKeys)))
+    }
 }
