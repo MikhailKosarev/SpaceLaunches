@@ -17,4 +17,17 @@ final class LaunchServiceProviderResponseTests: XCTestCase {
         // When & Then
         XCTAssertNoThrow(try JSONDecoder().decode(LaunchServiceProviderResponse.self, from: Data(validJSON)))
     }
+
+    func test_LaunchServiceProviderResponse_failsDecodingWhenAllRequiredValuesNull() {
+        // Given
+        let allNullJSON = """
+            {
+                "id": null,
+                "name": null
+            }
+            """.utf8
+
+        // When & Then
+        XCTAssertThrowsError(try JSONDecoder().decode(LaunchServiceProviderResponse.self, from: Data(allNullJSON)))
+    }
 }
