@@ -67,4 +67,21 @@ final class RocketResponseTests: XCTestCase {
         XCTAssertThrowsError(try JSONDecoder().decode(RocketResponse.self, from: Data(jsonWithInvalidId)))
     }
 
+    func test_RocketResponse_successfullyDecodedWithExtraKeys() {
+        // Given
+        let jsonWithExtraKeys = """
+            {
+                "id": 1,
+                "configuration": {
+                    "id": 1,
+                    "name": "Falcon 9",
+                    "image_url": "https://example.com/image"
+                },
+                "extraKey": "extraValue"
+            }
+            """.utf8
+
+        // When & Then
+        XCTAssertNoThrow(try JSONDecoder().decode(RocketResponse.self, from: Data(jsonWithExtraKeys)))
+    }
 }
