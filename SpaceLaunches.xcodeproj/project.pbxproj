@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		745205332B1DDAD300464DE0 /* RocketResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745205322B1DDAD300464DE0 /* RocketResponseTests.swift */; };
+		745205362B1E259100464DE0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745205342B1DE07900464DE0 /* NetworkError.swift */; };
 		746A81782B1A2046008BC095 /* LaunchServiceProviderResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746A81772B1A2046008BC095 /* LaunchServiceProviderResponseTests.swift */; };
 		746C1F322B10F89000FA9612 /* LaunchListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C1F312B10F89000FA9612 /* LaunchListResponse.swift */; };
 		746C1F342B10F8BA00FA9612 /* LaunchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C1F332B10F8BA00FA9612 /* LaunchResponse.swift */; };
@@ -51,6 +52,7 @@
 		593C047467B9CBB825EE2664 /* Pods_SpaceLaunches.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceLaunches.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		658D6344A47DA3F975424A99 /* Pods-SpaceLaunches.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceLaunches.release.xcconfig"; path = "Target Support Files/Pods-SpaceLaunches/Pods-SpaceLaunches.release.xcconfig"; sourceTree = "<group>"; };
 		745205322B1DDAD300464DE0 /* RocketResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketResponseTests.swift; sourceTree = "<group>"; };
+		745205342B1DE07900464DE0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		746A81772B1A2046008BC095 /* LaunchServiceProviderResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchServiceProviderResponseTests.swift; sourceTree = "<group>"; };
 		746C1F312B10F89000FA9612 /* LaunchListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchListResponse.swift; sourceTree = "<group>"; };
 		746C1F332B10F8BA00FA9612 /* LaunchResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchResponse.swift; sourceTree = "<group>"; };
@@ -122,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				746C1F172B10B62C00FA9612 /* Network */,
-				74ED9D392B17613A000BF024 /* Credentials.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -158,9 +159,19 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		745205372B1E262400464DE0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				74ED9D392B17613A000BF024 /* Credentials.swift */,
+				745205342B1DE07900464DE0 /* NetworkError.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		746C1F172B10B62C00FA9612 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				745205372B1E262400464DE0 /* Common */,
 				746C1F182B10B6AA00FA9612 /* LaunchLibrary2 */,
 			);
 			path = Network;
@@ -489,6 +500,7 @@
 				746C1F382B10F97500FA9612 /* LaunchServiceProviderResponse.swift in Sources */,
 				746C1F3E2B10F9D500FA9612 /* MissionResponse.swift in Sources */,
 				7474E0182B0CA804008AA32B /* AppDelegate.swift in Sources */,
+				745205362B1E259100464DE0 /* NetworkError.swift in Sources */,
 				746C1F342B10F8BA00FA9612 /* LaunchResponse.swift in Sources */,
 				74ED9D342B175CBA000BF024 /* LaunchListNetworkType.swift in Sources */,
 				746C1F3A2B10F99000FA9612 /* RocketResponse.swift in Sources */,
@@ -570,7 +582,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -635,7 +647,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

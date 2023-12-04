@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Tests for `LaunchStatusResponse`.
 - Tests for `LaunchServiceProviderResponse`.
 - Tests for `RocketResponseTests`.
+- `NetworkError` enum with error descriptions.
 
 ### Changed
 
