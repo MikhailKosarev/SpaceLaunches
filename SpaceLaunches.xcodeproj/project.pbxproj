@@ -124,8 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				746C1F172B10B62C00FA9612 /* Network */,
-				74ED9D392B17613A000BF024 /* Credentials.swift */,
-				745205342B1DE07900464DE0 /* NetworkError.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -161,9 +159,19 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		745205372B1E262400464DE0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				74ED9D392B17613A000BF024 /* Credentials.swift */,
+				745205342B1DE07900464DE0 /* NetworkError.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		746C1F172B10B62C00FA9612 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				745205372B1E262400464DE0 /* Common */,
 				746C1F182B10B6AA00FA9612 /* LaunchLibrary2 */,
 			);
 			path = Network;
