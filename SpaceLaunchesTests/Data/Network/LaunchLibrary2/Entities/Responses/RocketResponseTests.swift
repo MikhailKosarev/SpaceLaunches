@@ -20,4 +20,18 @@ final class RocketResponseTests: XCTestCase {
         // When & Then
         XCTAssertNoThrow(try JSONDecoder().decode(RocketResponse.self, from: Data(validJSON)))
     }
+
+    func test_RocketResponse_failsDecodingWhenAllRequiredValuesNull() {
+        // Given
+        let allNullJSON = """
+        {
+            "id": null,
+            "configuration": null
+        }
+        """.utf8
+
+        // When & Then
+        XCTAssertThrowsError(try JSONDecoder().decode(RocketResponse.self, from: Data(allNullJSON)))
+    }
+
 }
