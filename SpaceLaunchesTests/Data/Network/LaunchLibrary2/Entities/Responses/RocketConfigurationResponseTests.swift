@@ -34,4 +34,17 @@ final class RocketConfigurationResponseTests: XCTestCase {
                                                       from: Data(allNullJSON)))
     }
 
+    func test_RocketConfigurationResponse_failsDecodingWhenKeyIsMissing() {
+        // Given
+        let jsonWithoutIdKey = """
+            {
+                "name": "Falcon 9",
+                "image_url": "https://example.com/image"
+            }
+            """.utf8
+
+        // When & Then
+        XCTAssertThrowsError(try JSONDecoder().decode(RocketConfigurationResponse.self,
+                                                      from: Data(jsonWithoutIdKey)))
+    }
 }
