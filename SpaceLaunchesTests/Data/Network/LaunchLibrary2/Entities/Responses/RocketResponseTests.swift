@@ -50,7 +50,7 @@ final class RocketResponseTests: XCTestCase {
         XCTAssertThrowsError(try JSONDecoder().decode(RocketResponse.self, from: Data(jsonWithoutIdKey)))
     }
 
-    func test_RocketResponse_failsDecodingKeyIsNotValidType() {
+    func test_RocketResponse_failsDecodingWhenKeyIsNotValidType() {
         // Given
         let jsonWithInvalidId = """
             {
