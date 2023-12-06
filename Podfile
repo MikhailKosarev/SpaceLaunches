@@ -27,3 +27,13 @@ target 'SpaceLaunches' do
     # Linter
     pod 'SwiftLint', '~> 0.50'
 end
+
+target 'SpaceLaunchesTests' do
+
+    ## Testing
+    pod 'RxBlocking', '~> 6.0'
+    pod 'RxTest', '~> 6.0'
+
+    # Network
+    pod 'Moya/RxSwift', '~> 15.0'
+end
