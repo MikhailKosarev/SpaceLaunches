@@ -27,6 +27,10 @@
 		7474E0212B0CA805008AA32B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7474E0202B0CA805008AA32B /* Assets.xcassets */; };
 		7474E0242B0CA805008AA32B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7474E0222B0CA805008AA32B /* LaunchScreen.storyboard */; };
 		74A552542B1FB960002E4474 /* RocketConfigurationResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A552532B1FB960002E4474 /* RocketConfigurationResponseTests.swift */; };
+		74A552592B208292002E4474 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A552582B208292002E4474 /* NetworkService.swift */; };
+		74A5525D2B2082F8002E4474 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A5525C2B2082F8002E4474 /* MockNetworkService.swift */; };
+		74A5525F2B20833B002E4474 /* MockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A5525E2B20833B002E4474 /* MockAPI.swift */; };
+		74A552612B20835E002E4474 /* MockResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A552602B20835E002E4474 /* MockResponseData.swift */; };
 		74D5128E2B160E8500126E9E /* LaunchListResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5128D2B160E8500126E9E /* LaunchListResponseTests.swift */; };
 		74ED9D2A2B173701000BF024 /* LaunchResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D292B173701000BF024 /* LaunchResponseTests.swift */; };
 		74ED9D322B175C8B000BF024 /* LaunchListMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D312B175C8B000BF024 /* LaunchListMode.swift */; };
@@ -74,6 +78,10 @@
 		7474E0232B0CA805008AA32B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7474E0252B0CA805008AA32B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74A552532B1FB960002E4474 /* RocketConfigurationResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketConfigurationResponseTests.swift; sourceTree = "<group>"; };
+		74A552582B208292002E4474 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		74A5525C2B2082F8002E4474 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
+		74A5525E2B20833B002E4474 /* MockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPI.swift; sourceTree = "<group>"; };
+		74A552602B20835E002E4474 /* MockResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockResponseData.swift; sourceTree = "<group>"; };
 		74D5127E2B1604E000126E9E /* SpaceLaunchesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceLaunchesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D5128D2B160E8500126E9E /* LaunchListResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListResponseTests.swift; sourceTree = "<group>"; };
 		74ED9D292B173701000BF024 /* LaunchResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchResponseTests.swift; sourceTree = "<group>"; };
@@ -166,6 +174,7 @@
 			children = (
 				74ED9D392B17613A000BF024 /* Credentials.swift */,
 				745205342B1DE07900464DE0 /* NetworkError.swift */,
+				74A552582B208292002E4474 /* NetworkService.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -232,6 +241,24 @@
 			path = SpaceLaunches;
 			sourceTree = "<group>";
 		};
+		74A5525A2B2082CF002E4474 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				74A5525B2B2082DE002E4474 /* Mocks */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		74A5525B2B2082DE002E4474 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				74A5525C2B2082F8002E4474 /* MockNetworkService.swift */,
+				74A5525E2B20833B002E4474 /* MockAPI.swift */,
+				74A552602B20835E002E4474 /* MockResponseData.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		74D5127F2B1604E000126E9E /* SpaceLaunchesTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +294,7 @@
 		74D5128A2B160D5B00126E9E /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				74A5525A2B2082CF002E4474 /* Common */,
 				74D5128B2B160D6500126E9E /* LaunchLibrary2 */,
 			);
 			path = Network;
@@ -507,6 +535,7 @@
 				746C1F342B10F8BA00FA9612 /* LaunchResponse.swift in Sources */,
 				74ED9D342B175CBA000BF024 /* LaunchListNetworkType.swift in Sources */,
 				746C1F3A2B10F99000FA9612 /* RocketResponse.swift in Sources */,
+				74A552592B208292002E4474 /* NetworkService.swift in Sources */,
 				746C1F442B10FA3700FA9612 /* PadResponse.swift in Sources */,
 				74ED9D3A2B17613A000BF024 /* Credentials.swift in Sources */,
 				746C1F422B10FA1C00FA9612 /* AgencyResponse.swift in Sources */,
@@ -521,9 +550,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74A552612B20835E002E4474 /* MockResponseData.swift in Sources */,
 				746A81782B1A2046008BC095 /* LaunchServiceProviderResponseTests.swift in Sources */,
+				74A5525D2B2082F8002E4474 /* MockNetworkService.swift in Sources */,
 				74ED9D3D2B1896F6000BF024 /* LaunchStatusResponseTests.swift in Sources */,
 				74D5128E2B160E8500126E9E /* LaunchListResponseTests.swift in Sources */,
+				74A5525F2B20833B002E4474 /* MockAPI.swift in Sources */,
 				745205332B1DDAD300464DE0 /* RocketResponseTests.swift in Sources */,
 				74ED9D2A2B173701000BF024 /* LaunchResponseTests.swift in Sources */,
 				74A552542B1FB960002E4474 /* RocketConfigurationResponseTests.swift in Sources */,
@@ -586,7 +618,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -651,7 +683,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
