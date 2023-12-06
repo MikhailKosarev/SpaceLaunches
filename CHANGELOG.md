@@ -22,6 +22,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `NetworkService` protocol.
 - Mocks fo testing `NetworkService`.
 - Dependencies for `SpaceLaunchesTests` target.
+- Default implementation for `NetworkService` protocol with tests.
 
 ### Changed
 

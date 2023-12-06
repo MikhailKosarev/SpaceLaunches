@@ -31,6 +31,7 @@
 		74A5525D2B2082F8002E4474 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A5525C2B2082F8002E4474 /* MockNetworkService.swift */; };
 		74A5525F2B20833B002E4474 /* MockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A5525E2B20833B002E4474 /* MockAPI.swift */; };
 		74A552612B20835E002E4474 /* MockResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A552602B20835E002E4474 /* MockResponseData.swift */; };
+		74A552632B20862F002E4474 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A552622B20862F002E4474 /* NetworkServiceTests.swift */; };
 		74D5128E2B160E8500126E9E /* LaunchListResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5128D2B160E8500126E9E /* LaunchListResponseTests.swift */; };
 		74ED9D2A2B173701000BF024 /* LaunchResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D292B173701000BF024 /* LaunchResponseTests.swift */; };
 		74ED9D322B175C8B000BF024 /* LaunchListMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D312B175C8B000BF024 /* LaunchListMode.swift */; };
@@ -85,6 +86,7 @@
 		74A5525C2B2082F8002E4474 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 		74A5525E2B20833B002E4474 /* MockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPI.swift; sourceTree = "<group>"; };
 		74A552602B20835E002E4474 /* MockResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockResponseData.swift; sourceTree = "<group>"; };
+		74A552622B20862F002E4474 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 		74D5127E2B1604E000126E9E /* SpaceLaunchesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceLaunchesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D5128D2B160E8500126E9E /* LaunchListResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListResponseTests.swift; sourceTree = "<group>"; };
 		74ED9D292B173701000BF024 /* LaunchResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchResponseTests.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				74A5525B2B2082DE002E4474 /* Mocks */,
+				74A552622B20862F002E4474 /* NetworkServiceTests.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74A552632B20862F002E4474 /* NetworkServiceTests.swift in Sources */,
 				74A552612B20835E002E4474 /* MockResponseData.swift in Sources */,
 				746A81782B1A2046008BC095 /* LaunchServiceProviderResponseTests.swift in Sources */,
 				74A5525D2B2082F8002E4474 /* MockNetworkService.swift in Sources */,
@@ -667,7 +671,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -732,7 +736,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
