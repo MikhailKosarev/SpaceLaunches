@@ -27,6 +27,7 @@
 		7474E0212B0CA805008AA32B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7474E0202B0CA805008AA32B /* Assets.xcassets */; };
 		7474E0242B0CA805008AA32B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7474E0222B0CA805008AA32B /* LaunchScreen.storyboard */; };
 		74A552542B1FB960002E4474 /* RocketConfigurationResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A552532B1FB960002E4474 /* RocketConfigurationResponseTests.swift */; };
+		74A552592B208292002E4474 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A552582B208292002E4474 /* NetworkService.swift */; };
 		74D5128E2B160E8500126E9E /* LaunchListResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5128D2B160E8500126E9E /* LaunchListResponseTests.swift */; };
 		74ED9D2A2B173701000BF024 /* LaunchResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D292B173701000BF024 /* LaunchResponseTests.swift */; };
 		74ED9D322B175C8B000BF024 /* LaunchListMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D312B175C8B000BF024 /* LaunchListMode.swift */; };
@@ -74,6 +75,7 @@
 		7474E0232B0CA805008AA32B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7474E0252B0CA805008AA32B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74A552532B1FB960002E4474 /* RocketConfigurationResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketConfigurationResponseTests.swift; sourceTree = "<group>"; };
+		74A552582B208292002E4474 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		74D5127E2B1604E000126E9E /* SpaceLaunchesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceLaunchesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D5128D2B160E8500126E9E /* LaunchListResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListResponseTests.swift; sourceTree = "<group>"; };
 		74ED9D292B173701000BF024 /* LaunchResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchResponseTests.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				74ED9D392B17613A000BF024 /* Credentials.swift */,
 				745205342B1DE07900464DE0 /* NetworkError.swift */,
+				74A552582B208292002E4474 /* NetworkService.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				746C1F342B10F8BA00FA9612 /* LaunchResponse.swift in Sources */,
 				74ED9D342B175CBA000BF024 /* LaunchListNetworkType.swift in Sources */,
 				746C1F3A2B10F99000FA9612 /* RocketResponse.swift in Sources */,
+				74A552592B208292002E4474 /* NetworkService.swift in Sources */,
 				746C1F442B10FA3700FA9612 /* PadResponse.swift in Sources */,
 				74ED9D3A2B17613A000BF024 /* Credentials.swift in Sources */,
 				746C1F422B10FA1C00FA9612 /* AgencyResponse.swift in Sources */,
