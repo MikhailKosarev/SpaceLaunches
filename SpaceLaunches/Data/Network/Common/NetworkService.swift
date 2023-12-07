@@ -16,7 +16,7 @@ extension NetworkService {
     /// - Parameters:
     ///   - request: The request to be executed.
     /// - Returns: A `Single` containing either the decoded response or a `NetworkError`.
-    func fetchDecodedData<T: Codable>(_ request: API) -> Single<T> {
+    func fetchDecodedData<T: Decodable>(_ request: API) -> Single<T> {
         return provider.rx
             .request(request)
             .filterSuccessfulStatusCodes()
