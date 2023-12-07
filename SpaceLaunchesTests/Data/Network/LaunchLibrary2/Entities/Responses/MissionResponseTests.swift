@@ -88,4 +88,21 @@ final class MissionResponseTests: XCTestCase {
         // When & Then
         XCTAssertNoThrow(try JSONDecoder().decode(MissionResponse.self, from: Data(jsonWithExtraKeys)))
     }
+
+    func test_MissionResponse_failsDecodingWhenOrbitContainsInvalidElements() {
+        // Given
+        let jsonWithInvalidOrbit = """
+            {
+                "id": 1,
+                "name": "Sample Mission",
+                "description": "Mission Description",
+                "type": "Sample Type",
+                "orbit": {"id": 1, "invalidKey": "value"},
+                "agencies": [{"id": 1, "name": "NASA", "logo_url": "https://example.com/nasa_logo"}],
+            }
+            """.utf8
+
+        // When & Then
+        XCTAssertThrowsError(try JSONDecoder().decode(MissionResponse.self, from: Data(jsonWithInvalidOrbit)))
+    }
 }
