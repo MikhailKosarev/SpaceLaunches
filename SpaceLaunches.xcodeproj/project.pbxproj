@@ -27,6 +27,7 @@
 		7474E0212B0CA805008AA32B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7474E0202B0CA805008AA32B /* Assets.xcassets */; };
 		7474E0242B0CA805008AA32B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7474E0222B0CA805008AA32B /* LaunchScreen.storyboard */; };
 		7489E46C2B21DA3E00DCED7D /* LaunchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489E46B2B21DA3E00DCED7D /* LaunchService.swift */; };
+		7489E46E2B21DA9200DCED7D /* LaunchLibrary2Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489E46D2B21DA9200DCED7D /* LaunchLibrary2Service.swift */; };
 		74A552542B1FB960002E4474 /* RocketConfigurationResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A552532B1FB960002E4474 /* RocketConfigurationResponseTests.swift */; };
 		74A552592B208292002E4474 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A552582B208292002E4474 /* NetworkService.swift */; };
 		74A5525D2B2082F8002E4474 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A5525C2B2082F8002E4474 /* MockNetworkService.swift */; };
@@ -83,6 +84,7 @@
 		7474E0232B0CA805008AA32B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7474E0252B0CA805008AA32B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7489E46B2B21DA3E00DCED7D /* LaunchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchService.swift; sourceTree = "<group>"; };
+		7489E46D2B21DA9200DCED7D /* LaunchLibrary2Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLibrary2Service.swift; sourceTree = "<group>"; };
 		74A552532B1FB960002E4474 /* RocketConfigurationResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketConfigurationResponseTests.swift; sourceTree = "<group>"; };
 		74A552582B208292002E4474 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		74A5525C2B2082F8002E4474 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			children = (
 				746C1F192B10BA0000FA9612 /* Entities */,
 				74ED9D372B175D23000BF024 /* LaunchLibrary2API.swift */,
+				7489E46D2B21DA9200DCED7D /* LaunchLibrary2Service.swift */,
 			);
 			path = LaunchLibrary2;
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				7489E46C2B21DA3E00DCED7D /* LaunchService.swift in Sources */,
 				7474E0182B0CA804008AA32B /* AppDelegate.swift in Sources */,
 				745205362B1E259100464DE0 /* NetworkError.swift in Sources */,
+				7489E46E2B21DA9200DCED7D /* LaunchLibrary2Service.swift in Sources */,
 				746C1F342B10F8BA00FA9612 /* LaunchResponse.swift in Sources */,
 				74ED9D342B175CBA000BF024 /* LaunchListNetworkType.swift in Sources */,
 				746C1F3A2B10F99000FA9612 /* RocketResponse.swift in Sources */,
