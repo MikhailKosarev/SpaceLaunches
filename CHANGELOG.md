@@ -25,6 +25,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Default implementation for `NetworkService` protocol with tests.
 - `LaunchService` protocol to define metohds for interacting with launch-related data.
 - `LaunchLibrary2Service` for interacting with the LaunchLibrary2API and fetching launch-related data.
+- Tests for `MissionResponse`.
 
 ### Changed
 
