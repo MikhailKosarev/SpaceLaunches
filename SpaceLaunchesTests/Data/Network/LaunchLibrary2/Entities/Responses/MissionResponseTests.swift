@@ -122,4 +122,24 @@ final class MissionResponseTests: XCTestCase {
         // When & Then
         XCTAssertNoThrow(try JSONDecoder().decode(MissionResponse.self, from: Data(jsonWithEmptyAgenciesArray)))
     }
+
+    func test_MissionResponse_successfullyDecodedWithDuplicateAgencies() {
+        // Given
+        let jsonWithDuplicateAgencies = """
+            {
+                "id": 1,
+                "name": "Sample Mission",
+                "description": "Mission Description",
+                "type": "Sample Type",
+                "orbit": {"id": 1, "name": "Low Earth Orbit", "abbrev": "LEO"},
+                "agencies": [
+                    {"id": 1, "name": "NASA", "logo_url": "https://example.com/nasa_logo"},
+                    {"id": 1, "name": "NASA", "logo_url": "https://example.com/nasa_logo"}
+                ]
+            }
+            """.utf8
+
+        // When & Then
+        XCTAssertNoThrow(try JSONDecoder().decode(MissionResponse.self, from: Data(jsonWithDuplicateAgencies)))
+    }
 }
