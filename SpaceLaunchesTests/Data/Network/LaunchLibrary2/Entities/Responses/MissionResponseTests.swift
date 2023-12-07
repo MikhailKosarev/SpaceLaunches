@@ -105,4 +105,21 @@ final class MissionResponseTests: XCTestCase {
         // When & Then
         XCTAssertThrowsError(try JSONDecoder().decode(MissionResponse.self, from: Data(jsonWithInvalidOrbit)))
     }
+
+    func test_MissionResponse_successfullyDecodedWithEmptyAgenciesArray() {
+        // Given
+        let jsonWithEmptyAgenciesArray = """
+            {
+                "id": 1,
+                "name": "Sample Mission",
+                "description": "Mission Description",
+                "type": "Sample Type",
+                "orbit": {"id": 1, "name": "Low Earth Orbit", "abbrev": "LEO"},
+                "agencies": []
+            }
+            """.utf8
+
+        // When & Then
+        XCTAssertNoThrow(try JSONDecoder().decode(MissionResponse.self, from: Data(jsonWithEmptyAgenciesArray)))
+    }
 }
