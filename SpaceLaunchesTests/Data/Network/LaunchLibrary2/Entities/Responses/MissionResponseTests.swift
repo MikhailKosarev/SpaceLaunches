@@ -20,4 +20,21 @@ final class MissionResponseTests: XCTestCase {
         // When & Then
         XCTAssertNoThrow(try JSONDecoder().decode(MissionResponse.self, from: Data(validJSON)))
     }
+
+    func test_MissionResponse_failsDecodingWhenAllRequiredValuesNull() {
+        // Given
+        let allNullJSON = """
+        {
+            "id": null,
+            "name": null,
+            "description": null,
+            "type": null,
+            "orbit": null,
+            "agencies": null
+        }
+        """.utf8
+
+        // When & Then
+        XCTAssertThrowsError(try JSONDecoder().decode(MissionResponse.self, from: Data(allNullJSON)))
+    }
 }
