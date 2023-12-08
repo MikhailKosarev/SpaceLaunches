@@ -46,6 +46,7 @@
 		74FDFF452B23386800784E2C /* LaunchListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FDFF442B23386800784E2C /* LaunchListItem.swift */; };
 		74FDFF472B23388600784E2C /* LaunchListDisplayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FDFF462B23388600784E2C /* LaunchListDisplayType.swift */; };
 		74FDFF4A2B233A2400784E2C /* DateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FDFF492B233A2400784E2C /* DateTimeFormatter.swift */; };
+		74FDFF4E2B233B0300784E2C /* DateTimeFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FDFF4D2B233B0200784E2C /* DateTimeFormatterTests.swift */; };
 		798567B008C9CBE1E29A88D2 /* Pods_SpaceLaunchesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D15CF949E535A7D7C62C641A /* Pods_SpaceLaunchesTests.framework */; };
 		B530CE68AA903395293F85C0 /* Pods_SpaceLaunches.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593C047467B9CBB825EE2664 /* Pods_SpaceLaunches.framework */; };
 /* End PBXBuildFile section */
@@ -108,6 +109,7 @@
 		74FDFF442B23386800784E2C /* LaunchListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListItem.swift; sourceTree = "<group>"; };
 		74FDFF462B23388600784E2C /* LaunchListDisplayType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListDisplayType.swift; sourceTree = "<group>"; };
 		74FDFF492B233A2400784E2C /* DateTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeFormatter.swift; sourceTree = "<group>"; };
+		74FDFF4D2B233B0200784E2C /* DateTimeFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeFormatterTests.swift; sourceTree = "<group>"; };
 		D15CF949E535A7D7C62C641A /* Pods_SpaceLaunchesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceLaunchesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -186,6 +188,7 @@
 		741FB9F62B0F8F1600E6A95E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				74FDFF482B233A1700784E2C /* Utilities */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 		74D5127F2B1604E000126E9E /* SpaceLaunchesTests */ = {
 			isa = PBXGroup;
 			children = (
+				74FDFF4B2B233AE200784E2C /* Common */,
 				74D512872B16092C00126E9E /* Data */,
 				74D512882B16093200126E9E /* Domain */,
 				74D512892B16093600126E9E /* Presentation */,
@@ -393,6 +397,22 @@
 			isa = PBXGroup;
 			children = (
 				74FDFF492B233A2400784E2C /* DateTimeFormatter.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		74FDFF4B2B233AE200784E2C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				74FDFF4C2B233AF100784E2C /* Utilities */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		74FDFF4C2B233AF100784E2C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				74FDFF4D2B233B0200784E2C /* DateTimeFormatterTests.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -659,6 +679,7 @@
 				74ED9D2A2B173701000BF024 /* LaunchResponseTests.swift in Sources */,
 				7489E4702B21E0CB00DCED7D /* MissionResponseTests.swift in Sources */,
 				74A552542B1FB960002E4474 /* RocketConfigurationResponseTests.swift in Sources */,
+				74FDFF4E2B233B0300784E2C /* DateTimeFormatterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
