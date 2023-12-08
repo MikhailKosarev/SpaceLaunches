@@ -43,6 +43,7 @@
 		74ED9D382B175D23000BF024 /* LaunchLibrary2API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D372B175D23000BF024 /* LaunchLibrary2API.swift */; };
 		74ED9D3A2B17613A000BF024 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D392B17613A000BF024 /* Credentials.swift */; };
 		74ED9D3D2B1896F6000BF024 /* LaunchStatusResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D3C2B1896F6000BF024 /* LaunchStatusResponseTests.swift */; };
+		74FDFF452B23386800784E2C /* LaunchListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FDFF442B23386800784E2C /* LaunchListItem.swift */; };
 		798567B008C9CBE1E29A88D2 /* Pods_SpaceLaunchesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D15CF949E535A7D7C62C641A /* Pods_SpaceLaunchesTests.framework */; };
 		B530CE68AA903395293F85C0 /* Pods_SpaceLaunches.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593C047467B9CBB825EE2664 /* Pods_SpaceLaunches.framework */; };
 /* End PBXBuildFile section */
@@ -102,6 +103,7 @@
 		74ED9D372B175D23000BF024 /* LaunchLibrary2API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLibrary2API.swift; sourceTree = "<group>"; };
 		74ED9D392B17613A000BF024 /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		74ED9D3C2B1896F6000BF024 /* LaunchStatusResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchStatusResponseTests.swift; sourceTree = "<group>"; };
+		74FDFF442B23386800784E2C /* LaunchListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListItem.swift; sourceTree = "<group>"; };
 		D15CF949E535A7D7C62C641A /* Pods_SpaceLaunchesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceLaunchesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -155,6 +157,7 @@
 		741FB9F32B0F8EF800E6A95E /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				74FDFF422B23385000784E2C /* Models */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -363,6 +366,22 @@
 				7489E46F2B21E0CB00DCED7D /* MissionResponseTests.swift */,
 			);
 			path = Responses;
+			sourceTree = "<group>";
+		};
+		74FDFF422B23385000784E2C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				74FDFF432B23385500784E2C /* LaunchList */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		74FDFF432B23385500784E2C /* LaunchList */ = {
+			isa = PBXGroup;
+			children = (
+				74FDFF442B23386800784E2C /* LaunchListItem.swift */,
+			);
+			path = LaunchList;
 			sourceTree = "<group>";
 		};
 		C65C6995E716EB61376BF5A0 /* Pods */ = {
@@ -588,6 +607,7 @@
 				74ED9D362B175CF0000BF024 /* GetLaunchListRequestParameters.swift in Sources */,
 				746C1F362B10F93F00FA9612 /* LaunchStatusResponse.swift in Sources */,
 				746C1F322B10F89000FA9612 /* LaunchListResponse.swift in Sources */,
+				74FDFF452B23386800784E2C /* LaunchListItem.swift in Sources */,
 				746C1F3C2B10F9AD00FA9612 /* RocketConfigurationResponse.swift in Sources */,
 				746C1F382B10F97500FA9612 /* LaunchServiceProviderResponse.swift in Sources */,
 				746C1F3E2B10F9D500FA9612 /* MissionResponse.swift in Sources */,
