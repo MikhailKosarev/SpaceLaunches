@@ -41,4 +41,15 @@ final class DateTimeFormatterTests: XCTestCase {
         // Then
         XCTAssertNil(formattedDate)
     }
+
+    func test_getLongDateWithShortTime_ReturnsNilWhenGivenInvalidDateFormat() {
+        // Given
+        let invalidDateFormat = "2023-12-08 12:34:56"
+
+        // When
+        let formattedDate = formatter.getLongDateWithShortTime(from: invalidDateFormat)
+
+        // Then
+        XCTAssertNil(formattedDate)
+    }
 }
