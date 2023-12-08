@@ -30,4 +30,15 @@ final class DateTimeFormatterTests: XCTestCase {
         // Then
         XCTAssertEqual(actualFormattedDate, expectedFormattedDate)
     }
+
+    func test_getLongDateWithShortTime_ReturnsNilWhenGivenEmptyDate() {
+        // Given
+        let emptyDate = ""
+
+        // When
+        let formattedDate = formatter.getLongDateWithShortTime(from: emptyDate)
+
+        // Then
+        XCTAssertNil(formattedDate)
+    }
 }
