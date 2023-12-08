@@ -17,4 +17,17 @@ final class DateTimeFormatterTests: XCTestCase {
         super.tearDown()
     }
 
+    // MARK: - Test cases
+    func test_getLongDateWithShortTime_ReturnsFormattedDateWhenGivenValidDate() {
+        // Given
+        let validDate = "1970-01-01T00:00:00Z"
+        let expectedFormattedDate = Date(timeIntervalSince1970: .zero)
+            .formatted(date: .long, time: .shortened)
+
+        // When
+        let actualFormattedDate = formatter.getLongDateWithShortTime(from: validDate)
+
+        // Then
+        XCTAssertEqual(actualFormattedDate, expectedFormattedDate)
+    }
 }
