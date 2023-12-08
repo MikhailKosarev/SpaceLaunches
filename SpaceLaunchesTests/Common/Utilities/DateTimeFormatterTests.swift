@@ -52,4 +52,18 @@ final class DateTimeFormatterTests: XCTestCase {
         // Then
         XCTAssertNil(formattedDate)
     }
+
+    func test_getLongDateWithShortTime_ReturnsFormattedDateWithDifferentTimeZone() {
+        // Given
+        let dateWithDifferentTimeZone = "1970-01-01T00:00:00-0300"
+        let threeHoursInSeconds = 10800
+        let expectedFormattedDate = Date(timeIntervalSince1970: TimeInterval(threeHoursInSeconds))
+            .formatted(date: .long, time: .shortened)
+
+        // When
+        let actualFormattedDate = formatter.getLongDateWithShortTime(from: dateWithDifferentTimeZone)
+
+        // Then
+        XCTAssertEqual(actualFormattedDate, expectedFormattedDate)
+    }
 }
