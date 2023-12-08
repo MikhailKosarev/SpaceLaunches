@@ -1,4 +1,4 @@
-/// A type of launch list that can be display.
+/// A type of launch list that can be displayed.
 enum LaunchListDisplayType: Int, CaseIterable {
 
     // MARK: - Internal interface
