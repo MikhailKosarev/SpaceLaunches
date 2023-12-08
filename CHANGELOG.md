@@ -26,6 +26,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `LaunchService` protocol to define metohds for interacting with launch-related data.
 - `LaunchLibrary2Service` for interacting with the LaunchLibrary2API and fetching launch-related data.
 - Tests for `MissionResponse`.
+- `LaunchListItem` as a representation of a launch item in domain logic.
+- `LaunchListDisplayType` as a type of launch list that can be display.
 
 ### Changed
 
