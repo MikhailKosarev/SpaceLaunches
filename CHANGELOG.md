@@ -29,6 +29,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `LaunchListItem` as a representation of a launch item in domain logic.
 - `LaunchListDisplayType` as a type of launch list that can be displayed.
 - `DateTimeFormatter` utility with tests.
+- Tests for `OrbitResponse`.
 
 ### Changed
 
