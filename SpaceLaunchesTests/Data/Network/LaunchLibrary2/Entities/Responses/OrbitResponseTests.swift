@@ -44,4 +44,18 @@ final class OrbitResponseTests: XCTestCase {
         // When & Then
         XCTAssertThrowsError(try JSONDecoder().decode(OrbitResponse.self, from: Data(jsonWithoutIdKey)))
     }
+
+    func test_OrbitResponse_failsDecodingWhenKeyIsNotValidType() {
+        // Given
+        let jsonWithInvalidId = """
+            {
+                "id": "not_an_integer",
+                "name": "Low Earth Orbit",
+                "abbrev": "LEO"
+            }
+            """.utf8
+
+        // When & Then
+        XCTAssertThrowsError(try JSONDecoder().decode(OrbitResponse.self, from: Data(jsonWithInvalidId)))
+    }
 }
