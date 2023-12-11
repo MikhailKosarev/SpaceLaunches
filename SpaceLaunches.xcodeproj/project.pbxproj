@@ -48,6 +48,7 @@
 		74FDFF4A2B233A2400784E2C /* DateTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FDFF492B233A2400784E2C /* DateTimeFormatter.swift */; };
 		74FDFF4E2B233B0300784E2C /* DateTimeFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FDFF4D2B233B0200784E2C /* DateTimeFormatterTests.swift */; };
 		74FDFF502B270A4500784E2C /* OrbitResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FDFF4F2B270A4500784E2C /* OrbitResponseTests.swift */; };
+		74FDFF542B27132100784E2C /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FDFF532B27132100784E2C /* UseCase.swift */; };
 		798567B008C9CBE1E29A88D2 /* Pods_SpaceLaunchesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D15CF949E535A7D7C62C641A /* Pods_SpaceLaunchesTests.framework */; };
 		B530CE68AA903395293F85C0 /* Pods_SpaceLaunches.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593C047467B9CBB825EE2664 /* Pods_SpaceLaunches.framework */; };
 /* End PBXBuildFile section */
@@ -112,6 +113,7 @@
 		74FDFF492B233A2400784E2C /* DateTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeFormatter.swift; sourceTree = "<group>"; };
 		74FDFF4D2B233B0200784E2C /* DateTimeFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeFormatterTests.swift; sourceTree = "<group>"; };
 		74FDFF4F2B270A4500784E2C /* OrbitResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitResponseTests.swift; sourceTree = "<group>"; };
+		74FDFF532B27132100784E2C /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		D15CF949E535A7D7C62C641A /* Pods_SpaceLaunchesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceLaunchesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				74FDFF422B23385000784E2C /* Models */,
+				74FDFF522B2712DD00784E2C /* UseCases */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -420,6 +423,22 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		74FDFF522B2712DD00784E2C /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				74FDFF552B27143300784E2C /* Protocols */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		74FDFF552B27143300784E2C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				74FDFF532B27132100784E2C /* UseCase.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		C65C6995E716EB61376BF5A0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -653,6 +672,7 @@
 				7489E46E2B21DA9200DCED7D /* LaunchLibrary2Service.swift in Sources */,
 				746C1F342B10F8BA00FA9612 /* LaunchResponse.swift in Sources */,
 				74ED9D342B175CBA000BF024 /* LaunchListNetworkType.swift in Sources */,
+				74FDFF542B27132100784E2C /* UseCase.swift in Sources */,
 				746C1F3A2B10F99000FA9612 /* RocketResponse.swift in Sources */,
 				74A552592B208292002E4474 /* NetworkService.swift in Sources */,
 				746C1F442B10FA3700FA9612 /* PadResponse.swift in Sources */,
