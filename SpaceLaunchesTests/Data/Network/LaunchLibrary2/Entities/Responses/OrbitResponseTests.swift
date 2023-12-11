@@ -17,4 +17,18 @@ final class OrbitResponseTests: XCTestCase {
         // When & Then
         XCTAssertNoThrow(try JSONDecoder().decode(OrbitResponse.self, from: Data(validJSON)))
     }
+
+    func test_OrbitResponse_failsDecodingWhenAllRequiredValuesNull() {
+        // Given
+        let allNullJSON = """
+        {
+            "id": null,
+            "name": null,
+            "abbrev": null
+        }
+        """.utf8
+
+        // When & Then
+        XCTAssertThrowsError(try JSONDecoder().decode(OrbitResponse.self, from: Data(allNullJSON)))
+    }
 }
