@@ -31,4 +31,17 @@ final class AgencyResponseTests: XCTestCase {
         // When & Then
         XCTAssertThrowsError(try JSONDecoder().decode(AgencyResponse.self, from: Data(allNullJSON)))
     }
+
+    func test_AgencyResponse_failsDecodingWhenKeyIsMissing() {
+        // Given
+        let jsonWithoutIdKey = """
+            {
+                "name": "NASA",
+                "logo_url": "https://example.com/nasa_logo.png"
+            }
+            """.utf8
+
+        // When & Then
+        XCTAssertThrowsError(try JSONDecoder().decode(AgencyResponse.self, from: Data(jsonWithoutIdKey)))
+    }
 }
