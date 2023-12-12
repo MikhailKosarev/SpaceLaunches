@@ -31,6 +31,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `DateTimeFormatter` utility with tests.
 - Tests for `OrbitResponse`.
 - `UseCase` protocol to define the structure of a use case in an app.
+- Tests for `AgencyResponse`.
 
 ### Changed
 
