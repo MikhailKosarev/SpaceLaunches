@@ -44,4 +44,18 @@ final class AgencyResponseTests: XCTestCase {
         // When & Then
         XCTAssertThrowsError(try JSONDecoder().decode(AgencyResponse.self, from: Data(jsonWithoutIdKey)))
     }
+
+    func test_AgencyResponse_failsDecodingWhenKeyIsNotValidType() {
+        // Given
+        let jsonWithInvalidId = """
+            {
+                "id": "not_an_integer",
+                "name": "NASA",
+                "logo_url": "https://example.com/nasa_logo.png"
+            }
+            """.utf8
+
+        // When & Then
+        XCTAssertThrowsError(try JSONDecoder().decode(AgencyResponse.self, from: Data(jsonWithInvalidId)))
+    }
 }
