@@ -17,4 +17,18 @@ final class AgencyResponseTests: XCTestCase {
         // When & Then
         XCTAssertNoThrow(try JSONDecoder().decode(AgencyResponse.self, from: Data(validJSON)))
     }
+
+    func test_AgencyResponse_failsDecodingWhenAllRequiredValuesNull() {
+        // Given
+        let allNullJSON = """
+        {
+            "id": null,
+            "name": null,
+            "logo_url": null
+        }
+        """.utf8
+
+        // When & Then
+        XCTAssertThrowsError(try JSONDecoder().decode(AgencyResponse.self, from: Data(allNullJSON)))
+    }
 }
