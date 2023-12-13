@@ -32,7 +32,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Tests for `OrbitResponse`.
 - `UseCase` protocol to define the structure of a use case in an app.
 - Tests for `AgencyResponse`.
-- `GetLaunchListUseCase` for retrieving a list of launches.
+- `GetLaunchListUseCase` with tests for retrieving a list of launches.
 - `MockLaunchService`  for testing purposes.
 
 ### Changed
