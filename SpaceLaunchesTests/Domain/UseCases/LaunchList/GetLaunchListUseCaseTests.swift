@@ -92,6 +92,30 @@ final class GetLaunchListUseCaseTests: XCTestCase {
 
         wait(for: [expectation], timeout: 10)
     }
+
+    func test_produce_emitsErrorOnServiceError() throws {
+        // Given
+        let expectedError = NSError(domain: "TestError", code: 0, userInfo: nil)
+        let getLaunchListUseCaseStub = createFailureEvent(with: expectedError)
+        let getLaunchListUseCase = createUseCase(with: getLaunchListUseCaseStub)
+        let action = getLaunchListUseCase.produce(input: getNoMatterInput())
+        let errorsRecorder = scheduler.createObserver(Error.self)
+
+        // When
+        action.underlyingError
+            .bind(to: errorsRecorder)
+            .disposed(by: bag)
+
+        // Drive the inputs
+        Driver.just(())
+            .drive(action.inputs)
+            .disposed(by: bag)
+
+        // Then
+        let actualError = errorsRecorder.events.last?.value.element as? NSError
+        XCTAssertEqual(actualError, expectedError)
+    }
+
     // MARK: - Helper properties and methods
     private var scheduler: TestScheduler!
     private var bag: DisposeBag!
