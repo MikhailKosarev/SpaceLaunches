@@ -1,7 +1,7 @@
 import Foundation
 
 /// A representation of a launch item with essential information.
-struct LaunchListItem {
+struct LaunchListItem: Equatable {
 
     /// The unique identifier for the launch item.
     let id: String
