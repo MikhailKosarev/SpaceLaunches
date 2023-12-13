@@ -69,6 +69,29 @@ final class GetLaunchListUseCaseTests: XCTestCase {
         wait(for: [expectation], timeout: fetchTimeout)
     }
 
+    func test_produce_emitsExpectedValueOnServiceSuccessWithALotOfLaunches() throws {
+        // Given
+        let (received, expected) = createModels(numberOfLaunches: 50)
+        let getLaunchListUseCaseStub = createSuccessEvent(response: received)
+        let getLaunchListUseCase = createUseCase(with: getLaunchListUseCaseStub)
+        let action = getLaunchListUseCase.produce(input: getNoMatterInput())
+        let expectation = XCTestExpectation()
+
+        // When
+        action.elements
+            .subscribe(onNext: { elements in
+                // Then
+                XCTAssertEqual(elements, expected)
+                expectation.fulfill()
+            })
+            .disposed(by: bag)
+
+        Driver.just(())
+            .drive(action.inputs)
+            .disposed(by: bag)
+
+        wait(for: [expectation], timeout: 10)
+    }
     // MARK: - Helper properties and methods
     private var scheduler: TestScheduler!
     private var bag: DisposeBag!
