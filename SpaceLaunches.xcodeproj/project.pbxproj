@@ -36,6 +36,7 @@
 		74A5525F2B20833B002E4474 /* MockAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A5525E2B20833B002E4474 /* MockAPI.swift */; };
 		74A552612B20835E002E4474 /* MockResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A552602B20835E002E4474 /* MockResponseData.swift */; };
 		74A552632B20862F002E4474 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A552622B20862F002E4474 /* NetworkServiceTests.swift */; };
+		74D2E9872B29D33F0006E3FD /* GetLaunchListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D2E9862B29D33F0006E3FD /* GetLaunchListUseCase.swift */; };
 		74D5128E2B160E8500126E9E /* LaunchListResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D5128D2B160E8500126E9E /* LaunchListResponseTests.swift */; };
 		74ED9D2A2B173701000BF024 /* LaunchResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D292B173701000BF024 /* LaunchResponseTests.swift */; };
 		74ED9D322B175C8B000BF024 /* LaunchListMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D312B175C8B000BF024 /* LaunchListMode.swift */; };
@@ -101,6 +102,7 @@
 		74A5525E2B20833B002E4474 /* MockAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPI.swift; sourceTree = "<group>"; };
 		74A552602B20835E002E4474 /* MockResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockResponseData.swift; sourceTree = "<group>"; };
 		74A552622B20862F002E4474 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		74D2E9862B29D33F0006E3FD /* GetLaunchListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLaunchListUseCase.swift; sourceTree = "<group>"; };
 		74D5127E2B1604E000126E9E /* SpaceLaunchesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceLaunchesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D5128D2B160E8500126E9E /* LaunchListResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListResponseTests.swift; sourceTree = "<group>"; };
 		74ED9D292B173701000BF024 /* LaunchResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchResponseTests.swift; sourceTree = "<group>"; };
@@ -293,6 +295,14 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		74D2E9852B29D3140006E3FD /* LaunchList */ = {
+			isa = PBXGroup;
+			children = (
+				74D2E9862B29D33F0006E3FD /* GetLaunchListUseCase.swift */,
+			);
+			path = LaunchList;
+			sourceTree = "<group>";
+		};
 		74D5127F2B1604E000126E9E /* SpaceLaunchesTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,6 +440,7 @@
 			isa = PBXGroup;
 			children = (
 				74FDFF552B27143300784E2C /* Protocols */,
+				74D2E9852B29D3140006E3FD /* LaunchList */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -681,6 +692,7 @@
 				746C1F442B10FA3700FA9612 /* PadResponse.swift in Sources */,
 				74FDFF472B23388600784E2C /* LaunchListDisplayType.swift in Sources */,
 				74ED9D3A2B17613A000BF024 /* Credentials.swift in Sources */,
+				74D2E9872B29D33F0006E3FD /* GetLaunchListUseCase.swift in Sources */,
 				746C1F422B10FA1C00FA9612 /* AgencyResponse.swift in Sources */,
 				74ED9D382B175D23000BF024 /* LaunchLibrary2API.swift in Sources */,
 				746C1F402B10F9F600FA9612 /* OrbitResponse.swift in Sources */,
@@ -767,7 +779,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -832,7 +844,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
