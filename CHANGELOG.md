@@ -34,11 +34,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Tests for `AgencyResponse`.
 - `GetLaunchListUseCase` with tests for retrieving a list of launches.
 - `MockLaunchService`  for testing purposes.
+- `LaunchListViewController` with default implemetation.
 
 ### Changed
 
 - The project file structure according to the clean approach.
 - Set up the `Podfile` to automatic setting the deployment target `15.0` for all dependencies.
+- Project `rootViewController` from `ViewController` to `LaunchListViewController`.
+
+### Removed
+
+- Default `ViewController`.
 
 ## [0.1.0] - 2023-11-23
 
