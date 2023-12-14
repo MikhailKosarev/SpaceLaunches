@@ -34,7 +34,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Tests for `AgencyResponse`.
 - `GetLaunchListUseCase` with tests for retrieving a list of launches.
 - `MockLaunchService`  for testing purposes.
-- `LaunchListViewController` with default implemetation.
+- `LaunchListViewController` with a default implementation.
 
 ### Changed
 
