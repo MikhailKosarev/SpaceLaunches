@@ -35,6 +35,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `GetLaunchListUseCase` with tests for retrieving a list of launches.
 - `MockLaunchService`  for testing purposes.
 - `LaunchListViewController` with a default implementation.
+- `ViewModel` protocol.
 
 ### Changed
 
