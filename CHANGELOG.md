@@ -41,6 +41,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `LaunchListInput` protocol.
 - `LaunchListOutput` protocol.
 - `LaunchListViewModelType` protocol.
+- An extension with `Driver`s for the `Action`.
 
 ### Changed
 
