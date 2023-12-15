@@ -10,6 +10,9 @@
 		744F77772B2AFD9E0077ECCF /* LaunchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F77762B2AFD9E0077ECCF /* LaunchListViewController.swift */; };
 		744F777A2B2B03C20077ECCF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F77792B2B03C20077ECCF /* ViewModel.swift */; };
 		744F777C2B2B050B0077ECCF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F777B2B2B050B0077ECCF /* Coordinator.swift */; };
+		744F77CF2B2C51A20077ECCF /* LaunchListInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F77CE2B2C51A20077ECCF /* LaunchListInput.swift */; };
+		744F77D12B2C51F10077ECCF /* LaunchListOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F77D02B2C51F10077ECCF /* LaunchListOutput.swift */; };
+		744F77D32B2C52780077ECCF /* LaunchListViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F77D22B2C52780077ECCF /* LaunchListViewModelType.swift */; };
 		744F77DA2B2C558E0077ECCF /* LaunchListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F77D92B2C558E0077ECCF /* LaunchListSection.swift */; };
 		745205332B1DDAD300464DE0 /* RocketResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745205322B1DDAD300464DE0 /* RocketResponseTests.swift */; };
 		745205362B1E259100464DE0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745205342B1DE07900464DE0 /* NetworkError.swift */; };
@@ -79,6 +82,9 @@
 		744F77762B2AFD9E0077ECCF /* LaunchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListViewController.swift; sourceTree = "<group>"; };
 		744F77792B2B03C20077ECCF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		744F777B2B2B050B0077ECCF /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		744F77CE2B2C51A20077ECCF /* LaunchListInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListInput.swift; sourceTree = "<group>"; };
+		744F77D02B2C51F10077ECCF /* LaunchListOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListOutput.swift; sourceTree = "<group>"; };
+		744F77D22B2C52780077ECCF /* LaunchListViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListViewModelType.swift; sourceTree = "<group>"; };
 		744F77D92B2C558E0077ECCF /* LaunchListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListSection.swift; sourceTree = "<group>"; };
 		745205322B1DDAD300464DE0 /* RocketResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketResponseTests.swift; sourceTree = "<group>"; };
 		745205342B1DE07900464DE0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -218,6 +224,7 @@
 			children = (
 				744F77762B2AFD9E0077ECCF /* LaunchListViewController.swift */,
 				744F77D82B2C557C0077ECCF /* Views */,
+				744F77CD2B2C51650077ECCF /* Protocols */,
 			);
 			path = LaunchList;
 			sourceTree = "<group>";
@@ -227,6 +234,16 @@
 			children = (
 				744F77792B2B03C20077ECCF /* ViewModel.swift */,
 				744F777B2B2B050B0077ECCF /* Coordinator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		744F77CD2B2C51650077ECCF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				744F77CE2B2C51A20077ECCF /* LaunchListInput.swift */,
+				744F77D02B2C51F10077ECCF /* LaunchListOutput.swift */,
+				744F77D22B2C52780077ECCF /* LaunchListViewModelType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -745,6 +762,7 @@
 				746C1F382B10F97500FA9612 /* LaunchServiceProviderResponse.swift in Sources */,
 				746C1F3E2B10F9D500FA9612 /* MissionResponse.swift in Sources */,
 				7489E46C2B21DA3E00DCED7D /* LaunchService.swift in Sources */,
+				744F77D32B2C52780077ECCF /* LaunchListViewModelType.swift in Sources */,
 				7474E0182B0CA804008AA32B /* AppDelegate.swift in Sources */,
 				745205362B1E259100464DE0 /* NetworkError.swift in Sources */,
 				7489E46E2B21DA9200DCED7D /* LaunchLibrary2Service.swift in Sources */,
@@ -752,6 +770,7 @@
 				74ED9D342B175CBA000BF024 /* LaunchListNetworkType.swift in Sources */,
 				744F77DA2B2C558E0077ECCF /* LaunchListSection.swift in Sources */,
 				74FDFF542B27132100784E2C /* UseCase.swift in Sources */,
+				744F77CF2B2C51A20077ECCF /* LaunchListInput.swift in Sources */,
 				746C1F3A2B10F99000FA9612 /* RocketResponse.swift in Sources */,
 				74A552592B208292002E4474 /* NetworkService.swift in Sources */,
 				746C1F442B10FA3700FA9612 /* PadResponse.swift in Sources */,
@@ -759,6 +778,7 @@
 				74ED9D3A2B17613A000BF024 /* Credentials.swift in Sources */,
 				74D2E9872B29D33F0006E3FD /* GetLaunchListUseCase.swift in Sources */,
 				746C1F422B10FA1C00FA9612 /* AgencyResponse.swift in Sources */,
+				744F77D12B2C51F10077ECCF /* LaunchListOutput.swift in Sources */,
 				744F77772B2AFD9E0077ECCF /* LaunchListViewController.swift in Sources */,
 				74ED9D382B175D23000BF024 /* LaunchLibrary2API.swift in Sources */,
 				746C1F402B10F9F600FA9612 /* OrbitResponse.swift in Sources */,
@@ -847,7 +867,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -912,7 +932,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
