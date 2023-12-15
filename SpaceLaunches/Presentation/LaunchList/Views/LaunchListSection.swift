@@ -4,7 +4,7 @@ import RxDataSources
 struct LaunchListSection {
 
     /// Header title for the section.
-    var header: String
+    var header: String = "Launches"
     /// Items within the section.
     var items: [Item]
 }
