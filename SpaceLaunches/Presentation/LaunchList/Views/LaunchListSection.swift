@@ -9,3 +9,18 @@ struct LaunchListSection {
     var items: [Item]
 }
 
+// MARK: - SectionModelType
+extension LaunchListSection: SectionModelType {
+
+    /// Type of items within the section.
+    typealias Item = LaunchListItem
+
+    /// Initializes a section with items.
+    /// - Parameters:
+    ///   - original: The original section to duplicate.
+    ///   - items: The items to populate the section.
+    init(original: LaunchListSection, items: [Item]) {
+        self = original
+        self.items = items
+    }
+}
