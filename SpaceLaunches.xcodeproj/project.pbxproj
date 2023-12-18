@@ -20,6 +20,7 @@
 		744F77DA2B2C558E0077ECCF /* LaunchListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F77D92B2C558E0077ECCF /* LaunchListSection.swift */; };
 		744F77E02B2C5BD20077ECCF /* Action+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F77DF2B2C5BD20077ECCF /* Action+Extensions.swift */; };
 		744F77E22B2C5D1E0077ECCF /* LaunchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F77E12B2C5D1E0077ECCF /* LaunchListViewModel.swift */; };
+		744F77E52B2C64DA0077ECCF /* LaunchListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F77E42B2C64DA0077ECCF /* LaunchListViewModelTests.swift */; };
 		745205332B1DDAD300464DE0 /* RocketResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745205322B1DDAD300464DE0 /* RocketResponseTests.swift */; };
 		745205362B1E259100464DE0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745205342B1DE07900464DE0 /* NetworkError.swift */; };
 		746A81782B1A2046008BC095 /* LaunchServiceProviderResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746A81772B1A2046008BC095 /* LaunchServiceProviderResponseTests.swift */; };
@@ -99,6 +100,7 @@
 		744F77D92B2C558E0077ECCF /* LaunchListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListSection.swift; sourceTree = "<group>"; };
 		744F77DF2B2C5BD20077ECCF /* Action+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Action+Extensions.swift"; sourceTree = "<group>"; };
 		744F77E12B2C5D1E0077ECCF /* LaunchListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchListViewModel.swift; sourceTree = "<group>"; };
+		744F77E42B2C64DA0077ECCF /* LaunchListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListViewModelTests.swift; sourceTree = "<group>"; };
 		745205322B1DDAD300464DE0 /* RocketResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketResponseTests.swift; sourceTree = "<group>"; };
 		745205342B1DE07900464DE0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		746A81772B1A2046008BC095 /* LaunchServiceProviderResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchServiceProviderResponseTests.swift; sourceTree = "<group>"; };
@@ -314,6 +316,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		744F77E32B2C64CF0077ECCF /* LaunchList */ = {
+			isa = PBXGroup;
+			children = (
+				744F77E42B2C64DA0077ECCF /* LaunchListViewModelTests.swift */,
+			);
+			path = LaunchList;
+			sourceTree = "<group>";
+		};
 		745205372B1E262400464DE0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +481,7 @@
 		74D512892B16093600126E9E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				744F77E32B2C64CF0077ECCF /* LaunchList */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -876,6 +887,7 @@
 				744494F32B32138000CE48D6 /* LocationResponseTests.swift in Sources */,
 				74FDFF4E2B233B0300784E2C /* DateTimeFormatterTests.swift in Sources */,
 				74FDFF502B270A4500784E2C /* OrbitResponseTests.swift in Sources */,
+				744F77E52B2C64DA0077ECCF /* LaunchListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
