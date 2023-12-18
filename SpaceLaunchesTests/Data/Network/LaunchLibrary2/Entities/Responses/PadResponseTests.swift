@@ -36,4 +36,21 @@ final class PadResponseTests: XCTestCase {
         // When & Then
         XCTAssertThrowsError(try JSONDecoder().decode(PadResponse.self, from: Data(allNullJSON)))
     }
+
+    func test_PadResponse_failsDecodingWhenKeyIsMissing() {
+        // Given
+        let jsonWithoutIdKey = """
+            {
+                "latitude": "28.5623",
+                "longitude": "-80.5774",
+                "location": {
+                    "id": 101,
+                    "name": "Kennedy Space Center"
+                }
+            }
+            """.utf8
+
+        // When & Then
+        XCTAssertThrowsError(try JSONDecoder().decode(PadResponse.self, from: Data(jsonWithoutIdKey)))
+    }
 }
