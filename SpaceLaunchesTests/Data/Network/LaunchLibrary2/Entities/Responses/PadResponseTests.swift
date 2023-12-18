@@ -21,4 +21,19 @@ final class PadResponseTests: XCTestCase {
         // When & Then
         XCTAssertNoThrow(try JSONDecoder().decode(PadResponse.self, from: Data(validJSON)))
     }
+
+    func test_PadResponse_failsDecodingWhenAllRequiredValuesNull() {
+        // Given
+        let allNullJSON = """
+        {
+            "id": null,
+            "latitude": null,
+            "longitude": null,
+            "location": null
+        }
+        """.utf8
+
+        // When & Then
+        XCTAssertThrowsError(try JSONDecoder().decode(PadResponse.self, from: Data(allNullJSON)))
+    }
 }
