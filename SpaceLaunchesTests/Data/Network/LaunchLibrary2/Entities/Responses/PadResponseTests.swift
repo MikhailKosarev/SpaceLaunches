@@ -53,4 +53,22 @@ final class PadResponseTests: XCTestCase {
         // When & Then
         XCTAssertThrowsError(try JSONDecoder().decode(PadResponse.self, from: Data(jsonWithoutIdKey)))
     }
+
+    func test_PadResponse_failsDecodingWhenKeyIsNotValidType() {
+        // Given
+        let jsonWithInvalidId = """
+            {
+                "id": "not_an_integer",
+                "latitude": "28.5623",
+                "longitude": "-80.5774",
+                "location": {
+                    "id": 101,
+                    "name": "Kennedy Space Center"
+                }
+            }
+            """.utf8
+
+        // When & Then
+        XCTAssertThrowsError(try JSONDecoder().decode(PadResponse.self, from: Data(jsonWithInvalidId)))
+    }
 }
