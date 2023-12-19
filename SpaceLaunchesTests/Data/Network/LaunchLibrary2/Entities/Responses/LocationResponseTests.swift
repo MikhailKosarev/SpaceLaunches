@@ -55,4 +55,17 @@ final class LocationResponseTests: XCTestCase {
         XCTAssertThrowsError(try JSONDecoder().decode(LocationResponse.self, from: Data(jsonWithInvalidId)))
     }
 
+    func test_LocationResponse_successfullyDecodedWithExtraKeys() {
+        // Given
+        let jsonWithExtraKeys = """
+            {
+                "id": 1,
+                "name": "Kennedy Space Center",
+                "extraKey": "extraValue"
+            }
+            """.utf8
+
+        // When & Then
+        XCTAssertNoThrow(try JSONDecoder().decode(LocationResponse.self, from: Data(jsonWithExtraKeys)))
+    }
 }
