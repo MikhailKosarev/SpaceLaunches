@@ -29,4 +29,17 @@ final class LocationResponseTests: XCTestCase {
         // When & Then
         XCTAssertThrowsError(try JSONDecoder().decode(LocationResponse.self, from: Data(allNullJSON)))
     }
+
+    func test_LocationResponse_failsDecodingWhenKeyIsMissing() {
+        // Given
+        let jsonWithoutIdKey = """
+            {
+                "name": "Kennedy Space Center"
+            }
+            """.utf8
+
+        // When & Then
+        XCTAssertThrowsError(try JSONDecoder().decode(LocationResponse.self, from: Data(jsonWithoutIdKey)))
+    }
+
 }
