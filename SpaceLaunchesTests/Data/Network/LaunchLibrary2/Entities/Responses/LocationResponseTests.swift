@@ -16,4 +16,17 @@ final class LocationResponseTests: XCTestCase {
         // When & Then
         XCTAssertNoThrow(try JSONDecoder().decode(LocationResponse.self, from: Data(validJSON)))
     }
+
+    func test_LocationResponse_failsDecodingWhenAllRequiredValuesNull() {
+        // Given
+        let allNullJSON = """
+        {
+            "id": null,
+            "name": null
+        }
+        """.utf8
+
+        // When & Then
+        XCTAssertThrowsError(try JSONDecoder().decode(LocationResponse.self, from: Data(allNullJSON)))
+    }
 }
