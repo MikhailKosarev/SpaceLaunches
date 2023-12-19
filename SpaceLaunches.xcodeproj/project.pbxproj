@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		744494F32B32138000CE48D6 /* LocationResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744494F22B32138000CE48D6 /* LocationResponseTests.swift */; };
 		744F77772B2AFD9E0077ECCF /* LaunchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F77762B2AFD9E0077ECCF /* LaunchListViewController.swift */; };
 		744F777A2B2B03C20077ECCF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F77792B2B03C20077ECCF /* ViewModel.swift */; };
 		744F777C2B2B050B0077ECCF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F777B2B2B050B0077ECCF /* Coordinator.swift */; };
@@ -82,6 +83,7 @@
 		593C047467B9CBB825EE2664 /* Pods_SpaceLaunches.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceLaunches.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		658D6344A47DA3F975424A99 /* Pods-SpaceLaunches.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceLaunches.release.xcconfig"; path = "Target Support Files/Pods-SpaceLaunches/Pods-SpaceLaunches.release.xcconfig"; sourceTree = "<group>"; };
 		6747844BA8F22DCD84358180 /* Pods-SpaceLaunchesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceLaunchesTests.release.xcconfig"; path = "Target Support Files/Pods-SpaceLaunchesTests/Pods-SpaceLaunchesTests.release.xcconfig"; sourceTree = "<group>"; };
+		744494F22B32138000CE48D6 /* LocationResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationResponseTests.swift; sourceTree = "<group>"; };
 		744F77762B2AFD9E0077ECCF /* LaunchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListViewController.swift; sourceTree = "<group>"; };
 		744F77792B2B03C20077ECCF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		744F777B2B2B050B0077ECCF /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 				74FDFF4F2B270A4500784E2C /* OrbitResponseTests.swift */,
 				748C9A9A2B28A68E001C8E28 /* AgencyResponseTests.swift */,
 				74E6620D2B30C8D6008D395E /* PadResponseTests.swift */,
+				744494F22B32138000CE48D6 /* LocationResponseTests.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -826,6 +829,7 @@
 				7489E4702B21E0CB00DCED7D /* MissionResponseTests.swift in Sources */,
 				74A552542B1FB960002E4474 /* RocketConfigurationResponseTests.swift in Sources */,
 				74D2E98F2B29D6BB0006E3FD /* GetLaunchListUseCaseTests.swift in Sources */,
+				744494F32B32138000CE48D6 /* LocationResponseTests.swift in Sources */,
 				74FDFF4E2B233B0300784E2C /* DateTimeFormatterTests.swift in Sources */,
 				74FDFF502B270A4500784E2C /* OrbitResponseTests.swift in Sources */,
 			);
@@ -887,7 +891,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 34;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -952,7 +956,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 34;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
