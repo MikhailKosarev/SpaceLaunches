@@ -14,3 +14,6 @@ class RxReusableTableViewCell: UITableViewCell {
         super.prepareForReuse()
     }
 }
+
+// MARK: - Reusable Conformance
+extension RxReusableTableViewCell: Reusable {}
