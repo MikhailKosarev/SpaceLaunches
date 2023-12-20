@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7413C0242B33766400F1BBDF /* RxReusableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7413C0232B33766400F1BBDF /* RxReusableTableViewCell.swift */; };
 		744494F32B32138000CE48D6 /* LocationResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744494F22B32138000CE48D6 /* LocationResponseTests.swift */; };
 		744F77772B2AFD9E0077ECCF /* LaunchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F77762B2AFD9E0077ECCF /* LaunchListViewController.swift */; };
 		744F777A2B2B03C20077ECCF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F77792B2B03C20077ECCF /* ViewModel.swift */; };
@@ -83,6 +84,7 @@
 		593C047467B9CBB825EE2664 /* Pods_SpaceLaunches.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceLaunches.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		658D6344A47DA3F975424A99 /* Pods-SpaceLaunches.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceLaunches.release.xcconfig"; path = "Target Support Files/Pods-SpaceLaunches/Pods-SpaceLaunches.release.xcconfig"; sourceTree = "<group>"; };
 		6747844BA8F22DCD84358180 /* Pods-SpaceLaunchesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceLaunchesTests.release.xcconfig"; path = "Target Support Files/Pods-SpaceLaunchesTests/Pods-SpaceLaunchesTests.release.xcconfig"; sourceTree = "<group>"; };
+		7413C0232B33766400F1BBDF /* RxReusableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxReusableTableViewCell.swift; sourceTree = "<group>"; };
 		744494F22B32138000CE48D6 /* LocationResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationResponseTests.swift; sourceTree = "<group>"; };
 		744F77762B2AFD9E0077ECCF /* LaunchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListViewController.swift; sourceTree = "<group>"; };
 		744F77792B2B03C20077ECCF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -174,6 +176,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7413C0212B33760A00F1BBDF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7413C0222B33762400F1BBDF /* Cells */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7413C0222B33762400F1BBDF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7413C0232B33766400F1BBDF /* RxReusableTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		741FB9F02B0F8EA700E6A95E /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +222,7 @@
 		741FB9F42B0F8EFE00E6A95E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				7413C0212B33760A00F1BBDF /* Common */,
 				744F77782B2B03B10077ECCF /* Protocols */,
 				744F77752B2AFD7F0077ECCF /* LaunchList */,
 			);
@@ -778,6 +797,7 @@
 				744F777C2B2B050B0077ECCF /* Coordinator.swift in Sources */,
 				746C1F362B10F93F00FA9612 /* LaunchStatusResponse.swift in Sources */,
 				746C1F322B10F89000FA9612 /* LaunchListResponse.swift in Sources */,
+				7413C0242B33766400F1BBDF /* RxReusableTableViewCell.swift in Sources */,
 				74FDFF452B23386800784E2C /* LaunchListItem.swift in Sources */,
 				746C1F3C2B10F9AD00FA9612 /* RocketConfigurationResponse.swift in Sources */,
 				744F777A2B2B03C20077ECCF /* ViewModel.swift in Sources */,
