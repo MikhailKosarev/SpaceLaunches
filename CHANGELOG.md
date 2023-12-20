@@ -33,7 +33,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `UseCase` protocol to define the structure of a use case in an app.
 - Tests for `AgencyResponse`.
 - `GetLaunchListUseCase` with tests for retrieving a list of launches.
-- `MockLaunchService`  for testing purposes.
+- `MockLaunchService` for testing purposes.
 - `LaunchListViewController` with a default implementation.
 - `ViewModel` protocol.
 - `Coordinator` protocol.
@@ -45,6 +45,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `LaunchListViewModel` with a conformance to the `LaunchListViewModelType` protocol.
 - Tests for `PadResponse`.
 - Tests for `LocationResponse`.
+- `RxReusableTableViewCell` class for working reactively with a table view.
 
 ### Changed
 
