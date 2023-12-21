@@ -46,6 +46,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Tests for `PadResponse`.
 - Tests for `LocationResponse`.
 - `RxReusableTableViewCell` class for working reactively with a table view.
+- Reactive extension with `UIViewController` lifecycle events.
 
 ### Changed
 
