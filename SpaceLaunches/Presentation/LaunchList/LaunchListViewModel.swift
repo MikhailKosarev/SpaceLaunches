@@ -8,7 +8,7 @@ final class LaunchListViewModel {
     /// Dispose bag to store subscriptions.
     private let bag = DisposeBag()
     /// Service for fetching launch data.
-    private let service: LaunchLibrary2Service
+    private let launchService: LaunchService
     /// Use case for getting the launch list.
     private let getLaunchListUseCase: GetLaunchListUseCase
     /// Relay for holding the sections of the launch list.
@@ -23,9 +23,9 @@ final class LaunchListViewModel {
     // MARK: - Initialization
     /// Initializes the launch list view model.
     /// - Parameter service: Service for fetching launch data.
-    init(service: LaunchLibrary2Service) {
-        self.service = service
         getLaunchListUseCase = GetLaunchListUseCase(service: service)
+    init(service: LaunchService) {
+        self.launchService = service
     }
 }
 
