@@ -8,7 +8,7 @@ final class LaunchListViewModel {
     /// Dispose bag to store subscriptions.
     private let bag = DisposeBag()
     /// Service for fetching launch data.
-    private let service: LaunchLibrary2Service
+    private let launchService: LaunchService
     /// Use case for getting the launch list.
     private let getLaunchListUseCase: GetLaunchListUseCase
     /// Relay for holding the sections of the launch list.
@@ -23,9 +23,9 @@ final class LaunchListViewModel {
     // MARK: - Initialization
     /// Initializes the launch list view model.
     /// - Parameter service: Service for fetching launch data.
-    init(service: LaunchLibrary2Service) {
-        self.service = service
-        getLaunchListUseCase = GetLaunchListUseCase(service: service)
+    init(service: LaunchService) {
+        self.launchService = service
+        getLaunchListUseCase = GetLaunchListUseCase(launchService: service)
     }
 }
 
@@ -34,7 +34,7 @@ extension LaunchListViewModel: LaunchListViewModelType {
 
     /// The input for the launch list view model.
     struct Input: LaunchListInput {
-        let viewdDidLoad: Driver<Void>
+        let viewDidLoad: Driver<Void>
         let selectedLaunch: Driver<LaunchListItem>
         let rowsToPrefetch: Driver<[Int]>
         let selectedLaunchesType: Driver<LaunchListDisplayType>
@@ -65,7 +65,7 @@ extension LaunchListViewModel: LaunchListViewModelType {
                                                offset: requestOffset))
         )
 
-        input.viewdDidLoad
+        input.viewDidLoad
             .drive(getLaunchListAction.inputs)
             .disposed(by: bag)
 
@@ -110,7 +110,7 @@ extension LaunchListViewModel: LaunchListViewModelType {
                selectedLaunch: Driver<LaunchListItem>,
                rowsToPrefetch: Driver<[Int]>,
                selectedLaunchesType: Driver<LaunchListDisplayType>) -> LaunchListInput {
-        Input(viewdDidLoad: viewdDidLoad,
+        Input(viewDidLoad: viewdDidLoad,
               selectedLaunch: selectedLaunch,
               rowsToPrefetch: rowsToPrefetch,
               selectedLaunchesType: selectedLaunchesType)

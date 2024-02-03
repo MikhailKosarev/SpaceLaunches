@@ -7,7 +7,7 @@ struct GetLaunchListUseCase: UseCase {
 
     // MARK: - Internal interface
     /// The service responsible for fetching launch data.
-    let service: LaunchService
+    let launchService: LaunchService
     /// The formatter for date and time.
     let formatter = DateTimeFormatter()
 
@@ -37,7 +37,7 @@ struct GetLaunchListUseCase: UseCase {
 
             let launchResponses = Observable.just(())
                 .withLatestFrom(typeAndParameters)
-                .flatMap(service.getLaunchList)
+                .flatMap(launchService.getLaunchList)
                 .map { $0.results }
 
             let launchListItems = launchResponses.map { launchResponse in
