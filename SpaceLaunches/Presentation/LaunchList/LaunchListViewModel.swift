@@ -23,9 +23,9 @@ final class LaunchListViewModel {
     // MARK: - Initialization
     /// Initializes the launch list view model.
     /// - Parameter service: Service for fetching launch data.
-        getLaunchListUseCase = GetLaunchListUseCase(service: service)
     init(service: LaunchService) {
         self.launchService = service
+        getLaunchListUseCase = GetLaunchListUseCase(launchService: service)
     }
 }
 
