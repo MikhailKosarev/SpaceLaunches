@@ -34,7 +34,7 @@ extension LaunchListViewModel: LaunchListViewModelType {
 
     /// The input for the launch list view model.
     struct Input: LaunchListInput {
-        let viewdDidLoad: Driver<Void>
+        let viewDidLoad: Driver<Void>
         let selectedLaunch: Driver<LaunchListItem>
         let rowsToPrefetch: Driver<[Int]>
         let selectedLaunchesType: Driver<LaunchListDisplayType>
@@ -65,7 +65,7 @@ extension LaunchListViewModel: LaunchListViewModelType {
                                                offset: requestOffset))
         )
 
-        input.viewdDidLoad
+        input.viewDidLoad
             .drive(getLaunchListAction.inputs)
             .disposed(by: bag)
 
@@ -110,7 +110,7 @@ extension LaunchListViewModel: LaunchListViewModelType {
                selectedLaunch: Driver<LaunchListItem>,
                rowsToPrefetch: Driver<[Int]>,
                selectedLaunchesType: Driver<LaunchListDisplayType>) -> LaunchListInput {
-        Input(viewdDidLoad: viewdDidLoad,
+        Input(viewDidLoad: viewdDidLoad,
               selectedLaunch: selectedLaunch,
               rowsToPrefetch: rowsToPrefetch,
               selectedLaunchesType: selectedLaunchesType)
