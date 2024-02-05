@@ -130,7 +130,7 @@ final class GetLaunchListUseCaseTests: XCTestCase {
     private func createUseCase(with stub: Single<LaunchListResponse>) -> GetLaunchListUseCase {
         let mockLaunchService = MockLaunchService()
         mockLaunchService.getLaunchListStub = stub
-        let getLaunchListUseCase = GetLaunchListUseCase(service: mockLaunchService)
+        let getLaunchListUseCase = GetLaunchListUseCase(launchService: mockLaunchService)
         return getLaunchListUseCase
     }
 
