@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7413C0242B33766400F1BBDF /* RxReusableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7413C0232B33766400F1BBDF /* RxReusableTableViewCell.swift */; };
 		7413C0272B34D89500F1BBDF /* UIViewController+RxLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7413C0262B34D89500F1BBDF /* UIViewController+RxLifecycle.swift */; };
+		74336A572B712BEF00256BAA /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74336A562B712BEF00256BAA /* Recorder.swift */; };
 		744494F32B32138000CE48D6 /* LocationResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744494F22B32138000CE48D6 /* LocationResponseTests.swift */; };
 		744F77772B2AFD9E0077ECCF /* LaunchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F77762B2AFD9E0077ECCF /* LaunchListViewController.swift */; };
 		744F777A2B2B03C20077ECCF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F77792B2B03C20077ECCF /* ViewModel.swift */; };
@@ -87,6 +88,7 @@
 		6747844BA8F22DCD84358180 /* Pods-SpaceLaunchesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceLaunchesTests.release.xcconfig"; path = "Target Support Files/Pods-SpaceLaunchesTests/Pods-SpaceLaunchesTests.release.xcconfig"; sourceTree = "<group>"; };
 		7413C0232B33766400F1BBDF /* RxReusableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxReusableTableViewCell.swift; sourceTree = "<group>"; };
 		7413C0262B34D89500F1BBDF /* UIViewController+RxLifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+RxLifecycle.swift"; sourceTree = "<group>"; };
+		74336A562B712BEF00256BAA /* Recorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
 		744494F22B32138000CE48D6 /* LocationResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationResponseTests.swift; sourceTree = "<group>"; };
 		744F77762B2AFD9E0077ECCF /* LaunchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListViewController.swift; sourceTree = "<group>"; };
 		744F77792B2B03C20077ECCF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -256,6 +258,14 @@
 				74FDFF482B233A1700784E2C /* Utilities */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		74336A552B712BE300256BAA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				74336A562B712BEF00256BAA /* Recorder.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		744F77752B2AFD7F0077ECCF /* LaunchList */ = {
@@ -433,6 +443,7 @@
 		74D5127F2B1604E000126E9E /* SpaceLaunchesTests */ = {
 			isa = PBXGroup;
 			children = (
+				74336A552B712BE300256BAA /* Helpers */,
 				74FDFF4B2B233AE200784E2C /* Common */,
 				74D512872B16092C00126E9E /* Data */,
 				74D512882B16093200126E9E /* Domain */,
@@ -847,6 +858,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74A552632B20862F002E4474 /* NetworkServiceTests.swift in Sources */,
+				74336A572B712BEF00256BAA /* Recorder.swift in Sources */,
 				74A552612B20835E002E4474 /* MockResponseData.swift in Sources */,
 				74D2E98C2B29D4E80006E3FD /* MockLaunchService.swift in Sources */,
 				74E6620E2B30C8D6008D395E /* PadResponseTests.swift in Sources */,
@@ -923,7 +935,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 38;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -988,7 +1000,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 38;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
