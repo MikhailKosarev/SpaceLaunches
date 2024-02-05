@@ -21,7 +21,6 @@ class Recorder {
                                        eventName: String? = nil,
                                        file: StaticString = #file,
                                        line: UInt = #line) {
-        let name = eventName ?? String(describing: recorder)
         let eventsCount = self[keyPath: recorder].events.count
         XCTAssertEqual(eventsCount, times, file: file, line: line)
     }
@@ -39,7 +38,6 @@ class Recorder {
                                          eventName: String? = nil,
                                          file: StaticString = #file,
                                          line: UInt = #line) {
-        let name = eventName ?? String(describing: recorder)
         let eventsCount = self[keyPath: recorder].events.count
         XCTAssertEqual(eventsCount, 0, file: file, line: line)
     }
