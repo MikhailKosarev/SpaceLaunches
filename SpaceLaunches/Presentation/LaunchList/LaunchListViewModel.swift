@@ -11,8 +11,6 @@ final class LaunchListViewModel {
     private let launchService: LaunchService
     /// Use case for getting the launch list.
     private let getLaunchListUseCase: GetLaunchListUseCase
-    /// Relay for holding the sections of the launch list.
-    private let cellsRelay = BehaviorRelay<[LaunchListSection]>(value: [])
     /// Relay for holding the list of launches.
     private let launchListRelay = BehaviorRelay<[LaunchListItem]>(value: [])
     /// Number of launches to load initially.
@@ -79,7 +77,6 @@ extension LaunchListViewModel: LaunchListViewModelType {
 
         input.selectedLaunchesType.skip(1)
             .do(onNext: { [weak self] _ in
-                self?.cellsRelay.accept([])
                 self?.launchListRelay.accept([])
             })
             .map { _ in }
@@ -93,17 +90,16 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .drive(launchListRelay)
             .disposed(by: bag)
 
-        launchListRelay
+        let cells = launchListRelay
+            .asDriver()
             .map { [LaunchListSection(items: $0)] }
-            .bind(to: cellsRelay)
-            .disposed(by: bag)
 
         let error = getLaunchListAction.errorDriver
         let isLoading = getLaunchListAction.fetchingDriver
 
         return Output(errors: error,
                       isLoading: isLoading,
-                      cells: cellsRelay.asDriver())
+                      cells: cells)
     }
 
     func input(viewdDidLoad: Driver<Void>,
