@@ -52,12 +52,12 @@ extension LaunchListViewModel: LaunchListViewModelType {
     /// - Returns: The output for the 'LaunchListViewModel'.
     func transform(input: LaunchListInput) -> LaunchListOutput {
         let type = input.selectedLaunchesType
+            .asObservable()
+
         let requestOffset = launchListRelay
-            .asDriver()
             .map { $0.count }
 
         let limit = launchListRelay
-            .asDriver()
             .map { $0.isEmpty ? numberOfLaunchesToLoad : numberOfLaunchesToPrefetch }
 
         let getLaunchListAction = getLaunchListUseCase.produce(
