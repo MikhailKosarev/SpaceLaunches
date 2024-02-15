@@ -58,8 +58,7 @@ extension LaunchListViewModel: LaunchListViewModelType {
 
         let limit = launchListRelay
             .asDriver()
-            .map { $0.isEmpty ? numberOfLaunchesToLoad : numberOfLaunchesToPrefetch
-            }
+            .map { $0.isEmpty ? numberOfLaunchesToLoad : numberOfLaunchesToPrefetch }
 
         let getLaunchListAction = getLaunchListUseCase.produce(
             input: (.init(type: type,
