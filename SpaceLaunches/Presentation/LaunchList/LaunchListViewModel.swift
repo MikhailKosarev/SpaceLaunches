@@ -2,7 +2,7 @@ import RxCocoa
 import RxSwift
 
 /// View model for managing the launch list.
-final class LaunchListViewModel {
+struct LaunchListViewModel {
 
     // MARK: - Private interface
     /// Dispose bag to store subscriptions.
@@ -52,9 +52,7 @@ extension LaunchListViewModel: LaunchListViewModelType {
 
         let limit = launchListRelay
             .asDriver()
-            .map { [weak self] in
-                guard let self else { return 0 }
-                return $0.isEmpty ? self.numberOfLaunchesToLoad : self.numberOfLaunchesToPrefetch
+            .map { $0.isEmpty ? numberOfLaunchesToLoad : numberOfLaunchesToPrefetch
             }
 
         let getLaunchListAction = getLaunchListUseCase.produce(
@@ -68,9 +66,7 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .disposed(by: bag)
 
         input.rowsToPrefetch
-            .filter { [weak self] in
-                guard let self else { return false }
-                return $0.contains(self.launchListRelay.value.count - 2) }
+            .filter { $0.contains(launchListRelay.value.count - 2) }
             .map { _ in }
             .drive(getLaunchListAction.inputs)
             .disposed(by: bag)
