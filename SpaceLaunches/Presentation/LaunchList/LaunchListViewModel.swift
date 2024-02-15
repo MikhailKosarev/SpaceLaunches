@@ -17,6 +17,8 @@ struct LaunchListViewModel {
     private let numberOfLaunchesToLoad = 20
     /// Number of launches to prefetch.
     private let numberOfLaunchesToPrefetch = 10
+    /// Number of remaining launches to start prefetching.
+    private let numberOfRemainingLaunchesToPrefetch = 2
 
     // MARK: - Initialization
     /// Initializes the launch list view model.
@@ -66,7 +68,7 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .disposed(by: bag)
 
         input.rowsToPrefetch
-            .filter { $0.contains(launchListRelay.value.count - 2) }
+            .filter { $0.contains(launchListRelay.value.count - numberOfRemainingLaunchesToPrefetch) }
             .map { _ in }
             .drive(getLaunchListAction.inputs)
             .disposed(by: bag)
