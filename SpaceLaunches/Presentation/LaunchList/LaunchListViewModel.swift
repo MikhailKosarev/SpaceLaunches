@@ -47,6 +47,9 @@ extension LaunchListViewModel: LaunchListViewModelType {
         let cells: Driver<[LaunchListSection]>
     }
 
+    /// Transforms the input into output for the launch list.
+    /// - Parameter input: The input for the 'LaunchListViewModel'.
+    /// - Returns: The output for the 'LaunchListViewModel'.
     func transform(input: LaunchListInput) -> LaunchListOutput {
         let requestOffset = launchListRelay
             .asDriver()
@@ -103,6 +106,13 @@ extension LaunchListViewModel: LaunchListViewModelType {
                       cells: cells)
     }
 
+    /// Constructs the input for the 'LaunchListViewModel'.
+    /// - Parameters:
+    ///   - viewdDidLoad: Emits when the view is loaded.
+    ///   - selectedLaunch: Emits the selected launch item.
+    ///   - rowsToPrefetch: Emits when the rows need to be prefetched.
+    ///   - selectedLaunchesType: Emits the type of launch list display.
+    /// - Returns: The input for the launch list view model.
     func input(viewdDidLoad: Driver<Void>,
                selectedLaunch: Driver<LaunchListItem>,
                rowsToPrefetch: Driver<[Int]>,
