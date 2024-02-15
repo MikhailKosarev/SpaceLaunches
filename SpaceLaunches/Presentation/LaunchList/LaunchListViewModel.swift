@@ -87,8 +87,8 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .disposed(by: bag)
 
         getLaunchListAction.elementsDriver
-            .withLatestFrom(launchListRelay.asDriver()) { newItems, currentItems in
-                    currentItems + newItems
+            .withLatestFrom(launchListRelay.asDriver()) { newLaunches, currentLaunches in
+                    currentLaunches + newLaunches
                 }
             .drive(launchListRelay)
             .disposed(by: bag)
