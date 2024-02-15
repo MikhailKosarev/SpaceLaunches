@@ -15,10 +15,10 @@ final class LaunchListViewModel {
     private let cellsRelay = BehaviorRelay<[LaunchListSection]>(value: [])
     /// Relay for holding the list of launches.
     private let launchListRelay = BehaviorRelay<[LaunchListItem]>(value: [])
-    /// Number of items to load initially.
-    private let numberOfItemsToLoad = 20
-    /// Number of items to prefetch.
-    private let numberOfItemsToPrefetch = 10
+    /// Number of launches to load initially.
+    private let numberOfLaunchesToLoad = 20
+    /// Number of launches to prefetch.
+    private let numberOfLaunchesToPrefetch = 10
 
     // MARK: - Initialization
     /// Initializes the launch list view model.
@@ -56,7 +56,7 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .asDriver()
             .map { [weak self] in
                 guard let self else { return 0 }
-                return $0.isEmpty ? self.numberOfItemsToLoad : self.numberOfItemsToPrefetch
+                return $0.isEmpty ? self.numberOfLaunchesToLoad : self.numberOfLaunchesToPrefetch
             }
 
         let getLaunchListAction = getLaunchListUseCase.produce(
