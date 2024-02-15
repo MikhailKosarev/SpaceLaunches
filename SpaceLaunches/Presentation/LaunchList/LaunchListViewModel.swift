@@ -88,11 +88,11 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .drive(getLaunchListAction.inputs)
             .disposed(by: bag)
 
-        getLaunchListAction.elementsDriver
-            .withLatestFrom(launchListRelay.asDriver()) { newLaunches, currentLaunches in
+        getLaunchListAction.elements
+            .withLatestFrom(launchListRelay) { newLaunches, currentLaunches in
                     currentLaunches + newLaunches
                 }
-            .drive(launchListRelay)
+            .bind(to: launchListRelay)
             .disposed(by: bag)
 
         let cells = launchListRelay
