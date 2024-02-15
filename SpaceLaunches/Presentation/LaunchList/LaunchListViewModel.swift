@@ -51,6 +51,7 @@ extension LaunchListViewModel: LaunchListViewModelType {
     /// - Parameter input: The input for the 'LaunchListViewModel'.
     /// - Returns: The output for the 'LaunchListViewModel'.
     func transform(input: LaunchListInput) -> LaunchListOutput {
+        let type = input.selectedLaunchesType
         let requestOffset = launchListRelay
             .asDriver()
             .map { $0.count }
@@ -61,9 +62,9 @@ extension LaunchListViewModel: LaunchListViewModelType {
             }
 
         let getLaunchListAction = getLaunchListUseCase.produce(
-            input: (GetLaunchListUseCase.Input(type: input.selectedLaunchesType,
-                                               limit: limit,
-                                               offset: requestOffset))
+            input: (.init(type: type,
+                          limit: limit,
+                          offset: requestOffset))
         )
 
         input.viewDidLoad
