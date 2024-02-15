@@ -14,11 +14,11 @@ struct GetLaunchListUseCase: UseCase {
     /// Input parameters for the `GetLaunchListUseCase`.
     struct Input {
         /// The type of launches to retrieve.
-        let type: Driver<LaunchListDisplayType>
+        let type: Observable<LaunchListDisplayType>
         /// The maximum number of launches to fetch.
-        let limit: Driver<Int>
+        let limit: Observable<Int>
         /// The offset for paginating through the launch list.
-        let offset: Driver<Int>
+        let offset: Observable<Int>
     }
 
     /// Produces an `Action` that, when executed, retrieves a list of launches.
@@ -27,13 +27,13 @@ struct GetLaunchListUseCase: UseCase {
     /// - Returns: An `Action` that produces an array of `LaunchListItem` when executed.
     func produce(input: Input) -> Action<Void, [LaunchListItem]> {
         Action {
-            let parameters = Driver.combineLatest(input.limit, input.offset)
+            let parameters = Observable.combineLatest(input.limit, input.offset)
                 .map { GetLaunchListRequestParameters(limit: $0.0, offset: $0.1) }
 
             let type = input.type
                 .map { mapToLaunchListNetworkType($0) }
 
-            let typeAndParameters = Driver.combineLatest(type, parameters)
+            let typeAndParameters = Observable.combineLatest(type, parameters)
 
             let launchResponses = Observable.just(())
                 .withLatestFrom(typeAndParameters)
