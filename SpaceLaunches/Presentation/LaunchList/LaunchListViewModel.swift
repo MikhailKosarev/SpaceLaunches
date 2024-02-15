@@ -75,10 +75,13 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .drive(getLaunchListAction.inputs)
             .disposed(by: bag)
 
-        input.selectedLaunchesType.skip(1)
-            .do(onNext: { [weak self] _ in
-                self?.launchListRelay.accept([])
-            })
+        input.selectedLaunchesType
+            .map { _ in [LaunchListItem]() }
+            .drive(launchListRelay)
+            .disposed(by: bag)
+
+        input.selectedLaunchesType
+            .skip(1)
             .map { _ in }
             .drive(getLaunchListAction.inputs)
             .disposed(by: bag)
