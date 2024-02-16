@@ -7,4 +7,3 @@ extension LaunchServiceProviderResponse {
               logoURL: nil)
     }
 }
-
