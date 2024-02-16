@@ -20,6 +20,7 @@
 		744F77DA2B2C558E0077ECCF /* LaunchListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F77D92B2C558E0077ECCF /* LaunchListSection.swift */; };
 		744F77E02B2C5BD20077ECCF /* Action+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F77DF2B2C5BD20077ECCF /* Action+Extensions.swift */; };
 		744F77E22B2C5D1E0077ECCF /* LaunchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F77E12B2C5D1E0077ECCF /* LaunchListViewModel.swift */; };
+		744F77E52B2C64DA0077ECCF /* LaunchListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744F77E42B2C64DA0077ECCF /* LaunchListViewModelTests.swift */; };
 		745205332B1DDAD300464DE0 /* RocketResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745205322B1DDAD300464DE0 /* RocketResponseTests.swift */; };
 		745205362B1E259100464DE0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745205342B1DE07900464DE0 /* NetworkError.swift */; };
 		746A81782B1A2046008BC095 /* LaunchServiceProviderResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746A81772B1A2046008BC095 /* LaunchServiceProviderResponseTests.swift */; };
@@ -38,6 +39,12 @@
 		7474E01A2B0CA804008AA32B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7474E0192B0CA804008AA32B /* SceneDelegate.swift */; };
 		7474E0212B0CA805008AA32B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7474E0202B0CA805008AA32B /* Assets.xcassets */; };
 		7474E0242B0CA805008AA32B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7474E0222B0CA805008AA32B /* LaunchScreen.storyboard */; };
+		747B120A2B7FD2AD005D979D /* LaunchListItem+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747B12092B7FD2AD005D979D /* LaunchListItem+Stub.swift */; };
+		747B12122B7FD304005D979D /* LaunchListResponse+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747B120D2B7FD304005D979D /* LaunchListResponse+Stub.swift */; };
+		747B12172B7FD467005D979D /* LaunchResponse+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747B12162B7FD467005D979D /* LaunchResponse+Stub.swift */; };
+		747B12192B7FD4A2005D979D /* LaunchServiceProviderResponse+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747B12182B7FD4A2005D979D /* LaunchServiceProviderResponse+Stub.swift */; };
+		747B121B2B7FD4CD005D979D /* PadResponse+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747B121A2B7FD4CD005D979D /* PadResponse+Stub.swift */; };
+		747B121D2B7FD4ED005D979D /* LocationResponse+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747B121C2B7FD4ED005D979D /* LocationResponse+Stub.swift */; };
 		7489E46C2B21DA3E00DCED7D /* LaunchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489E46B2B21DA3E00DCED7D /* LaunchService.swift */; };
 		7489E46E2B21DA9200DCED7D /* LaunchLibrary2Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489E46D2B21DA9200DCED7D /* LaunchLibrary2Service.swift */; };
 		7489E4702B21E0CB00DCED7D /* MissionResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489E46F2B21E0CB00DCED7D /* MissionResponseTests.swift */; };
@@ -99,6 +106,7 @@
 		744F77D92B2C558E0077ECCF /* LaunchListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListSection.swift; sourceTree = "<group>"; };
 		744F77DF2B2C5BD20077ECCF /* Action+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Action+Extensions.swift"; sourceTree = "<group>"; };
 		744F77E12B2C5D1E0077ECCF /* LaunchListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchListViewModel.swift; sourceTree = "<group>"; };
+		744F77E42B2C64DA0077ECCF /* LaunchListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListViewModelTests.swift; sourceTree = "<group>"; };
 		745205322B1DDAD300464DE0 /* RocketResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketResponseTests.swift; sourceTree = "<group>"; };
 		745205342B1DE07900464DE0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		746A81772B1A2046008BC095 /* LaunchServiceProviderResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchServiceProviderResponseTests.swift; sourceTree = "<group>"; };
@@ -119,6 +127,12 @@
 		7474E0202B0CA805008AA32B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7474E0232B0CA805008AA32B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7474E0252B0CA805008AA32B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		747B12092B7FD2AD005D979D /* LaunchListItem+Stub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LaunchListItem+Stub.swift"; sourceTree = "<group>"; };
+		747B120D2B7FD304005D979D /* LaunchListResponse+Stub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LaunchListResponse+Stub.swift"; sourceTree = "<group>"; };
+		747B12162B7FD467005D979D /* LaunchResponse+Stub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LaunchResponse+Stub.swift"; sourceTree = "<group>"; };
+		747B12182B7FD4A2005D979D /* LaunchServiceProviderResponse+Stub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LaunchServiceProviderResponse+Stub.swift"; sourceTree = "<group>"; };
+		747B121A2B7FD4CD005D979D /* PadResponse+Stub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PadResponse+Stub.swift"; sourceTree = "<group>"; };
+		747B121C2B7FD4ED005D979D /* LocationResponse+Stub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LocationResponse+Stub.swift"; sourceTree = "<group>"; };
 		7489E46B2B21DA3E00DCED7D /* LaunchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchService.swift; sourceTree = "<group>"; };
 		7489E46D2B21DA9200DCED7D /* LaunchLibrary2Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLibrary2Service.swift; sourceTree = "<group>"; };
 		7489E46F2B21E0CB00DCED7D /* MissionResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionResponseTests.swift; sourceTree = "<group>"; };
@@ -314,6 +328,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		744F77E32B2C64CF0077ECCF /* LaunchList */ = {
+			isa = PBXGroup;
+			children = (
+				744F77E42B2C64DA0077ECCF /* LaunchListViewModelTests.swift */,
+			);
+			path = LaunchList;
+			sourceTree = "<group>";
+		};
 		745205372B1E262400464DE0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +410,26 @@
 			path = SpaceLaunches;
 			sourceTree = "<group>";
 		};
+		747B12082B7FD2AD005D979D /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				747B12092B7FD2AD005D979D /* LaunchListItem+Stub.swift */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		747B120B2B7FD304005D979D /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				747B120D2B7FD304005D979D /* LaunchListResponse+Stub.swift */,
+				747B12162B7FD467005D979D /* LaunchResponse+Stub.swift */,
+				747B12182B7FD4A2005D979D /* LaunchServiceProviderResponse+Stub.swift */,
+				747B121A2B7FD4CD005D979D /* PadResponse+Stub.swift */,
+				747B121C2B7FD4ED005D979D /* LocationResponse+Stub.swift */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
 		74A5525A2B2082CF002E4474 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -455,6 +497,7 @@
 		74D512872B16092C00126E9E /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				747B120B2B7FD304005D979D /* Stubs */,
 				74D5128A2B160D5B00126E9E /* Network */,
 			);
 			path = Data;
@@ -463,6 +506,7 @@
 		74D512882B16093200126E9E /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				747B12082B7FD2AD005D979D /* Stubs */,
 				74D2E9892B29D4D50006E3FD /* UseCases */,
 			);
 			path = Domain;
@@ -471,6 +515,7 @@
 		74D512892B16093600126E9E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				744F77E32B2C64CF0077ECCF /* LaunchList */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -857,8 +902,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				747B120A2B7FD2AD005D979D /* LaunchListItem+Stub.swift in Sources */,
 				74A552632B20862F002E4474 /* NetworkServiceTests.swift in Sources */,
+				747B12192B7FD4A2005D979D /* LaunchServiceProviderResponse+Stub.swift in Sources */,
 				74336A572B712BEF00256BAA /* Recorder.swift in Sources */,
+				747B12122B7FD304005D979D /* LaunchListResponse+Stub.swift in Sources */,
 				74A552612B20835E002E4474 /* MockResponseData.swift in Sources */,
 				74D2E98C2B29D4E80006E3FD /* MockLaunchService.swift in Sources */,
 				74E6620E2B30C8D6008D395E /* PadResponseTests.swift in Sources */,
@@ -871,11 +919,15 @@
 				745205332B1DDAD300464DE0 /* RocketResponseTests.swift in Sources */,
 				74ED9D2A2B173701000BF024 /* LaunchResponseTests.swift in Sources */,
 				7489E4702B21E0CB00DCED7D /* MissionResponseTests.swift in Sources */,
+				747B121D2B7FD4ED005D979D /* LocationResponse+Stub.swift in Sources */,
 				74A552542B1FB960002E4474 /* RocketConfigurationResponseTests.swift in Sources */,
 				74D2E98F2B29D6BB0006E3FD /* GetLaunchListUseCaseTests.swift in Sources */,
+				747B12172B7FD467005D979D /* LaunchResponse+Stub.swift in Sources */,
 				744494F32B32138000CE48D6 /* LocationResponseTests.swift in Sources */,
+				747B121B2B7FD4CD005D979D /* PadResponse+Stub.swift in Sources */,
 				74FDFF4E2B233B0300784E2C /* DateTimeFormatterTests.swift in Sources */,
 				74FDFF502B270A4500784E2C /* OrbitResponseTests.swift in Sources */,
+				744F77E52B2C64DA0077ECCF /* LaunchListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -935,7 +987,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 40;
+				CURRENT_PROJECT_VERSION = 41;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1000,7 +1052,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 40;
+				CURRENT_PROJECT_VERSION = 41;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
