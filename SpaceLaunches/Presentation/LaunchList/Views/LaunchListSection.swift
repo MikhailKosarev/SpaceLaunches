@@ -24,3 +24,5 @@ extension LaunchListSection: SectionModelType {
         self.items = items
     }
 }
+
+extension LaunchListSection: Equatable {}
