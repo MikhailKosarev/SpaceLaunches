@@ -11,5 +11,11 @@ final class LaunchListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
+
+    // MARK: - Private interface
+    private let bag = DisposeBag()
+    private var viewModel: LaunchListViewModelType
+    private let launchListDataSource = LaunchListDataSource.dataSource
+
     }
 }
