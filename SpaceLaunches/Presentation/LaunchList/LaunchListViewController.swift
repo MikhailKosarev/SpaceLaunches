@@ -69,5 +69,30 @@ extension LaunchListViewController {
         }
     }
 }
+
+// MARK: Binding
+extension LaunchListViewController {
+
+    private func bind() {
+        let input = getInput(for: viewModel)
+        let output = viewModel.transform(input: input)
+
+        output.cells
+            .drive(launchListTableView.rx.items(dataSource: launchListDataSource))
+            .disposed(by: bag)
+
+        output.isLoading
+            .drive(activityIndicatorView.rx.isAnimating).disposed(by: bag)
+    }
+
+    private func getInput(for viewModel: LaunchListViewModelType) -> LaunchListInput {
+        let selectedLaunchesType = launchesTypeSegmentedControl.rx.selectedSegmentIndex
+            .asDriver()
+            .compactMap { LaunchListDisplayType(rawValue: $0) }
+
+        return viewModel.input(viewdDidLoad: rx.viewDidLoad.asDriver(),
+                        selectedLaunch: launchListTableView.rx.modelSelected(LaunchListItem.self).asDriver(),
+                        rowsToPrefetch: launchListTableView.rx.prefetchRows.asDriver().map { $0.map(\.row) },
+                        selectedLaunchesType: selectedLaunchesType)
     }
 }
