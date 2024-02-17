@@ -47,7 +47,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Tests for `LocationResponse`.
 - `RxReusableTableViewCell` class for working reactively with a table view.
 - Reactive extension with `UIViewController` lifecycle events.
-- 'Recorder' class as a helper for testing.
 - Implement stubs for `LaunchListResponse'`, `LaunchListItem`, `LaunchResponse`, `LaunchServiceProviderResponse`, `PadResponse`, `LocationResponse`.
 
 ### Changed
