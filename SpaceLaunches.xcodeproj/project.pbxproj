@@ -48,6 +48,7 @@
 		7489E46E2B21DA9200DCED7D /* LaunchLibrary2Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489E46D2B21DA9200DCED7D /* LaunchLibrary2Service.swift */; };
 		7489E4702B21E0CB00DCED7D /* MissionResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489E46F2B21E0CB00DCED7D /* MissionResponseTests.swift */; };
 		748C9A9B2B28A68E001C8E28 /* AgencyResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748C9A9A2B28A68E001C8E28 /* AgencyResponseTests.swift */; };
+		74905EED2B80E19000784A5C /* LaunchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74905EEC2B80E19000784A5C /* LaunchListTableViewCell.swift */; };
 		74905EEF2B80E19500784A5C /* LaunchListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74905EEE2B80E19500784A5C /* LaunchListDataSource.swift */; };
 		74A552542B1FB960002E4474 /* RocketConfigurationResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A552532B1FB960002E4474 /* RocketConfigurationResponseTests.swift */; };
 		74A552592B208292002E4474 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A552582B208292002E4474 /* NetworkService.swift */; };
@@ -136,6 +137,7 @@
 		7489E46D2B21DA9200DCED7D /* LaunchLibrary2Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLibrary2Service.swift; sourceTree = "<group>"; };
 		7489E46F2B21E0CB00DCED7D /* MissionResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionResponseTests.swift; sourceTree = "<group>"; };
 		748C9A9A2B28A68E001C8E28 /* AgencyResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgencyResponseTests.swift; sourceTree = "<group>"; };
+		74905EEC2B80E19000784A5C /* LaunchListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchListTableViewCell.swift; sourceTree = "<group>"; };
 		74905EEE2B80E19500784A5C /* LaunchListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchListDataSource.swift; sourceTree = "<group>"; };
 		74A552532B1FB960002E4474 /* RocketConfigurationResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketConfigurationResponseTests.swift; sourceTree = "<group>"; };
 		74A552582B208292002E4474 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 		744F77D82B2C557C0077ECCF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				74905EEC2B80E19000784A5C /* LaunchListTableViewCell.swift */,
 				74905EEE2B80E19500784A5C /* LaunchListDataSource.swift */,
 				744F77D92B2C558E0077ECCF /* LaunchListSection.swift */,
 			);
@@ -851,6 +854,7 @@
 			files = (
 				746C1F462B10FA5600FA9612 /* LocationResponse.swift in Sources */,
 				744F77E02B2C5BD20077ECCF /* Action+Extensions.swift in Sources */,
+				74905EED2B80E19000784A5C /* LaunchListTableViewCell.swift in Sources */,
 				74ED9D362B175CF0000BF024 /* GetLaunchListRequestParameters.swift in Sources */,
 				744F77E22B2C5D1E0077ECCF /* LaunchListViewModel.swift in Sources */,
 				7413C0272B34D89500F1BBDF /* UIViewController+RxLifecycle.swift in Sources */,
