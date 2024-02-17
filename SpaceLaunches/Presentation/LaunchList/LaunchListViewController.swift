@@ -37,5 +37,37 @@ final class LaunchListViewController: UIViewController {
 
     private let activityIndicatorView = UIActivityIndicatorView(style: .large)
 }
+
+// MARK: - Setup
+extension LaunchListViewController {
+
+    private func addSubviews() {
+        view.addSubview(launchListTableView)
+        view.addSubview(launchesTypeSegmentedControl)
+        view.addSubview(activityIndicatorView)
+    }
+
+    private func setup() {
+        view.backgroundColor = .systemBackground
+        let backBarButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backBarButton
+    }
+
+    private func setConstraints() {
+        launchListTableView.snp.makeConstraints { make in
+            make.leading.top.trailing.equalToSuperview()
+            make.bottom.equalTo(launchesTypeSegmentedControl.snp.top)
+        }
+
+        launchesTypeSegmentedControl.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(8)
+            make.trailing.equalToSuperview().offset(-8)
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+        activityIndicatorView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+    }
+}
     }
 }
