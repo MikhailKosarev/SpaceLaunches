@@ -50,6 +50,7 @@
 		748C9A9B2B28A68E001C8E28 /* AgencyResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748C9A9A2B28A68E001C8E28 /* AgencyResponseTests.swift */; };
 		74905EED2B80E19000784A5C /* LaunchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74905EEC2B80E19000784A5C /* LaunchListTableViewCell.swift */; };
 		74905EEF2B80E19500784A5C /* LaunchListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74905EEE2B80E19500784A5C /* LaunchListDataSource.swift */; };
+		74905EF62B84E5AC00784A5C /* LoadingTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74905EF52B84E5AC00784A5C /* LoadingTableFooterView.swift */; };
 		74A552542B1FB960002E4474 /* RocketConfigurationResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A552532B1FB960002E4474 /* RocketConfigurationResponseTests.swift */; };
 		74A552592B208292002E4474 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A552582B208292002E4474 /* NetworkService.swift */; };
 		74A5525D2B2082F8002E4474 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A5525C2B2082F8002E4474 /* MockNetworkService.swift */; };
@@ -139,6 +140,7 @@
 		748C9A9A2B28A68E001C8E28 /* AgencyResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgencyResponseTests.swift; sourceTree = "<group>"; };
 		74905EEC2B80E19000784A5C /* LaunchListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchListTableViewCell.swift; sourceTree = "<group>"; };
 		74905EEE2B80E19500784A5C /* LaunchListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchListDataSource.swift; sourceTree = "<group>"; };
+		74905EF52B84E5AC00784A5C /* LoadingTableFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingTableFooterView.swift; sourceTree = "<group>"; };
 		74A552532B1FB960002E4474 /* RocketConfigurationResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketConfigurationResponseTests.swift; sourceTree = "<group>"; };
 		74A552582B208292002E4474 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		74A5525C2B2082F8002E4474 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		7413C0212B33760A00F1BBDF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				74905EF42B84E5A400784A5C /* Views */,
 				7413C0222B33762400F1BBDF /* Cells */,
 			);
 			path = Common;
@@ -424,6 +427,14 @@
 				747B121C2B7FD4ED005D979D /* LocationResponse+Stub.swift */,
 			);
 			path = Stubs;
+			sourceTree = "<group>";
+		};
+		74905EF42B84E5A400784A5C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				74905EF52B84E5AC00784A5C /* LoadingTableFooterView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		74A5525A2B2082CF002E4474 /* Common */ = {
@@ -883,6 +894,7 @@
 				746C1F442B10FA3700FA9612 /* PadResponse.swift in Sources */,
 				74FDFF472B23388600784E2C /* LaunchListDisplayType.swift in Sources */,
 				74ED9D3A2B17613A000BF024 /* Credentials.swift in Sources */,
+				74905EF62B84E5AC00784A5C /* LoadingTableFooterView.swift in Sources */,
 				74D2E9872B29D33F0006E3FD /* GetLaunchListUseCase.swift in Sources */,
 				746C1F422B10FA1C00FA9612 /* AgencyResponse.swift in Sources */,
 				744F77D12B2C51F10077ECCF /* LaunchListOutput.swift in Sources */,
