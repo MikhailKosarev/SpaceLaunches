@@ -50,7 +50,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Implement stubs for `LaunchListResponse'`, `LaunchListItem`, `LaunchResponse`, `LaunchServiceProviderResponse`, `PadResponse`, `LocationResponse`.
 - `LaunchListDataSource` and `LaunchListTableViewCell`.
 - `default_rocket_launch_image.jpg` to the Assets.
-- custom `LoadingTableFooterView` for the prefetching indication.
+- Custom `LoadingTableFooterView` for the prefetching indication.
+- A reactive extension for the `UIRefreshControl` with `didPullToRefresh` property.
 
 ### Changed
 

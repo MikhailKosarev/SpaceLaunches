@@ -10,6 +10,8 @@ protocol LaunchListInput {
     var selectedLaunch: Driver<LaunchListItem> { get }
     /// Driver emitting an array of row indices to prefetch.
     var rowsToPrefetch: Driver<[Int]> { get }
+    /// Driver emitting when the user performs a pull-to-refresh action.
+    var didPullToRefresh: Driver<Void> { get }
     /// Driver emitting the selected type of launches to display.
     var selectedLaunchesType: Driver<LaunchListDisplayType> { get }
 }

@@ -49,6 +49,7 @@ extension LaunchListViewModel: LaunchListViewModelType {
         let viewDidLoad: Driver<Void>
         let selectedLaunch: Driver<LaunchListItem>
         let rowsToPrefetch: Driver<[Int]>
+        let didPullToRefresh: Driver<Void>
         let selectedLaunchesType: Driver<LaunchListDisplayType>
     }
 
@@ -57,6 +58,7 @@ extension LaunchListViewModel: LaunchListViewModelType {
         let errors: Driver<Error>
         let isLoading: Driver<Bool>
         var isPrefetching: Driver<Bool>
+        var isRefreshing: Driver<Bool>
         let cells: Driver<[LaunchListSection]>
     }
 
@@ -93,6 +95,15 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .disposed(by: bag)
 
         shoudPrefetch
+            .drive(getLaunchListAction.inputs)
+            .disposed(by: bag)
+
+        input.didPullToRefresh
+            .map { _ in LoadingType.updating }
+            .drive(loadingTypeRelay)
+            .disposed(by: bag)
+
+        input.didPullToRefresh
             .drive(getLaunchListAction.inputs)
             .disposed(by: bag)
 
@@ -137,9 +148,15 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .filter { $1 == .loadingMore }
             .map { $0.0 }
 
+        let endRefreshing = getLaunchListAction.fetchingDriver
+            .withLatestFrom(loadingTypeRelay.asDriver()) { ($0, $1) }
+            .filter { $0 == false && $1 == .updating }
+            .map { _ in false }
+
         return Output(errors: error,
                       isLoading: isLoading,
                       isPrefetching: isPrefetching,
+                      isRefreshing: endRefreshing,
                       cells: cells)
     }
 
@@ -153,10 +170,12 @@ extension LaunchListViewModel: LaunchListViewModelType {
     func input(viewdDidLoad: Driver<Void>,
                selectedLaunch: Driver<LaunchListItem>,
                rowsToPrefetch: Driver<[Int]>,
+               didPullToRefresh: Driver<Void>,
                selectedLaunchesType: Driver<LaunchListDisplayType>) -> LaunchListInput {
         Input(viewDidLoad: viewdDidLoad,
               selectedLaunch: selectedLaunch,
               rowsToPrefetch: rowsToPrefetch,
+              didPullToRefresh: didPullToRefresh,
               selectedLaunchesType: selectedLaunchesType)
     }
 }
