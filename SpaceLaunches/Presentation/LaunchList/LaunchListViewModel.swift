@@ -79,9 +79,16 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .drive(getLaunchListAction.inputs)
             .disposed(by: bag)
 
-        input.rowsToPrefetch
+        let shoudPrefetch = input.rowsToPrefetch
             .filter { $0.contains(launchListRelay.value.count - numberOfRemainingLaunchesToPrefetch) }
             .map { _ in }
+
+        shoudPrefetch
+            .map { _ in LoadingType.loadingMore }
+            .drive(loadingTypeRelay)
+            .disposed(by: bag)
+
+        shoudPrefetch
             .drive(getLaunchListAction.inputs)
             .disposed(by: bag)
 
@@ -109,6 +116,11 @@ extension LaunchListViewModel: LaunchListViewModelType {
 
         let error = getLaunchListAction.errorDriver
         let isLoading = getLaunchListAction.fetchingDriver
+
+        let isPrefetching = getLaunchListAction.fetchingDriver
+            .withLatestFrom(loadingTypeRelay.asDriver()) { ($0, $1) }
+            .filter { $1 == .loadingMore }
+            .map { $0.0 }
 
         return Output(errors: error,
                       isLoading: isLoading,
