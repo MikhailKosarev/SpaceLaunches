@@ -5,6 +5,16 @@ import RxSwift
 struct LaunchListViewModel {
 
     // MARK: - Private interface
+    /// Represents the loading state of the launch list.
+    private enum LoadingType {
+        /// Indicates initial loading.
+        case initialLoading
+        /// Indicates loading more launches during scrolling.
+        case loadingMore
+        /// Indicates updating the list, typically due to pull-to-refresh action.
+        case updating
+    }
+
     /// Dispose bag to store subscriptions.
     private let bag = DisposeBag()
     /// Service for fetching launch data.
@@ -13,6 +23,8 @@ struct LaunchListViewModel {
     private let getLaunchListUseCase: GetLaunchListUseCase
     /// Relay for holding the list of launches.
     private let launchListRelay = BehaviorRelay<[LaunchListItem]>(value: [])
+    /// Relay for holding the current loading type.
+    private let loadingTypeRelay = BehaviorRelay<LoadingType>(value: .initialLoading)
     /// Number of launches to load initially.
     private let numberOfLaunchesToLoad = 20
     /// Number of launches to prefetch.
@@ -44,6 +56,7 @@ extension LaunchListViewModel: LaunchListViewModelType {
     struct Output: LaunchListOutput {
         let errors: Driver<Error>
         let isLoading: Driver<Bool>
+        var isPrefetching: Driver<Bool>
         let cells: Driver<[LaunchListSection]>
     }
 
@@ -70,19 +83,33 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .drive(getLaunchListAction.inputs)
             .disposed(by: bag)
 
-        input.rowsToPrefetch
+        let shoudPrefetch = input.rowsToPrefetch
             .filter { $0.contains(launchListRelay.value.count - numberOfRemainingLaunchesToPrefetch) }
             .map { _ in }
+
+        shoudPrefetch
+            .map { _ in LoadingType.loadingMore }
+            .drive(loadingTypeRelay)
+            .disposed(by: bag)
+
+        shoudPrefetch
             .drive(getLaunchListAction.inputs)
             .disposed(by: bag)
 
-        input.selectedLaunchesType
+        let didChangeLaunchType = input.selectedLaunchesType
+            .skip(1)
+
+        didChangeLaunchType
             .map { _ in [LaunchListItem]() }
             .drive(launchListRelay)
             .disposed(by: bag)
 
-        input.selectedLaunchesType
-            .skip(1)
+        didChangeLaunchType
+            .map { _ in LoadingType.initialLoading }
+            .drive(loadingTypeRelay)
+            .disposed(by: bag)
+
+        didChangeLaunchType
             .map { _ in }
             .drive(getLaunchListAction.inputs)
             .disposed(by: bag)
@@ -99,10 +126,20 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .map { [LaunchListSection(items: $0)] }
 
         let error = getLaunchListAction.errorDriver
+
         let isLoading = getLaunchListAction.fetchingDriver
+            .withLatestFrom(loadingTypeRelay.asDriver()) { ($0, $1) }
+            .filter { $1 == .initialLoading }
+            .map { $0.0 }
+
+        let isPrefetching = getLaunchListAction.fetchingDriver
+            .withLatestFrom(loadingTypeRelay.asDriver()) { ($0, $1) }
+            .filter { $1 == .loadingMore }
+            .map { $0.0 }
 
         return Output(errors: error,
                       isLoading: isLoading,
+                      isPrefetching: isPrefetching,
                       cells: cells)
     }
 

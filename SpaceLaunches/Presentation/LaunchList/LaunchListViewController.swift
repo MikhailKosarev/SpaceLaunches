@@ -99,6 +99,18 @@ extension LaunchListViewController {
             .drive(launchListTableView.rx.items(dataSource: launchListDataSource))
             .disposed(by: bag)
 
+        output.isPrefetching
+            .filter { $0 }
+            .map { [weak self] _ in self?.createLoaderView() }
+            .drive(launchListTableView.rx.tableFooterView)
+            .disposed(by: bag)
+
+        output.isPrefetching
+            .filter { !$0 }
+            .map { _ in nil }
+            .drive(launchListTableView.rx.tableFooterView)
+            .disposed(by: bag)
+
         output.isLoading
             .drive(activityIndicatorView.rx.isAnimating).disposed(by: bag)
     }
@@ -112,5 +124,14 @@ extension LaunchListViewController {
                         selectedLaunch: launchListTableView.rx.modelSelected(LaunchListItem.self).asDriver(),
                         rowsToPrefetch: launchListTableView.rx.prefetchRows.asDriver().map { $0.map(\.row) },
                         selectedLaunchesType: selectedLaunchesType)
+    }
+
+    private func createLoaderView() -> UIView {
+        let footerView = LoadingTableFooterView(frame: .init(x: 0,
+                                                             y: 0,
+                                                             width: UIScreen.main.bounds.width,
+                                                             height: 35))
+        footerView.startAnimating()
+        return footerView
     }
 }
