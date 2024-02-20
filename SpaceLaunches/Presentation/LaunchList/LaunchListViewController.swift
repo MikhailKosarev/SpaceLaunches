@@ -99,6 +99,18 @@ extension LaunchListViewController {
             .drive(launchListTableView.rx.items(dataSource: launchListDataSource))
             .disposed(by: bag)
 
+        output.isPrefetching
+            .filter { $0 }
+            .map { [weak self] _ in self?.createLoaderView() }
+            .drive(launchListTableView.rx.tableFooterView)
+            .disposed(by: bag)
+
+        output.isPrefetching
+            .filter { !$0 }
+            .map { _ in nil }
+            .drive(launchListTableView.rx.tableFooterView)
+            .disposed(by: bag)
+
         output.isLoading
             .drive(activityIndicatorView.rx.isAnimating).disposed(by: bag)
     }
