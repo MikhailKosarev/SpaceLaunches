@@ -92,13 +92,20 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .drive(getLaunchListAction.inputs)
             .disposed(by: bag)
 
-        input.selectedLaunchesType
+        let didChangeLaunchType = input.selectedLaunchesType
+            .skip(1)
+
+        didChangeLaunchType
             .map { _ in [LaunchListItem]() }
             .drive(launchListRelay)
             .disposed(by: bag)
 
-        input.selectedLaunchesType
-            .skip(1)
+        didChangeLaunchType
+            .map { _ in LoadingType.initialLoading }
+            .drive(loadingTypeRelay)
+            .disposed(by: bag)
+
+        didChangeLaunchType
             .map { _ in }
             .drive(getLaunchListAction.inputs)
             .disposed(by: bag)
@@ -115,7 +122,11 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .map { [LaunchListSection(items: $0)] }
 
         let error = getLaunchListAction.errorDriver
+
         let isLoading = getLaunchListAction.fetchingDriver
+            .withLatestFrom(loadingTypeRelay.asDriver()) { ($0, $1) }
+            .filter { $1 == .initialLoading }
+            .map { $0.0 }
 
         let isPrefetching = getLaunchListAction.fetchingDriver
             .withLatestFrom(loadingTypeRelay.asDriver()) { ($0, $1) }
