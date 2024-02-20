@@ -19,5 +19,6 @@ protocol LaunchListViewModelType {
     func input(viewdDidLoad: Driver<Void>,
                selectedLaunch: Driver<LaunchListItem>,
                rowsToPrefetch: Driver<[Int]>,
+               didPullToRefresh: Driver<Void>,
                selectedLaunchesType: Driver<LaunchListDisplayType>) -> LaunchListInput
 }
