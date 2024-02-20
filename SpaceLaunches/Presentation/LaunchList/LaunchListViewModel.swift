@@ -5,6 +5,16 @@ import RxSwift
 struct LaunchListViewModel {
 
     // MARK: - Private interface
+    /// Represents the loading state of the launch list.
+    private enum LoadingType {
+        /// Indicates initial loading.
+        case initialLoading
+        /// Indicates loading more launches during scrolling.
+        case loadingMore
+        /// Indicates updating the list, typically due to pull-to-refresh action.
+        case updating
+    }
+
     /// Dispose bag to store subscriptions.
     private let bag = DisposeBag()
     /// Service for fetching launch data.
@@ -48,12 +58,6 @@ extension LaunchListViewModel: LaunchListViewModelType {
         let isLoading: Driver<Bool>
         var isPrefetching: Driver<Bool>
         let cells: Driver<[LaunchListSection]>
-    }
-    // TODO: comments
-    enum LoadingType {
-        case initialLoading
-        case loadingMore
-        case updating
     }
 
     /// Transforms the input into output for the launch list.
