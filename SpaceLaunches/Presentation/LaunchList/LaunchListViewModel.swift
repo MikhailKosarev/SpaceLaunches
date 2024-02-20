@@ -44,6 +44,7 @@ extension LaunchListViewModel: LaunchListViewModelType {
     struct Output: LaunchListOutput {
         let errors: Driver<Error>
         let isLoading: Driver<Bool>
+        var isPrefetching: Driver<Bool>
         let cells: Driver<[LaunchListSection]>
     }
 
@@ -103,6 +104,7 @@ extension LaunchListViewModel: LaunchListViewModelType {
 
         return Output(errors: error,
                       isLoading: isLoading,
+                      isPrefetching: isPrefetching,
                       cells: cells)
     }
 
