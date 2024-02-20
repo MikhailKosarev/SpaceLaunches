@@ -43,6 +43,7 @@ final class LaunchListViewController: UIViewController {
         tableView.rx.itemSelected.bind { [weak self] in
             tableView.deselectRow(at: $0, animated: true)
         }.disposed(by: bag)
+        tableView.refreshControl = refreshControl
         return tableView
     }()
 
@@ -54,6 +55,7 @@ final class LaunchListViewController: UIViewController {
     }()
 
     private let activityIndicatorView = UIActivityIndicatorView(style: .large)
+    private lazy var refreshControl = UIRefreshControl()
 }
 
 // MARK: - Setup
@@ -113,6 +115,10 @@ extension LaunchListViewController {
 
         output.isLoading
             .drive(activityIndicatorView.rx.isAnimating).disposed(by: bag)
+
+        output.isRefreshing
+            .drive(refreshControl.rx.isRefreshing)
+            .disposed(by: bag)
     }
 
     private func getInput(for viewModel: LaunchListViewModelType) -> LaunchListInput {
@@ -121,9 +127,10 @@ extension LaunchListViewController {
             .compactMap { LaunchListDisplayType(rawValue: $0) }
 
         return viewModel.input(viewdDidLoad: rx.viewDidLoad.asDriver(),
-                        selectedLaunch: launchListTableView.rx.modelSelected(LaunchListItem.self).asDriver(),
-                        rowsToPrefetch: launchListTableView.rx.prefetchRows.asDriver().map { $0.map(\.row) },
-                        selectedLaunchesType: selectedLaunchesType)
+                               selectedLaunch: launchListTableView.rx.modelSelected(LaunchListItem.self).asDriver(),
+                               rowsToPrefetch: launchListTableView.rx.prefetchRows.asDriver().map { $0.map(\.row) },
+                               didPullToRefresh: refreshControl.rx.didPullToRefresh,
+                               selectedLaunchesType: selectedLaunchesType)
     }
 
     private func createLoaderView() -> UIView {
