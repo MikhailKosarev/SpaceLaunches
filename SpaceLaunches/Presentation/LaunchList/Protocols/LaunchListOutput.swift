@@ -10,6 +10,8 @@ protocol LaunchListOutput {
     var isLoading: Driver<Bool> { get }
     /// Driver emitting a boolean indicating the prefetching state.
     var isPrefetching: Driver<Bool> { get }
+    /// Driver emitting a boolean indicating the refreshing state.
+    var isRefreshing: Driver<Bool> { get }
     /// Driver emitting an array of launch list sections to be displayed.
     var cells: Driver<[LaunchListSection]> { get }
 }
