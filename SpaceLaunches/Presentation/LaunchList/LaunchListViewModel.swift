@@ -13,6 +13,8 @@ struct LaunchListViewModel {
     private let getLaunchListUseCase: GetLaunchListUseCase
     /// Relay for holding the list of launches.
     private let launchListRelay = BehaviorRelay<[LaunchListItem]>(value: [])
+    /// Relay for holding the current loading type.
+    private let loadingTypeRelay = BehaviorRelay<LoadingType>(value: .initialLoading)
     /// Number of launches to load initially.
     private let numberOfLaunchesToLoad = 20
     /// Number of launches to prefetch.
@@ -46,6 +48,12 @@ extension LaunchListViewModel: LaunchListViewModelType {
         let isLoading: Driver<Bool>
         var isPrefetching: Driver<Bool>
         let cells: Driver<[LaunchListSection]>
+    }
+    // TODO: comments
+    enum LoadingType {
+        case initialLoading
+        case loadingMore
+        case updating
     }
 
     /// Transforms the input into output for the launch list.
