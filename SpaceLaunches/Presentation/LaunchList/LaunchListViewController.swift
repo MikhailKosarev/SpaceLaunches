@@ -73,7 +73,7 @@ extension LaunchListViewController {
 
     private func setConstraints() {
         launchListTableView.snp.makeConstraints { make in
-            make.leading.top.trailing.equalToSuperview()
+            make.leading.top.trailing.equalTo(view.safeAreaLayoutGuide)
             make.bottom.equalTo(launchesTypeSegmentedControl.snp.top)
         }
 
