@@ -113,4 +113,13 @@ extension LaunchListViewController {
                         rowsToPrefetch: launchListTableView.rx.prefetchRows.asDriver().map { $0.map(\.row) },
                         selectedLaunchesType: selectedLaunchesType)
     }
+
+    private func createLoaderView() -> UIView {
+        let footerView = LoadingTableFooterView(frame: .init(x: 0,
+                                                             y: 0,
+                                                             width: UIScreen.main.bounds.width,
+                                                             height: 35))
+        footerView.startAnimating()
+        return footerView
+    }
 }
