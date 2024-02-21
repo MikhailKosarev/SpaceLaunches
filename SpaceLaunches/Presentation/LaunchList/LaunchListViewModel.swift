@@ -92,10 +92,26 @@ extension LaunchListViewModel: LaunchListViewModelType {
         bindDidPullToRefresh(input.didPullToRefresh, action: getLaunchListAction)
         bindSelectedLaunchesType(input.selectedLaunchesType, action: getLaunchListAction)
 
+        handleActionOutputs(getLaunchListAction, getPrefetchingLaunchListAction)
+
+        let cells = launchListRelay
+            .asDriver()
+            .map { [LaunchListSection(items: $0)] }
+
+        let error = Driver.merge(getLaunchListAction.errorDriver,
+                                 getPrefetchingLaunchListAction.errorDriver)
 
         let isLoading = createIsLoading(action: getLaunchListAction)
         let isPrefetching = createIsPrefetching(action: getPrefetchingLaunchListAction)
         let isRefreshing = createIsRefreshing(action: getLaunchListAction)
+
+        return Output(errors: error,
+                      isLoading: isLoading,
+                      isPrefetching: isPrefetching,
+                      isRefreshing: isRefreshing,
+                      cells: cells)
+    }
+
     private func bindViewDidLoad(_ viewDidLoad: Driver<Void>, action: GetLaunchListAction) {
         viewDidLoad
             .drive(action.inputs)
@@ -145,22 +161,10 @@ extension LaunchListViewModel: LaunchListViewModelType {
 
         didChangeLaunchType
             .map { _ in }
-        getLaunchListAction.elements
-            .bind(to: launchListRelay)
+            .drive(action.inputs)
             .disposed(by: bag)
+    }
 
-        getPrefetchingLaunchListAction.elements
-            .withLatestFrom(loadingTypeRelay) { ($0, $1) }
-            .filter { $1 == .loadingMore }
-            .withLatestFrom(launchListRelay) { new, current in current + new.0 }
-            .bind(to: launchListRelay)
-            .disposed(by: bag)
-
-        let cells = launchListRelay
-            .asDriver()
-            .map { [LaunchListSection(items: $0)] }
-
-        let error = getLaunchListAction.errorDriver
     private func createIsLoading(action: GetLaunchListAction) -> Driver<Bool> {
         action.fetchingDriver
             .withLatestFrom(loadingTypeRelay.asDriver()) { ($0, $1) }
@@ -194,11 +198,18 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .merge(isStillRefreshing, endRefreshing)
     }
 
-        return Output(errors: error,
-                      isLoading: isLoading,
-                      isPrefetching: isPrefetching,
-                      isRefreshing: isRefreshing,
-                      cells: cells)
+    private func handleActionOutputs(_ getLaunchListAction: GetLaunchListAction,
+                                     _ getPrefetchingLaunchListAction: GetLaunchListAction) {
+        getLaunchListAction.elements
+            .bind(to: launchListRelay)
+            .disposed(by: bag)
+
+        getPrefetchingLaunchListAction.elements
+            .withLatestFrom(loadingTypeRelay) { ($0, $1) }
+            .filter { $1 == .loadingMore }
+            .withLatestFrom(launchListRelay) { new, current in current + new.0 }
+            .bind(to: launchListRelay)
+            .disposed(by: bag)
     }
 
     /// Constructs the input for the 'LaunchListViewModel'.
