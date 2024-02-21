@@ -1,8 +1,11 @@
+import Action
 import RxCocoa
 import RxSwift
 
 /// View model for managing the launch list.
 struct LaunchListViewModel {
+
+    typealias GetLaunchListAction = Action<Void, [LaunchListItem]>
 
     // MARK: - Private interface
     /// Represents the loading state of the launch list.
@@ -22,8 +25,6 @@ struct LaunchListViewModel {
     /// Use case for getting the launch list.
     private let getLaunchListUseCase: GetLaunchListUseCase
     /// Use case for prefetching the launch list.
-    private let getPrefetchingLaunchListUseCase: GetLaunchListUseCase
-    /// Relay for holding the list of launches.
     private let launchListRelay = BehaviorRelay<[LaunchListItem]>(value: [])
     /// Relay for holding the current loading type.
     private let loadingTypeRelay = BehaviorRelay<LoadingType>(value: .initialLoading)
@@ -40,7 +41,6 @@ struct LaunchListViewModel {
     init(service: LaunchService) {
         self.launchService = service
         getLaunchListUseCase = GetLaunchListUseCase(launchService: service)
-        getPrefetchingLaunchListUseCase = GetLaunchListUseCase(launchService: service)
     }
 }
 
@@ -69,29 +69,48 @@ extension LaunchListViewModel: LaunchListViewModelType {
     /// - Parameter input: The input for the 'LaunchListViewModel'.
     /// - Returns: The output for the 'LaunchListViewModel'.
     func transform(input: LaunchListInput) -> LaunchListOutput {
-        let type = input.selectedLaunchesType
-            .asObservable()
+        let type = input.selectedLaunchesType.asObservable()
+        let requestOffset = launchListRelay.map { $0.count }
 
-        let requestOffset = launchListRelay
-            .map { $0.count }
+        let getLaunchListAction = createLaunchListAction(type: type)
+        let getPrefetchingLaunchListAction = createPrefetchingLaunchListAction(type: type,
+                                                                               requestOffset: requestOffset)
 
-        let getLaunchListAction = getLaunchListUseCase.produce(
+        bindViewDidLoad(input.viewDidLoad, action: getLaunchListAction)
+        bindRowsToPrefetch(input.rowsToPrefetch, action: getPrefetchingLaunchListAction)
+        bindDidPullToRefresh(input.didPullToRefresh, action: getLaunchListAction)
+        bindSelectedLaunchesType(input.selectedLaunchesType, action: getLaunchListAction)
+
+        handleActionOutputs(getLaunchListAction, getPrefetchingLaunchListAction)
+
+        return createOutput(getLaunchListAction, getPrefetchingLaunchListAction)
+    }
+
+    private func createLaunchListAction(type: Observable<LaunchListDisplayType>) -> GetLaunchListAction {
+        getLaunchListUseCase.produce(
             input: (.init(type: type,
                           limit: Observable.just(numberOfLaunchesToLoad),
                           offset: Observable.just(0)))
-        )
+            )
+    }
 
-        let getPrefetchingLaunchListAction = getPrefetchingLaunchListUseCase.produce(
+    private func createPrefetchingLaunchListAction(type: Observable<LaunchListDisplayType>,
+                                                   requestOffset: Observable<Int>) -> GetLaunchListAction {
+        getLaunchListUseCase.produce(
             input: (.init(type: type,
                           limit: Observable.just(numberOfLaunchesToPrefetch),
                           offset: requestOffset))
         )
+    }
 
-        input.viewDidLoad
-            .drive(getLaunchListAction.inputs)
+    private func bindViewDidLoad(_ viewDidLoad: Driver<Void>, action: GetLaunchListAction) {
+        viewDidLoad
+            .drive(action.inputs)
             .disposed(by: bag)
+    }
 
-        let shoudPrefetch = input.rowsToPrefetch
+    private func bindRowsToPrefetch(_ rowsToPrefetch: Driver<[Int]>, action: GetLaunchListAction) {
+        let shoudPrefetch = rowsToPrefetch
             .filter { $0.contains(launchListRelay.value.count - numberOfRemainingLaunchesToPrefetch) }
             .map { _ in }
 
@@ -101,19 +120,24 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .disposed(by: bag)
 
         shoudPrefetch
-            .drive(getPrefetchingLaunchListAction.inputs)
+            .drive(action.inputs)
             .disposed(by: bag)
+    }
 
-        input.didPullToRefresh
+    private func bindDidPullToRefresh(_ didPullToRefresh: Driver<Void>, action: GetLaunchListAction) {
+        didPullToRefresh
             .map { _ in LoadingType.updating }
             .drive(loadingTypeRelay)
             .disposed(by: bag)
 
-        input.didPullToRefresh
-            .drive(getLaunchListAction.inputs)
+        didPullToRefresh
+            .drive(action.inputs)
             .disposed(by: bag)
+    }
 
-        let didChangeLaunchType = input.selectedLaunchesType
+    private func bindSelectedLaunchesType(_ selectedLaunchesType: Driver<LaunchListDisplayType>,
+                                          action: GetLaunchListAction) {
+        let didChangeLaunchType = selectedLaunchesType
             .skip(1)
 
         didChangeLaunchType
@@ -128,9 +152,45 @@ extension LaunchListViewModel: LaunchListViewModelType {
 
         didChangeLaunchType
             .map { _ in }
-            .drive(getLaunchListAction.inputs)
+            .drive(action.inputs)
             .disposed(by: bag)
+    }
 
+    private func createIsLoading(action: GetLaunchListAction) -> Driver<Bool> {
+        action.fetchingDriver
+            .withLatestFrom(loadingTypeRelay.asDriver()) { ($0, $1) }
+            .filter { $1 == .initialLoading }
+            .map { $0.0 }
+    }
+
+    private func createIsPrefetching(action: GetLaunchListAction) -> Driver<Bool> {
+        let isStillPrefetching = loadingTypeRelay
+            .filter { $0 != .loadingMore }
+            .map { _ in false }
+            .asDriver(onErrorDriveWith: .never())
+
+        return Driver
+            .merge(isStillPrefetching, action.fetchingDriver)
+            .distinctUntilChanged()
+    }
+
+    private func createIsRefreshing(action: GetLaunchListAction) -> Driver<Bool> {
+        let isStillRefreshing = loadingTypeRelay
+            .filter { $0 != .updating }
+            .map { _ in false }
+            .asDriver(onErrorJustReturn: false)
+
+        let endRefreshing = action.fetchingDriver
+            .withLatestFrom(loadingTypeRelay.asDriver()) { ($0, $1) }
+            .filter { $0 == false && $1 == .updating }
+            .map { _ in false }
+
+        return Driver
+            .merge(isStillRefreshing, endRefreshing)
+    }
+
+    private func handleActionOutputs(_ getLaunchListAction: GetLaunchListAction,
+                                     _ getPrefetchingLaunchListAction: GetLaunchListAction) {
         getLaunchListAction.elements
             .bind(to: launchListRelay)
             .disposed(by: bag)
@@ -141,39 +201,20 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .withLatestFrom(launchListRelay) { new, current in current + new.0 }
             .bind(to: launchListRelay)
             .disposed(by: bag)
+    }
 
+    private func createOutput(_ getLaunchListAction: GetLaunchListAction,
+                              _ getPrefetchingLaunchListAction: GetLaunchListAction) -> LaunchListOutput {
         let cells = launchListRelay
             .asDriver()
             .map { [LaunchListSection(items: $0)] }
 
-        let error = getLaunchListAction.errorDriver
+        let error = Driver.merge(getLaunchListAction.errorDriver,
+                                 getPrefetchingLaunchListAction.errorDriver)
 
-        let isLoading = getLaunchListAction.fetchingDriver
-            .withLatestFrom(loadingTypeRelay.asDriver()) { ($0, $1) }
-            .filter { $1 == .initialLoading }
-            .map { $0.0 }
-
-        let isStillPrefetching = loadingTypeRelay
-            .filter { $0 != .loadingMore }
-            .map { _ in false }
-            .asDriver(onErrorDriveWith: .never())
-
-        let isPrefetching = Driver
-            .merge(isStillPrefetching, getPrefetchingLaunchListAction.fetchingDriver)
-            .distinctUntilChanged()
-
-        let isStillRefreshing = loadingTypeRelay
-            .filter { $0 != .updating }
-            .map { _ in false }
-            .asDriver(onErrorJustReturn: false)
-
-        let endRefreshing = getLaunchListAction.fetchingDriver
-            .withLatestFrom(loadingTypeRelay.asDriver()) { ($0, $1) }
-            .filter { $0 == false && $1 == .updating }
-            .map { _ in false }
-
-        let isRefreshing = Driver
-            .merge(isStillRefreshing, endRefreshing)
+        let isLoading = createIsLoading(action: getLaunchListAction)
+        let isPrefetching = createIsPrefetching(action: getPrefetchingLaunchListAction)
+        let isRefreshing = createIsRefreshing(action: getLaunchListAction)
 
         return Output(errors: error,
                       isLoading: isLoading,
