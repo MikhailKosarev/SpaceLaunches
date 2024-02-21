@@ -95,6 +95,7 @@ extension LaunchListViewModel: LaunchListViewModelType {
 
         let isLoading = createIsLoading(action: getLaunchListAction)
         let isPrefetching = createIsPrefetching(action: getPrefetchingLaunchListAction)
+        let isRefreshing = createIsRefreshing(action: getLaunchListAction)
     private func bindViewDidLoad(_ viewDidLoad: Driver<Void>, action: GetLaunchListAction) {
         viewDidLoad
             .drive(action.inputs)
@@ -178,18 +179,20 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .distinctUntilChanged()
     }
 
+    private func createIsRefreshing(action: GetLaunchListAction) -> Driver<Bool> {
         let isStillRefreshing = loadingTypeRelay
             .filter { $0 != .updating }
             .map { _ in false }
             .asDriver(onErrorJustReturn: false)
 
-        let endRefreshing = getLaunchListAction.fetchingDriver
+        let endRefreshing = action.fetchingDriver
             .withLatestFrom(loadingTypeRelay.asDriver()) { ($0, $1) }
             .filter { $0 == false && $1 == .updating }
             .map { _ in false }
 
-        let isRefreshing = Driver
+        return Driver
             .merge(isStillRefreshing, endRefreshing)
+    }
 
         return Output(errors: error,
                       isLoading: isLoading,
