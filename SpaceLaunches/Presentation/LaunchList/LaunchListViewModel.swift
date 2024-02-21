@@ -72,11 +72,8 @@ extension LaunchListViewModel: LaunchListViewModelType {
     /// - Parameter input: The input for the 'LaunchListViewModel'.
     /// - Returns: The output for the 'LaunchListViewModel'.
     func transform(input: LaunchListInput) -> LaunchListOutput {
-        let type = input.selectedLaunchesType
-            .asObservable()
-
-        let requestOffset = launchListRelay
-            .map { $0.count }
+        let type = input.selectedLaunchesType.asObservable()
+        let requestOffset = launchListRelay.map { $0.count }
 
         let getLaunchListAction = getLaunchListUseCase.produce(
             input: (.init(type: type,
