@@ -92,6 +92,7 @@ extension LaunchListViewModel: LaunchListViewModelType {
 
         bindViewDidLoad(input.viewDidLoad, action: getLaunchListAction)
         bindRowsToPrefetch(input.rowsToPrefetch, action: getPrefetchingLaunchListAction)
+        bindDidPullToRefresh(input.didPullToRefresh, action: getLaunchListAction)
     private func bindViewDidLoad(_ viewDidLoad: Driver<Void>, action: GetLaunchListAction) {
         viewDidLoad
             .drive(action.inputs)
@@ -113,14 +114,16 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .disposed(by: bag)
     }
 
-        input.didPullToRefresh
+    private func bindDidPullToRefresh(_ didPullToRefresh: Driver<Void>, action: GetLaunchListAction) {
+        didPullToRefresh
             .map { _ in LoadingType.updating }
             .drive(loadingTypeRelay)
             .disposed(by: bag)
 
-        input.didPullToRefresh
-            .drive(getLaunchListAction.inputs)
+        didPullToRefresh
+            .drive(action.inputs)
             .disposed(by: bag)
+    }
 
         let didChangeLaunchType = input.selectedLaunchesType
             .skip(1)
