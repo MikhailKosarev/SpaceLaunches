@@ -75,12 +75,15 @@ extension LaunchListViewModel: LaunchListViewModelType {
         let requestOffset = launchListRelay
             .map { $0.count }
 
-        let limit = launchListRelay
-            .map { $0.isEmpty ? numberOfLaunchesToLoad : numberOfLaunchesToPrefetch }
-
         let getLaunchListAction = getLaunchListUseCase.produce(
             input: (.init(type: type,
-                          limit: limit,
+                          limit: Observable.just(numberOfLaunchesToLoad),
+                          offset: Observable.just(0)))
+        )
+
+        let getPrefetchingLaunchListAction = getPrefetchingLaunchListUseCase.produce(
+            input: (.init(type: type,
+                          limit: Observable.just(numberOfLaunchesToPrefetch),
                           offset: requestOffset))
         )
 
@@ -98,7 +101,7 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .disposed(by: bag)
 
         shoudPrefetch
-            .drive(getLaunchListAction.inputs)
+            .drive(getPrefetchingLaunchListAction.inputs)
             .disposed(by: bag)
 
         input.didPullToRefresh
@@ -129,9 +132,13 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .disposed(by: bag)
 
         getLaunchListAction.elements
-            .withLatestFrom(launchListRelay) { newLaunches, currentLaunches in
-                    currentLaunches + newLaunches
-                }
+            .bind(to: launchListRelay)
+            .disposed(by: bag)
+
+        getPrefetchingLaunchListAction.elements
+            .withLatestFrom(loadingTypeRelay) { ($0, $1) }
+            .filter { $1 == .loadingMore }
+            .withLatestFrom(launchListRelay) { new, current in current + new.0 }
             .bind(to: launchListRelay)
             .disposed(by: bag)
 
@@ -146,20 +153,32 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .filter { $1 == .initialLoading }
             .map { $0.0 }
 
-        let isPrefetching = getLaunchListAction.fetchingDriver
-            .withLatestFrom(loadingTypeRelay.asDriver()) { ($0, $1) }
-            .filter { $1 == .loadingMore }
-            .map { $0.0 }
+        let isStillPrefetching = loadingTypeRelay
+            .filter { $0 != .loadingMore }
+            .map { _ in false }
+            .asDriver(onErrorDriveWith: .never())
+
+        let isPrefetching = Driver
+            .merge(isStillPrefetching, getPrefetchingLaunchListAction.fetchingDriver)
+            .distinctUntilChanged()
+
+        let isStillRefreshing = loadingTypeRelay
+            .filter { $0 != .updating }
+            .map { _ in false }
+            .asDriver(onErrorJustReturn: false)
 
         let endRefreshing = getLaunchListAction.fetchingDriver
             .withLatestFrom(loadingTypeRelay.asDriver()) { ($0, $1) }
             .filter { $0 == false && $1 == .updating }
             .map { _ in false }
 
+        let isRefreshing = Driver
+            .merge(isStillRefreshing, endRefreshing)
+
         return Output(errors: error,
                       isLoading: isLoading,
                       isPrefetching: isPrefetching,
-                      isRefreshing: endRefreshing,
+                      isRefreshing: isRefreshing,
                       cells: cells)
     }
 
