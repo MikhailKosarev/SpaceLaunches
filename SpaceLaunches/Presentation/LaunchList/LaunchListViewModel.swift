@@ -25,8 +25,6 @@ struct LaunchListViewModel {
     /// Use case for getting the launch list.
     private let getLaunchListUseCase: GetLaunchListUseCase
     /// Use case for prefetching the launch list.
-    private let getPrefetchingLaunchListUseCase: GetLaunchListUseCase
-    /// Relay for holding the list of launches.
     private let launchListRelay = BehaviorRelay<[LaunchListItem]>(value: [])
     /// Relay for holding the current loading type.
     private let loadingTypeRelay = BehaviorRelay<LoadingType>(value: .initialLoading)
@@ -43,7 +41,6 @@ struct LaunchListViewModel {
     init(service: LaunchService) {
         self.launchService = service
         getLaunchListUseCase = GetLaunchListUseCase(launchService: service)
-        getPrefetchingLaunchListUseCase = GetLaunchListUseCase(launchService: service)
     }
 }
 
@@ -75,17 +72,9 @@ extension LaunchListViewModel: LaunchListViewModelType {
         let type = input.selectedLaunchesType.asObservable()
         let requestOffset = launchListRelay.map { $0.count }
 
-        let getLaunchListAction = getLaunchListUseCase.produce(
-            input: (.init(type: type,
-                          limit: Observable.just(numberOfLaunchesToLoad),
-                          offset: Observable.just(0)))
-        )
-
-        let getPrefetchingLaunchListAction = getPrefetchingLaunchListUseCase.produce(
-            input: (.init(type: type,
-                          limit: Observable.just(numberOfLaunchesToPrefetch),
-                          offset: requestOffset))
-        )
+        let getLaunchListAction = createLaunchListAction(type: type)
+        let getPrefetchingLaunchListAction = createPrefetchingLaunchListAction(type: type,
+                                                                               requestOffset: requestOffset)
 
         bindViewDidLoad(input.viewDidLoad, action: getLaunchListAction)
         bindRowsToPrefetch(input.rowsToPrefetch, action: getPrefetchingLaunchListAction)
@@ -95,6 +84,23 @@ extension LaunchListViewModel: LaunchListViewModelType {
         handleActionOutputs(getLaunchListAction, getPrefetchingLaunchListAction)
 
         return createOutput(getLaunchListAction, getPrefetchingLaunchListAction)
+    }
+
+    private func createLaunchListAction(type: Observable<LaunchListDisplayType>) -> GetLaunchListAction {
+        getLaunchListUseCase.produce(
+            input: (.init(type: type,
+                          limit: Observable.just(numberOfLaunchesToLoad),
+                          offset: Observable.just(0)))
+            )
+    }
+
+    private func createPrefetchingLaunchListAction(type: Observable<LaunchListDisplayType>,
+                                                   requestOffset: Observable<Int>) -> GetLaunchListAction {
+        getLaunchListUseCase.produce(
+            input: (.init(type: type,
+                          limit: Observable.just(numberOfLaunchesToPrefetch),
+                          offset: requestOffset))
+        )
     }
 
     private func bindViewDidLoad(_ viewDidLoad: Driver<Void>, action: GetLaunchListAction) {
