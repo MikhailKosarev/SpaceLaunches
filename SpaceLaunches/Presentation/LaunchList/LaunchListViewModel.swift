@@ -21,6 +21,8 @@ struct LaunchListViewModel {
     private let launchService: LaunchService
     /// Use case for getting the launch list.
     private let getLaunchListUseCase: GetLaunchListUseCase
+    /// Use case for prefetching the launch list.
+    private let getPrefetchingLaunchListUseCase: GetLaunchListUseCase
     /// Relay for holding the list of launches.
     private let launchListRelay = BehaviorRelay<[LaunchListItem]>(value: [])
     /// Relay for holding the current loading type.
@@ -38,6 +40,7 @@ struct LaunchListViewModel {
     init(service: LaunchService) {
         self.launchService = service
         getLaunchListUseCase = GetLaunchListUseCase(launchService: service)
+        getPrefetchingLaunchListUseCase = GetLaunchListUseCase(launchService: service)
     }
 }
 
