@@ -91,13 +91,15 @@ extension LaunchListViewModel: LaunchListViewModelType {
         )
 
         bindViewDidLoad(input.viewDidLoad, action: getLaunchListAction)
+        bindRowsToPrefetch(input.rowsToPrefetch, action: getPrefetchingLaunchListAction)
     private func bindViewDidLoad(_ viewDidLoad: Driver<Void>, action: GetLaunchListAction) {
         viewDidLoad
             .drive(action.inputs)
             .disposed(by: bag)
     }
 
-        let shoudPrefetch = input.rowsToPrefetch
+    private func bindRowsToPrefetch(_ rowsToPrefetch: Driver<[Int]>, action: GetLaunchListAction) {
+        let shoudPrefetch = rowsToPrefetch
             .filter { $0.contains(launchListRelay.value.count - numberOfRemainingLaunchesToPrefetch) }
             .map { _ in }
 
@@ -107,8 +109,9 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .disposed(by: bag)
 
         shoudPrefetch
-            .drive(getPrefetchingLaunchListAction.inputs)
+            .drive(action.inputs)
             .disposed(by: bag)
+    }
 
         input.didPullToRefresh
             .map { _ in LoadingType.updating }
