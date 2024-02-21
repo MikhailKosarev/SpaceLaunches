@@ -94,22 +94,7 @@ extension LaunchListViewModel: LaunchListViewModelType {
 
         handleActionOutputs(getLaunchListAction, getPrefetchingLaunchListAction)
 
-        let cells = launchListRelay
-            .asDriver()
-            .map { [LaunchListSection(items: $0)] }
-
-        let error = Driver.merge(getLaunchListAction.errorDriver,
-                                 getPrefetchingLaunchListAction.errorDriver)
-
-        let isLoading = createIsLoading(action: getLaunchListAction)
-        let isPrefetching = createIsPrefetching(action: getPrefetchingLaunchListAction)
-        let isRefreshing = createIsRefreshing(action: getLaunchListAction)
-
-        return Output(errors: error,
-                      isLoading: isLoading,
-                      isPrefetching: isPrefetching,
-                      isRefreshing: isRefreshing,
-                      cells: cells)
+        return createOutput(getLaunchListAction, getPrefetchingLaunchListAction)
     }
 
     private func bindViewDidLoad(_ viewDidLoad: Driver<Void>, action: GetLaunchListAction) {
@@ -210,6 +195,26 @@ extension LaunchListViewModel: LaunchListViewModelType {
             .withLatestFrom(launchListRelay) { new, current in current + new.0 }
             .bind(to: launchListRelay)
             .disposed(by: bag)
+    }
+
+    private func createOutput(_ getLaunchListAction: GetLaunchListAction,
+                              _ getPrefetchingLaunchListAction: GetLaunchListAction) -> LaunchListOutput {
+        let cells = launchListRelay
+            .asDriver()
+            .map { [LaunchListSection(items: $0)] }
+
+        let error = Driver.merge(getLaunchListAction.errorDriver,
+                                 getPrefetchingLaunchListAction.errorDriver)
+
+        let isLoading = createIsLoading(action: getLaunchListAction)
+        let isPrefetching = createIsPrefetching(action: getPrefetchingLaunchListAction)
+        let isRefreshing = createIsRefreshing(action: getLaunchListAction)
+
+        return Output(errors: error,
+                      isLoading: isLoading,
+                      isPrefetching: isPrefetching,
+                      isRefreshing: isRefreshing,
+                      cells: cells)
     }
 
     /// Constructs the input for the 'LaunchListViewModel'.
