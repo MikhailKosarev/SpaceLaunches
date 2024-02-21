@@ -90,9 +90,12 @@ extension LaunchListViewModel: LaunchListViewModelType {
                           offset: requestOffset))
         )
 
-        input.viewDidLoad
-            .drive(getLaunchListAction.inputs)
+        bindViewDidLoad(input.viewDidLoad, action: getLaunchListAction)
+    private func bindViewDidLoad(_ viewDidLoad: Driver<Void>, action: GetLaunchListAction) {
+        viewDidLoad
+            .drive(action.inputs)
             .disposed(by: bag)
+    }
 
         let shoudPrefetch = input.rowsToPrefetch
             .filter { $0.contains(launchListRelay.value.count - numberOfRemainingLaunchesToPrefetch) }
