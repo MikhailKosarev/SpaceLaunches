@@ -114,7 +114,13 @@ extension LaunchListViewController {
             .disposed(by: bag)
 
         output.isLoading
-            .drive(activityIndicatorView.rx.isAnimating).disposed(by: bag)
+            .drive(activityIndicatorView.rx.isAnimating)
+            .disposed(by: bag)
+
+        output.isLoading
+            .map { !$0 }
+            .drive(view.rx.isUserInteractionEnabled)
+            .disposed(by: bag)
 
         output.isRefreshing
             .drive(refreshControl.rx.isRefreshing)
