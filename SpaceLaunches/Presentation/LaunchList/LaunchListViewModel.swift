@@ -1,8 +1,11 @@
+import Action
 import RxCocoa
 import RxSwift
 
 /// View model for managing the launch list.
 struct LaunchListViewModel {
+
+    typealias GetLaunchListAction = Action<Void, [LaunchListItem]>
 
     // MARK: - Private interface
     /// Represents the loading state of the launch list.
