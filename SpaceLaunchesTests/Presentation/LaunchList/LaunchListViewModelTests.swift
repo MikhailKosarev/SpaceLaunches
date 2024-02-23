@@ -5,6 +5,7 @@ import XCTest
 
 @testable import SpaceLaunches
 
+// swiftlint:disable type_body_length
 final class LaunchListViewModelTests: XCTestCase {
 
     // MARK: - Tests for Output.errors
@@ -51,6 +52,7 @@ final class LaunchListViewModelTests: XCTestCase {
         let input = viewModel.input(viewdDidLoad: viewDidLoadRelay.asDriver(onErrorDriveWith: .never()),
                                     selectedLaunch: .never(),
                                     rowsToPrefetch: .never(),
+                                    didPullToRefresh: .never(),
                                     selectedLaunchesType: .never())
 
         let expectation = XCTestExpectation()
@@ -79,6 +81,7 @@ final class LaunchListViewModelTests: XCTestCase {
         let input = viewModel.input(viewdDidLoad: .never(),
                                     selectedLaunch: selectedLaunchRelay.asDriver(onErrorDriveWith: .never()),
                                     rowsToPrefetch: .never(),
+                                    didPullToRefresh: .never(),
                                     selectedLaunchesType: .never())
 
         let expectation = XCTestExpectation()
@@ -106,6 +109,7 @@ final class LaunchListViewModelTests: XCTestCase {
         let input = viewModel.input(viewdDidLoad: .never(),
                                     selectedLaunch: .never(),
                                     rowsToPrefetch: rowsToPrefetchRelay.asDriver(onErrorDriveWith: .never()),
+                                    didPullToRefresh: .never(),
                                     selectedLaunchesType: .never())
 
         let expectation = XCTestExpectation()
@@ -134,6 +138,7 @@ final class LaunchListViewModelTests: XCTestCase {
         let input = viewModel.input(viewdDidLoad: .never(),
                                     selectedLaunch: .never(),
                                     rowsToPrefetch: .never(),
+                                    didPullToRefresh: .never(),
                                     selectedLaunchesType: selectedLaunchTypeRelay.asDriver(onErrorDriveWith: .never()))
 
         let expectation = XCTestExpectation()
@@ -162,6 +167,7 @@ final class LaunchListViewModelTests: XCTestCase {
         let input = viewModel.input(viewdDidLoad: .never(),
                                     selectedLaunch: .never(),
                                     rowsToPrefetch: .never(),
+                                    didPullToRefresh: .never(),
                                     selectedLaunchesType: selectedLaunchTypeRelay.asDriver(onErrorDriveWith: .never()))
 
         let expectation = XCTestExpectation()
@@ -213,6 +219,7 @@ final class LaunchListViewModelTests: XCTestCase {
         let input = viewModel.input(viewdDidLoad: viewDidLoadRelay.asDriver(onErrorDriveWith: .never()),
                                     selectedLaunch: .never(),
                                     rowsToPrefetch: .never(),
+                                    didPullToRefresh: .never(),
                                     selectedLaunchesType: .never())
 
         let expectation = XCTestExpectation()
@@ -241,6 +248,7 @@ final class LaunchListViewModelTests: XCTestCase {
         let input = viewModel.input(viewdDidLoad: .never(),
                                     selectedLaunch: selectedLaunchRelay.asDriver(onErrorDriveWith: .never()),
                                     rowsToPrefetch: .never(),
+                                    didPullToRefresh: .never(),
                                     selectedLaunchesType: .never())
 
         let expectation = XCTestExpectation()
@@ -269,6 +277,7 @@ final class LaunchListViewModelTests: XCTestCase {
         let input = viewModel.input(viewdDidLoad: .never(),
                                     selectedLaunch: .never(),
                                     rowsToPrefetch: rowsToPrefetchRelay.asDriver(onErrorDriveWith: .never()),
+                                    didPullToRefresh: .never(),
                                     selectedLaunchesType: .never())
 
         let expectation = XCTestExpectation()
@@ -297,12 +306,13 @@ final class LaunchListViewModelTests: XCTestCase {
         let input = viewModel.input(viewdDidLoad: .never(),
                                     selectedLaunch: .never(),
                                     rowsToPrefetch: .never(),
+                                    didPullToRefresh: .never(),
                                     selectedLaunchesType: selectedLaunchesTypeRelay
             .asDriver(onErrorDriveWith: .never()))
 
         let expectation = XCTestExpectation()
         var emittedEvents: [LaunchListSection] = []
-        let expectedEvents = Array(repeating: LaunchListSection(header: "Launches", items: []), count: 2)
+        let expectedEvents = Array(repeating: LaunchListSection(header: "Launches", items: []), count: 1)
 
         // When
         let output = viewModel.transform(input: input)
@@ -351,6 +361,8 @@ final class LaunchListViewModelTests: XCTestCase {
         viewModel.input(viewdDidLoad: .never(),
                         selectedLaunch: .never(),
                         rowsToPrefetch: .never(),
+                        didPullToRefresh: .never(),
                         selectedLaunchesType: .never())
     }
 }
+// swiftlint:enable type_body_length
