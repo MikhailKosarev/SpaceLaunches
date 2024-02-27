@@ -1,6 +1,7 @@
 # paths to ignore during linting.
 excluded:
   - Pods
+  - DerivedData
 
 # configurable rules
 trailing_comma:
