@@ -52,6 +52,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `default_rocket_launch_image.jpg` to the Assets.
 - Custom `LoadingTableFooterView` for the prefetching indication.
 - A reactive extension for the `UIRefreshControl` with `didPullToRefresh` property.
+- CI workflow for GitHub with custom scripts.
 
 ### Changed
 
