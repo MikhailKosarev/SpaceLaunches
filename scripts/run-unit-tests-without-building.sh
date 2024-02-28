@@ -13,4 +13,5 @@ xcodebuild \
     -only-testing:"${TEST_TARGET}" \
     -project "${APP_NAME}.xcodeproj" \
     -scheme "${APP_NAME}" \
-    -destination "platform=${DESTINATION_PLATFORM},name=${DESTINATION_NAME}"
+    -destination "platform=${DESTINATION_PLATFORM},name=${DESTINATION_NAME}" \
+    -derivedDataPath 'DerivedData'

@@ -25,12 +25,6 @@ jobs:
           name: Build
           path: DerivedData/Build/Products/Debug-iphonesimulator/SpaceLaunches.app
 
-      - name: Archive Runner
-        uses: actions/upload-artifact@v4
-        with:
-          name: Runner
-          path: DerivedData/Build/Products/Debug-iphonesimulator/SpaceLaunches-Runner.app
-
   unit_tests:
     needs: build
     runs-on: macos-14
@@ -46,12 +40,6 @@ jobs:
         with:
           name: Build
           path: DerivedData/Build/Products/Debug-iphonesimulator/SpaceLaunches.app
-
-      - name: Download Runner
-        uses: actions/download-artifact@v4
-        with:
-          name: Runner
-          path: DerivedData/Build/Products/Debug-iphonesimulator/SpaceLaunches-Runner.app
 
       - name: Run unit tests
         run: ./scripts/run-unit-tests-without-building.sh
