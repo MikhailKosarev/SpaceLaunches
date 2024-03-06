@@ -220,6 +220,7 @@
 		7413C0252B34D87500F1BBDF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				74905EF72B84F9AF00784A5C /* UIRefreshControl+Rx.swift */,
 				7413C0262B34D89500F1BBDF /* UIViewController+RxLifecycle.swift */,
 			);
 			path = Extensions;
@@ -325,7 +326,6 @@
 			isa = PBXGroup;
 			children = (
 				744F77DF2B2C5BD20077ECCF /* Action+Extensions.swift */,
-				74905EF72B84F9AF00784A5C /* UIRefreshControl+Rx.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
