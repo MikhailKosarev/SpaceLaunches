@@ -1,5 +1,13 @@
 /// View model for managing the launch detailed info.
 struct LaunchViewModel {
+
+    // MARK: - Private interface
+
+    private let coordinator: LaunchCoordinator
+
+    init(coordinator: LaunchCoordinator) {
+        self.coordinator = coordinator
+    }
 }
 
 // MARK: - LaunchViewModelType
