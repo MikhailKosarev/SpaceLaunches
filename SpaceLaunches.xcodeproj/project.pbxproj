@@ -65,6 +65,7 @@
 		74E4689C2B98D98A00C13448 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4689B2B98D98A00C13448 /* LaunchViewController.swift */; };
 		74E468A02B98DFD500C13448 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E4689F2B98DFD500C13448 /* LaunchViewModel.swift */; };
 		74E468A22B98E36900C13448 /* LaunchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E468A12B98E36900C13448 /* LaunchCoordinator.swift */; };
+		74E468A72B98F6EC00C13448 /* LaunchInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E468A62B98F6EC00C13448 /* LaunchInput.swift */; };
 		74E6620E2B30C8D6008D395E /* PadResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E6620D2B30C8D6008D395E /* PadResponseTests.swift */; };
 		74ED9D2A2B173701000BF024 /* LaunchResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D292B173701000BF024 /* LaunchResponseTests.swift */; };
 		74ED9D322B175C8B000BF024 /* LaunchListMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D312B175C8B000BF024 /* LaunchListMode.swift */; };
@@ -160,6 +161,7 @@
 		74E4689B2B98D98A00C13448 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		74E4689F2B98DFD500C13448 /* LaunchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		74E468A12B98E36900C13448 /* LaunchCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchCoordinator.swift; sourceTree = "<group>"; };
+		74E468A62B98F6EC00C13448 /* LaunchInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInput.swift; sourceTree = "<group>"; };
 		74E6620D2B30C8D6008D395E /* PadResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadResponseTests.swift; sourceTree = "<group>"; };
 		74ED9D292B173701000BF024 /* LaunchResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchResponseTests.swift; sourceTree = "<group>"; };
 		74ED9D312B175C8B000BF024 /* LaunchListMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListMode.swift; sourceTree = "<group>"; };
@@ -564,11 +566,20 @@
 		74E4689A2B98D94A00C13448 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
+				74E468A32B98E68300C13448 /* Protocols */,
 				74E468A12B98E36900C13448 /* LaunchCoordinator.swift */,
 				74E4689F2B98DFD500C13448 /* LaunchViewModel.swift */,
 				74E4689B2B98D98A00C13448 /* LaunchViewController.swift */,
 			);
 			path = Launch;
+			sourceTree = "<group>";
+		};
+		74E468A32B98E68300C13448 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				74E468A62B98F6EC00C13448 /* LaunchInput.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		74ED9D302B175C20000BF024 /* Responses */ = {
@@ -890,6 +901,7 @@
 				744F77E22B2C5D1E0077ECCF /* LaunchListViewModel.swift in Sources */,
 				7413C0272B34D89500F1BBDF /* UIViewController+RxLifecycle.swift in Sources */,
 				744F777C2B2B050B0077ECCF /* Coordinator.swift in Sources */,
+				74E468A72B98F6EC00C13448 /* LaunchInput.swift in Sources */,
 				74E468A02B98DFD500C13448 /* LaunchViewModel.swift in Sources */,
 				746C1F362B10F93F00FA9612 /* LaunchStatusResponse.swift in Sources */,
 				746C1F322B10F89000FA9612 /* LaunchListResponse.swift in Sources */,
