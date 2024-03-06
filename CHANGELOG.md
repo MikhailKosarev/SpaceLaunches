@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Changed
+
+- Moved the extension for the `UIRefreshControl` to the `Presentation` layer.
 
 ## [0.2.0] - 2024-03-05
 
