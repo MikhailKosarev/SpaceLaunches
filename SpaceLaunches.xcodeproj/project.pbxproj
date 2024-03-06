@@ -67,6 +67,7 @@
 		74E468A22B98E36900C13448 /* LaunchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E468A12B98E36900C13448 /* LaunchCoordinator.swift */; };
 		74E468A72B98F6EC00C13448 /* LaunchInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E468A62B98F6EC00C13448 /* LaunchInput.swift */; };
 		74E468A92B98F74F00C13448 /* LaunchOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E468A82B98F74F00C13448 /* LaunchOutput.swift */; };
+		74E468AB2B98F77F00C13448 /* LaunchViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E468AA2B98F77F00C13448 /* LaunchViewModelType.swift */; };
 		74E6620E2B30C8D6008D395E /* PadResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E6620D2B30C8D6008D395E /* PadResponseTests.swift */; };
 		74ED9D2A2B173701000BF024 /* LaunchResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D292B173701000BF024 /* LaunchResponseTests.swift */; };
 		74ED9D322B175C8B000BF024 /* LaunchListMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ED9D312B175C8B000BF024 /* LaunchListMode.swift */; };
@@ -164,6 +165,7 @@
 		74E468A12B98E36900C13448 /* LaunchCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchCoordinator.swift; sourceTree = "<group>"; };
 		74E468A62B98F6EC00C13448 /* LaunchInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInput.swift; sourceTree = "<group>"; };
 		74E468A82B98F74F00C13448 /* LaunchOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchOutput.swift; sourceTree = "<group>"; };
+		74E468AA2B98F77F00C13448 /* LaunchViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModelType.swift; sourceTree = "<group>"; };
 		74E6620D2B30C8D6008D395E /* PadResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadResponseTests.swift; sourceTree = "<group>"; };
 		74ED9D292B173701000BF024 /* LaunchResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchResponseTests.swift; sourceTree = "<group>"; };
 		74ED9D312B175C8B000BF024 /* LaunchListMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListMode.swift; sourceTree = "<group>"; };
@@ -581,6 +583,7 @@
 			children = (
 				74E468A62B98F6EC00C13448 /* LaunchInput.swift */,
 				74E468A82B98F74F00C13448 /* LaunchOutput.swift */,
+				74E468AA2B98F77F00C13448 /* LaunchViewModelType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -910,6 +913,7 @@
 				746C1F322B10F89000FA9612 /* LaunchListResponse.swift in Sources */,
 				7413C0242B33766400F1BBDF /* RxReusableTableViewCell.swift in Sources */,
 				74FDFF452B23386800784E2C /* LaunchListItem.swift in Sources */,
+				74E468AB2B98F77F00C13448 /* LaunchViewModelType.swift in Sources */,
 				746C1F3C2B10F9AD00FA9612 /* RocketConfigurationResponse.swift in Sources */,
 				74E468A92B98F74F00C13448 /* LaunchOutput.swift in Sources */,
 				744F777A2B2B03C20077ECCF /* ViewModel.swift in Sources */,
