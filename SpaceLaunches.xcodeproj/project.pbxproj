@@ -570,10 +570,10 @@
 		74E4689A2B98D94A00C13448 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
-				74E468A32B98E68300C13448 /* Protocols */,
 				74E468A12B98E36900C13448 /* LaunchCoordinator.swift */,
 				74E4689F2B98DFD500C13448 /* LaunchViewModel.swift */,
 				74E4689B2B98D98A00C13448 /* LaunchViewController.swift */,
+				74E468A32B98E68300C13448 /* Protocols */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
