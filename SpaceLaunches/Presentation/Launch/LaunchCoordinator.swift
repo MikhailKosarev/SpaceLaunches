@@ -17,13 +17,12 @@ final class LaunchCoordinator: Coordinator {
         navigationController?.pushViewController(viewController, animated: true)
     }
 
-// MARK: Private interface
-
+    // MARK: Private interface
     private weak var navigationController: UINavigationController?
 
     private func makeViewController() -> UIViewController? {
-        let launchViewModel = LaunchViewModel()
-        let viewController = LaunchViewController()
+        let launchViewModel = LaunchViewModel(coordinator: self)
+        let viewController = LaunchViewController(viewModel: launchViewModel)
 
         return viewController
     }

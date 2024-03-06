@@ -27,7 +27,7 @@ extension LaunchViewModel: LaunchViewModelType {
     func transform(input: LaunchInput) -> LaunchOutput {
         Output()
     }
-    
+
     /// Constructs the input for the 'LaunchViewModel'.
     /// - Returns: The input for the launch  view model.
     func input() -> LaunchInput {
