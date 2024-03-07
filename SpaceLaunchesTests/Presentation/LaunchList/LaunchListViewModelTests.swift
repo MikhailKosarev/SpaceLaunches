@@ -354,7 +354,8 @@ final class LaunchListViewModelTests: XCTestCase {
     private func getViewModel() -> LaunchListViewModel {
         let mockLaunchService = MockLaunchService()
         mockLaunchService.getLaunchListStub = getLaunchListStub()
-        return LaunchListViewModel(service: mockLaunchService)
+        return LaunchListViewModel(coordinator: LaunchListCoordinator(navigationController: nil),
+                                   service: mockLaunchService)
     }
 
     private func neverInput() -> LaunchListInput {

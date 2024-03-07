@@ -28,7 +28,8 @@ final class LaunchListCoordinator: Coordinator {
     private weak var navigationController: UINavigationController?
 
     private func makeViewController() -> UIViewController? {
-        let launchListViewModel = LaunchListViewModel(service: LaunchLibrary2Service())
+        let launchListViewModel = LaunchListViewModel(coordinator: self,
+                                                      service: LaunchLibrary2Service())
         let controller = LaunchListViewController(viewModel: launchListViewModel)
 
         return controller
