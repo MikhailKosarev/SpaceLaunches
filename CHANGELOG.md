@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added
+
+- `LaunchViewController` with a template implementation.
+- `LaunchInput` protocol with a template implementation.
+- `LaunchOutput` protocol with a template implementation.
+- `LaunchViewModelType` protocol with a template implementation.
+- `LaunchViewModel` with a conformance to the `LaunchListViewModelType` protocol and a template implementation.
+- `LaunchViewModelType` protocol with a template implementation.
+- `LaunchCoordinator` with a full implementation.
+
 ### Changed
 
 - Moved the extension for the `UIRefreshControl` to the `Presentation` layer.
