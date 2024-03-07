@@ -20,6 +20,8 @@ struct LaunchListViewModel {
 
     /// Dispose bag to store subscriptions.
     private let bag = DisposeBag()
+    /// Coordinator responsible for navigation events related to the launch list.
+    private let coordinator: LaunchListCoordinator
     /// Service for fetching launch data.
     private let launchService: LaunchService
     /// Use case for getting the launch list.
@@ -36,9 +38,14 @@ struct LaunchListViewModel {
     private let numberOfRemainingLaunchesToPrefetch = 2
 
     // MARK: - Initialization
+
     /// Initializes the launch list view model.
-    /// - Parameter service: Service for fetching launch data.
-    init(service: LaunchService) {
+    /// - Parameters:
+    ///   - coordinator: The coordinator responsible for navigation events related to the launch list.
+    ///   - service: The service for fetching launch data.
+    init(coordinator: LaunchListCoordinator,
+         service: LaunchService) {
+        self.coordinator = coordinator
         self.launchService = service
         getLaunchListUseCase = GetLaunchListUseCase(launchService: service)
     }

@@ -15,10 +15,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `LaunchViewModel` with a conformance to the `LaunchListViewModelType` protocol and a template implementation.
 - `LaunchViewModelType` protocol with a template implementation.
 - `LaunchCoordinator` with a full implementation.
+- `LaunchListCoordinator` with a full implementation.
+- `AppNavigationController` as a custom navigation controller for the application.
 
 ### Changed
 
 - Moved the extension for the `UIRefreshControl` to the `Presentation` layer.
+- Binded `LaunchList` and `Launch` screens with their coordinators.
 
 ## [0.2.0] - 2024-03-05
 
