@@ -30,6 +30,11 @@ final class LaunchListViewController: UIViewController {
         setConstraints()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+
     // MARK: - Private interface
     private let bag = DisposeBag()
     private var viewModel: LaunchListViewModelType
